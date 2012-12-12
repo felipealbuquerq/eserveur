@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Softex.Residencia.EServeur.Model.Categoria" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEACgA=</HashCode>
+      <FileName>Categoria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Softex.Residencia.EServeur.Model.Ingrediente" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAKAAAAACAAAAAgAAAAAAAAAAAAAAQAAAAEAAEACgA=</HashCode>
+      <FileName>Ingrediente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Softex.Residencia.EServeur.Model.Mesa" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAgA=</HashCode>
+      <FileName>Mesa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Softex.Residencia.EServeur.Model.Pedido" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQKAABMAAAACCAAAAAAAIAAgAAAAIAAAAAAAIAICgA=</HashCode>
+      <FileName>Pedido.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Softex.Residencia.EServeur.Model.Produto" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAAEQABABEgAQAAIAACEAAAAhQAAAAEAAEAAgA=</HashCode>
+      <FileName>Produto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Softex.Residencia.EServeur.Model.Status" Collapsed="true">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAABAAAAAAAAAAAAAAAIAAAACAAAAAAAAgA=</HashCode>
+      <FileName>Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Softex.Residencia.EServeur.Model.ICategoriaRepository" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICategoriaRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Softex.Residencia.EServeur.Model.IIngredienteRepository" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IIngredienteRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Softex.Residencia.EServeur.Model.IMesaRepository" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMesaRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Softex.Residencia.EServeur.Model.IPedidoRepository" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPedidoRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Softex.Residencia.EServeur.Model.IProdutoRepository" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IProdutoRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Softex.Residencia.EServeur.Model.IRepository&lt;T, EntityKey&gt;" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIAAAAAAAAgAAAAQBAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Softex.Residencia.EServeur.Model.IStatusRepository" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IStatusRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Softex.Residencia.EServeur.Model.StatusPedido" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAACAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StatusPedido.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
