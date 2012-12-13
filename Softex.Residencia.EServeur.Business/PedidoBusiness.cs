@@ -38,6 +38,7 @@ namespace Softex.Residencia.EServeur.Business
             return this.repository.FindBy(pedidoId);
         }
 
+		// Metodo para recuperator todos os pedidos
         public IEnumerable<Pedido> RecuperarPedidos()
         {
             return this.repository.FindAll();
@@ -62,8 +63,7 @@ namespace Softex.Residencia.EServeur.Business
                                             //Subtrai o horario atual com o horario em que o pedido foi realizado
                                             //e verifica se o intervalo é menor ou igual a 3 horas.
                                             dataAtual.Subtract(p.HorarioEntrada).Hours <= 3 &&
-                                            //Verifica se o horario de saida é nulo, o que significa que o pedido
-                                            //ainda não foi atendido.
+                                            //Verifica se o horario de saida é nulo, o que significa que o pedido ainda não foi atendido
                                             p.HorarioSaida == null);
         }
         
