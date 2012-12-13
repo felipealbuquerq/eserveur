@@ -42,6 +42,8 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
         }
 
+		// botao para salvar prato
+		// TODO: modificar de prato a produto
         private void btnSalvarPrato_Click(object sender, EventArgs e)
         {
             Categoria categoria = new Categoria(){
