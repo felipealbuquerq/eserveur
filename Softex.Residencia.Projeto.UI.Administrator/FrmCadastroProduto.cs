@@ -74,8 +74,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void btnSalvarPrato_Click(object sender, EventArgs e)
         {
-            Categoria categoria = new Categoria()
-                                      {
+            Categoria categoria = new Categoria(){
                                           Nome = "Pratos"
                                       };
 

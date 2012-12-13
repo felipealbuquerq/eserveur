@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -53,7 +54,13 @@
             this.combosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingredienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
+            this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -200,6 +207,8 @@
             // 
             // toolStrip
             // 
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(880, 25);
@@ -233,14 +242,52 @@
             // vendasDeProdutosToolStripMenuItem
             // 
             this.vendasDeProdutosToolStripMenuItem.Name = "vendasDeProdutosToolStripMenuItem";
-            this.vendasDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.vendasDeProdutosToolStripMenuItem.Text = "Vendas de Produtos";
+            this.vendasDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.vendasDeProdutosToolStripMenuItem.Text = "Vendas";
             // 
             // modificarToolStripMenuItem
             // 
+            this.modificarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.categoriaToolStripMenuItem1,
+            this.ingredienteToolStripMenuItem1,
+            this.produtoToolStripMenuItem1,
+            this.comboToolStripMenuItem});
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
             this.modificarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.modificarToolStripMenuItem.Text = "Modificar";
+            // 
+            // categoriaToolStripMenuItem1
+            // 
+            this.categoriaToolStripMenuItem1.Name = "categoriaToolStripMenuItem1";
+            this.categoriaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.categoriaToolStripMenuItem1.Text = "Categoria";
+            // 
+            // ingredienteToolStripMenuItem1
+            // 
+            this.ingredienteToolStripMenuItem1.Name = "ingredienteToolStripMenuItem1";
+            this.ingredienteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ingredienteToolStripMenuItem1.Text = "Ingrediente";
+            // 
+            // produtoToolStripMenuItem1
+            // 
+            this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
+            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.produtoToolStripMenuItem1.Text = "Produto";
+            // 
+            // comboToolStripMenuItem
+            // 
+            this.comboToolStripMenuItem.Name = "comboToolStripMenuItem";
+            this.comboToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.comboToolStripMenuItem.Text = "Combo";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Modificar disponibilidade de um ingrediente";
             // 
             // FrmPrincipal
             // 
@@ -255,6 +302,8 @@
             this.Text = "E-Serveur";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,6 +336,11 @@
         private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem combosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem vendasDeProdutosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ingredienteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem comboToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

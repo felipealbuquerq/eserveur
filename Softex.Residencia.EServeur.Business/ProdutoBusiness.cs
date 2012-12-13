@@ -43,11 +43,13 @@ namespace Softex.Residencia.EServeur.Business
             return this.repository.FindAll();
         }
 
+        // TODO: Comentar esse codigo
         public IEnumerable<Produto> RecuperarProdutos(Expression<Func<Produto, bool>> filter)
         {
             return this.repository.FindBy(filter);
         }
 
+        // TODO: Comentar a necessidade do overload
         public IEnumerable<Produto> RecuperarProdutos(Expression<Func<Produto, bool>> filter, int index, int count)
         {
             return this.repository.FindBy(filter, index, count);
