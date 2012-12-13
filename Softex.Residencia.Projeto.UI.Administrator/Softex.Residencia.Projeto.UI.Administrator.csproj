@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IconLogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,6 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCadastroCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroCategoria.Designer.cs">
+      <DependentUpon>FrmCadastroCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastroCombo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroCombo.Designer.cs">
+      <DependentUpon>FrmCadastroCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastroIngrediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroIngrediente.Designer.cs">
+      <DependentUpon>FrmCadastroIngrediente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadastroProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +86,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCadastroCategoria.resx">
+      <DependentUpon>FrmCadastroCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastroCombo.resx">
+      <DependentUpon>FrmCadastroCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastroIngrediente.resx">
+      <DependentUpon>FrmCadastroIngrediente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastroProduto.resx">
       <DependentUpon>FrmCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +139,9 @@
       <Project>{FB2D1BBD-BBFD-4BE0-8EC2-3844086D26A3}</Project>
       <Name>Softex.Residencia.Projeto.UI.Client</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IconLogo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

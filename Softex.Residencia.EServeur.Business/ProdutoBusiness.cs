@@ -61,6 +61,7 @@ namespace Softex.Residencia.EServeur.Business
 
             foreach (Produto produto in this.RecuperarProdutos())
             {
+                // HACK: Modificar um pouco esse código que ta meio complicado
                 if (produto.Ingredientes.Count > 0)
                 {
                     int qtdIngredientesDisponiveis = produto.Ingredientes.Count(ingrediente => ingrediente.Disponivel);

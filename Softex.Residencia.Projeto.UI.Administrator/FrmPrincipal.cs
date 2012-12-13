@@ -36,6 +36,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
             Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmCadastroProduto);
 
+            /* TODO: Reparar o banco de dados
             if (frmCliente == null)
             {
                 frmCliente = new FrmCadastroProduto
@@ -43,7 +44,9 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                     MdiParent = this
                 };
             }
+             * */
 
+            frmCliente = new FrmCadastroProduto() { MdiParent = this }; // test
             frmCliente.Focus();
         }
     }

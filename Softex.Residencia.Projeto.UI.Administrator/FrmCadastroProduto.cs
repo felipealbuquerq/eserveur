@@ -22,42 +22,12 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
             InitializeComponent();
 
-            this.ingredienteBusiness = new IngredienteBusiness();
-            this.produtoBusiness = new ProdutoBusiness();
+            //this.ingredienteBusiness = new IngredienteBusiness();
+            //this.produtoBusiness = new ProdutoBusiness();
 
-            this.CarregarIngredientes();
+            //this.CarregarIngredientes();
         }
 
-        private void btnCadastrarIngrediente_Click(object sender, EventArgs e)
-        {
-            string nome = this.txtNomeIngrediente.Text.Trim();
-            decimal preco = 0;
-
-            if (!decimal.TryParse(this.txtPrecoIngrediente.Text, out preco))
-            {
-                throw new Exception(Mensagens.PrecoIngredienteInvalido);
-            }
-
-            Ingrediente ingrediente = new Ingrediente()
-            {
-                Nome = nome,
-                Preco = preco
-            };
-
-            this.ingredienteBusiness.CadastrarIngrediente(ingrediente);
-            this.LimparCamposGroupBoxIngrediente();
-            this.CarregarIngredientes();
-
-            MessageBox.Show(Mensagens.IngredienteCadastrado, Mensagens.Mensagem, MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-        }
-
-        private void LimparCamposGroupBoxIngrediente()
-        {
-            this.txtNomeIngrediente.Text = "";
-            this.txtPrecoIngrediente.Text = "";
-            this.chkDisponivelEmEstoque.Checked = true;
-        }
 
         private void CarregarIngredientes()
         {
@@ -96,5 +66,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
             this.produtoBusiness.CadastrarProduto(produto);
         }
+
+        private void button1_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
     }
 }
