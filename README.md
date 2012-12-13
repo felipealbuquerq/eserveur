@@ -19,20 +19,21 @@ Com suporte à geração de relatórios gerenciais e operacionais facilitando as
 Funcionalidades
 ============
 
-+ Gestão da disponibilidade dos produtos vendidos 
-+ Impressão de pedidos
++ Gestão de caixa;
++ Gestão da disponibilidade dos produtos vendidos;
++ Impressão de pedidos;
 + Gerenciar a disponibilidade dos pratos a partir dos ingredientes disponíveis;
 + Cancelamento/Modificação de pedidos;
 + Visualização pedidos em aberto;
-+ Visualisação do valor da conta do cliente
-+ Geração de faturas
-+ Suporte a relatórios gerenciais (Ex: Vendas por produto ou por data)
-+ Suporte a relatórios operacionais (Ex: Relatório listando produtos vendidos)
++ Visualisação do valor da conta do cliente;
++ Geração de faturas;
++ Suporte a relatórios gerenciais (Ex: Vendas por produto ou por data);
++ Suporte a relatórios operacionais (Ex: Relatório listando produtos vendidos);
 + Cadastro de ingredientes;
 + Cadastro de categorias;
 + Cadastro de produtos;
 + Cadastro de combos;
-+ Suporte multi-idioma (previsto)
++ Suporte multi-idioma (previsto).
 
 
 Versionamento
