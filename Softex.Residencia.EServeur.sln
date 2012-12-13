@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softex.Residencia.EServeur.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softex.Residencia.EServeur.Business", "Softex.Residencia.EServeur.Business\Softex.Residencia.EServeur.Business.csproj", "{F033B2B7-C983-4570-B109-D5CAE94448A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "tests\tests.csproj", "{223DB34F-876C-4E63-B9DF-9208EC87CBD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,16 @@ Global
 		{F033B2B7-C983-4570-B109-D5CAE94448A9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F033B2B7-C983-4570-B109-D5CAE94448A9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F033B2B7-C983-4570-B109-D5CAE94448A9}.Release|x86.ActiveCfg = Release|Any CPU
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Debug|x86.ActiveCfg = Debug|x86
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Debug|x86.Build.0 = Debug|x86
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Release|Any CPU.ActiveCfg = Release|x86
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Release|Mixed Platforms.Build.0 = Release|x86
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Release|x86.ActiveCfg = Release|x86
+		{223DB34F-876C-4E63-B9DF-9208EC87CBD4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

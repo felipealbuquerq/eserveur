@@ -31,14 +31,15 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPratos = new System.Windows.Forms.TabPage();
             this.tabBebidas = new System.Windows.Forms.TabPage();
+            this.lstBebidas = new System.Windows.Forms.ListView();
             this.tabPromocoes = new System.Windows.Forms.TabPage();
-            this.lstProdutos = new System.Windows.Forms.ListView();
+            this.lstPromocoes = new System.Windows.Forms.ListView();
             this.btnRealizarPedido = new System.Windows.Forms.Button();
             this.lblValorTotalPedido = new System.Windows.Forms.Label();
-            this.btnAdicionarProduto = new System.Windows.Forms.Button();
-            this.btnRemoverProduto = new System.Windows.Forms.Button();
-            this.lstBebidas = new System.Windows.Forms.ListView();
-            this.lstPromocoes = new System.Windows.Forms.ListView();
+            this.lstProdutos = new System.Windows.Forms.ListView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabBebidas.SuspendLayout();
             this.tabPromocoes.SuspendLayout();
@@ -52,7 +53,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(452, 446);
+            this.tabControl1.Size = new System.Drawing.Size(951, 530);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPratos
@@ -60,7 +61,7 @@
             this.tabPratos.Location = new System.Drawing.Point(4, 22);
             this.tabPratos.Name = "tabPratos";
             this.tabPratos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPratos.Size = new System.Drawing.Size(444, 420);
+            this.tabPratos.Size = new System.Drawing.Size(943, 504);
             this.tabPratos.TabIndex = 0;
             this.tabPratos.Text = "Pratos";
             this.tabPratos.UseVisualStyleBackColor = true;
@@ -71,10 +72,19 @@
             this.tabBebidas.Location = new System.Drawing.Point(4, 22);
             this.tabBebidas.Name = "tabBebidas";
             this.tabBebidas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBebidas.Size = new System.Drawing.Size(444, 420);
+            this.tabBebidas.Size = new System.Drawing.Size(943, 504);
             this.tabBebidas.TabIndex = 1;
             this.tabBebidas.Text = "Bebidas";
             this.tabBebidas.UseVisualStyleBackColor = true;
+            // 
+            // lstBebidas
+            // 
+            this.lstBebidas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstBebidas.Location = new System.Drawing.Point(3, 3);
+            this.lstBebidas.Name = "lstBebidas";
+            this.lstBebidas.Size = new System.Drawing.Size(937, 498);
+            this.lstBebidas.TabIndex = 0;
+            this.lstBebidas.UseCompatibleStateImageBehavior = false;
             // 
             // tabPromocoes
             // 
@@ -87,60 +97,6 @@
             this.tabPromocoes.Text = "Promoções";
             this.tabPromocoes.UseVisualStyleBackColor = true;
             // 
-            // lstProdutos
-            // 
-            this.lstProdutos.Location = new System.Drawing.Point(520, 34);
-            this.lstProdutos.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.lstProdutos.Name = "lstProdutos";
-            this.lstProdutos.Size = new System.Drawing.Size(218, 424);
-            this.lstProdutos.TabIndex = 1;
-            this.lstProdutos.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnRealizarPedido
-            // 
-            this.btnRealizarPedido.Location = new System.Drawing.Point(520, 498);
-            this.btnRealizarPedido.Name = "btnRealizarPedido";
-            this.btnRealizarPedido.Size = new System.Drawing.Size(218, 23);
-            this.btnRealizarPedido.TabIndex = 2;
-            this.btnRealizarPedido.Text = "Realizar Pedido";
-            this.btnRealizarPedido.UseVisualStyleBackColor = true;
-            // 
-            // lblValorTotalPedido
-            // 
-            this.lblValorTotalPedido.AutoSize = true;
-            this.lblValorTotalPedido.Location = new System.Drawing.Point(517, 471);
-            this.lblValorTotalPedido.Name = "lblValorTotalPedido";
-            this.lblValorTotalPedido.Size = new System.Drawing.Size(85, 13);
-            this.lblValorTotalPedido.TabIndex = 3;
-            this.lblValorTotalPedido.Text = "Valor do Pedido:";
-            // 
-            // btnAdicionarProduto
-            // 
-            this.btnAdicionarProduto.Location = new System.Drawing.Point(470, 216);
-            this.btnAdicionarProduto.Name = "btnAdicionarProduto";
-            this.btnAdicionarProduto.Size = new System.Drawing.Size(42, 23);
-            this.btnAdicionarProduto.TabIndex = 4;
-            this.btnAdicionarProduto.Text = ">>";
-            this.btnAdicionarProduto.UseVisualStyleBackColor = true;
-            // 
-            // btnRemoverProduto
-            // 
-            this.btnRemoverProduto.Location = new System.Drawing.Point(470, 245);
-            this.btnRemoverProduto.Name = "btnRemoverProduto";
-            this.btnRemoverProduto.Size = new System.Drawing.Size(42, 23);
-            this.btnRemoverProduto.TabIndex = 5;
-            this.btnRemoverProduto.Text = "<<";
-            this.btnRemoverProduto.UseVisualStyleBackColor = true;
-            // 
-            // lstBebidas
-            // 
-            this.lstBebidas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstBebidas.Location = new System.Drawing.Point(3, 3);
-            this.lstBebidas.Name = "lstBebidas";
-            this.lstBebidas.Size = new System.Drawing.Size(438, 414);
-            this.lstBebidas.TabIndex = 0;
-            this.lstBebidas.UseCompatibleStateImageBehavior = false;
-            // 
             // lstPromocoes
             // 
             this.lstPromocoes.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -150,13 +106,64 @@
             this.lstPromocoes.TabIndex = 0;
             this.lstPromocoes.UseCompatibleStateImageBehavior = false;
             // 
+            // btnRealizarPedido
+            // 
+            this.btnRealizarPedido.Location = new System.Drawing.Point(996, 519);
+            this.btnRealizarPedido.Name = "btnRealizarPedido";
+            this.btnRealizarPedido.Size = new System.Drawing.Size(218, 23);
+            this.btnRealizarPedido.TabIndex = 2;
+            this.btnRealizarPedido.Text = "Realizar Pedido";
+            this.btnRealizarPedido.UseVisualStyleBackColor = true;
+            // 
+            // lblValorTotalPedido
+            // 
+            this.lblValorTotalPedido.AutoSize = true;
+            this.lblValorTotalPedido.Location = new System.Drawing.Point(993, 485);
+            this.lblValorTotalPedido.Name = "lblValorTotalPedido";
+            this.lblValorTotalPedido.Size = new System.Drawing.Size(85, 13);
+            this.lblValorTotalPedido.TabIndex = 3;
+            this.lblValorTotalPedido.Text = "Valor do Pedido:";
+            // 
+            // lstProdutos
+            // 
+            this.lstProdutos.Location = new System.Drawing.Point(996, 74);
+            this.lstProdutos.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.lstProdutos.Name = "lstProdutos";
+            this.lstProdutos.Size = new System.Drawing.Size(218, 384);
+            this.lstProdutos.TabIndex = 1;
+            this.lstProdutos.UseCompatibleStateImageBehavior = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1084, 482);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(130, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(1035, 41);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(179, 20);
+            this.textBox2.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(993, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Mesa:";
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 533);
-            this.Controls.Add(this.btnRemoverProduto);
-            this.Controls.Add(this.btnAdicionarProduto);
+            this.ClientSize = new System.Drawing.Size(1227, 569);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblValorTotalPedido);
             this.Controls.Add(this.btnRealizarPedido);
             this.Controls.Add(this.lstProdutos);
@@ -176,14 +183,15 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPratos;
         private System.Windows.Forms.TabPage tabBebidas;
-        private System.Windows.Forms.ListView lstProdutos;
-        private System.Windows.Forms.Button btnRealizarPedido;
-        private System.Windows.Forms.Label lblValorTotalPedido;
         private System.Windows.Forms.TabPage tabPromocoes;
-        private System.Windows.Forms.Button btnAdicionarProduto;
-        private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.ListView lstBebidas;
         private System.Windows.Forms.ListView lstPromocoes;
+        private System.Windows.Forms.Button btnRealizarPedido;
+        private System.Windows.Forms.Label lblValorTotalPedido;
+        private System.Windows.Forms.ListView lstProdutos;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
 
     }
 }
