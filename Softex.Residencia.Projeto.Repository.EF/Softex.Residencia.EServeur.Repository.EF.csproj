@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaRepository.cs" />
+    <Compile Include="ComboRepository.cs" />
     <Compile Include="EServeurEntities.cs" />
     <Compile Include="EServeurEntitiesFactory.cs" />
     <Compile Include="IngredienteRepository.cs" />

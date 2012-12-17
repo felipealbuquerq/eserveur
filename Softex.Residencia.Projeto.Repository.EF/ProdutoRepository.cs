@@ -14,11 +14,6 @@ namespace Softex.Residencia.EServeur.Repository.EF
             this.ObjectSet = this.Context.Produtos;
         }
 
-        public override IQueryable<Produto> GetObjectSet()
-        {
-            return this.ObjectSet;
-        }
-
         public override string GetEntitySetName()
         {
             return this.Context.Produtos.EntitySet.Name;

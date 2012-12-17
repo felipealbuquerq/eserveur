@@ -8,19 +8,20 @@ namespace Softex.Residencia.EServeur.Repository.EF
 {
     public class CategoriaRepository : RepositoryBase<Categoria, int>, ICategoriaRepository
     {
-        public override IQueryable<Categoria> GetObjectSet()
+        public CategoriaRepository()
         {
-            throw new NotImplementedException();
+            this.Context = EServeurEntitiesFactory.GetDatacontext();
+            this.ObjectSet = this.Context.Categorias;
         }
 
         public override string GetEntitySetName()
         {
-            throw new NotImplementedException();
+            return this.Context.Categorias.EntitySet.Name;
         }
 
         public override Categoria FindBy(int id)
         {
-            throw new NotImplementedException();
+            return this.ObjectSet.FirstOrDefault(i => i.Id == id);
         }
     }
 }

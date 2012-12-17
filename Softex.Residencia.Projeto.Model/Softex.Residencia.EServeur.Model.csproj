@@ -56,7 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="Combo.cs" />
     <Compile Include="ICategoriaRepository.cs" />
+    <Compile Include="IComboRepository.cs" />
     <Compile Include="IIngredienteRepository.cs" />
     <Compile Include="IMesaRepository.cs" />
     <Compile Include="Ingrediente.cs" />

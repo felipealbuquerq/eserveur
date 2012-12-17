@@ -8,19 +8,20 @@ namespace Softex.Residencia.EServeur.Repository.EF
 {
     public class StatusRepository : RepositoryBase<Status, int>, IStatusRepository
     {
-        public override IQueryable<Status> GetObjectSet()
+        public StatusRepository()
         {
-            throw new NotImplementedException();
+            this.Context = EServeurEntitiesFactory.GetDatacontext();
+            this.ObjectSet = this.Context.Status;
         }
 
         public override string GetEntitySetName()
         {
-            throw new NotImplementedException();
+            return this.Context.Status.EntitySet.Name;
         }
 
         public override Status FindBy(int id)
         {
-            throw new NotImplementedException();
+            return this.ObjectSet.FirstOrDefault(i => i.Id == id);
         }
     }
 }
