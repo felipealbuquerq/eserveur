@@ -15,6 +15,7 @@ namespace Softex.Residencia.EServeur.Repository.EF
         private ObjectSet<Pedido> pedidos;
         private ObjectSet<Status> status;
         private ObjectSet<Mesa> mesas;
+        private ObjectSet<Combo> combos;
 
         public EServeurEntities()
             : base("name=EServeurEntities", "EServeurEntities")
@@ -25,6 +26,7 @@ namespace Softex.Residencia.EServeur.Repository.EF
             this.Categorias = CreateObjectSet<Categoria>();
             this.Status = CreateObjectSet<Status>();
             this.Mesas = CreateObjectSet<Mesa>();
+            this.Combos = CreateObjectSet<Combo>();
 
             base.ContextOptions.LazyLoadingEnabled = true;
         }
@@ -63,6 +65,12 @@ namespace Softex.Residencia.EServeur.Repository.EF
         {
             get { return mesas; }
             set { mesas = value; }
+        }
+
+        public ObjectSet<Combo> Combos
+        {
+            get { return combos; }
+            set { combos = value; }
         }
     }
 }

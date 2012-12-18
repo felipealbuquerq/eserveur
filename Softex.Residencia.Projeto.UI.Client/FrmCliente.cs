@@ -40,6 +40,18 @@ namespace Softex.Residencia.Projeto.UI.Client
                     thumbnailControl.NomeProduto = produto.Nome;
                 }
 
+                int i = this.tabPratos.Controls.Count;
+
+                if (i > 0)
+                {
+                    Control c = this.tabPratos.Controls[i - 1];
+
+                    if (c != null)
+                    {
+                        thumbnailControl.Location = new Point(c.Location.X + 150, c.Location.Y);
+                    }
+                }
+                
                 this.tabPratos.Controls.Add(thumbnailControl);
             }
         }

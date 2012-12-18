@@ -2,8 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
+<<<<<<< HEAD
 -- Date Created: 12/13/2012 22:58:31
 -- Generated from EDMX file: D:\CSProjects\eserveur\Softex.Residencia.Projeto.Repository.EF\EServeurModel.edmx
+=======
+-- Date Created: 12/17/2012 19:37:03
+-- Generated from EDMX file: C:\Users\Max\Documents\GitHub\eserveur\Softex.Residencia.Projeto.Repository.EF\EServeurModel.edmx
+>>>>>>> remoteCarlos/master
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -48,6 +53,12 @@ IF OBJECT_ID(N'[dbo].[Pedidos]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Mesas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Mesas];
+GO
+IF OBJECT_ID(N'[dbo].[ComboProduto]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ComboProduto];
+GO
+IF OBJECT_ID(N'[dbo].[Combo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Combo];
 GO
 IF OBJECT_ID(N'[dbo].[Produtos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Produtos];
@@ -118,9 +129,23 @@ CREATE TABLE [dbo].[Status] (
 );
 GO
 
+-- Creating table 'Combo'
+CREATE TABLE [dbo].[Combo] (
+    [Desconto] decimal(18,0)  NOT NULL,
+    [Id] int  NOT NULL
+);
+GO
+
 -- Creating table 'IngredienteProduto'
 CREATE TABLE [dbo].[IngredienteProduto] (
     [Ingredientes_Id] int  NOT NULL,
+    [Produtos_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'ComboProduto'
+CREATE TABLE [dbo].[ComboProduto] (
+    [Combos_Id] int  NOT NULL,
     [Produtos_Id] int  NOT NULL
 );
 GO
@@ -165,10 +190,22 @@ ADD CONSTRAINT [PK_Status]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+-- Creating primary key on [Id] in table 'Produtos_Combo'
+ALTER TABLE [dbo].[Combo]
+ADD CONSTRAINT [PK_Combo]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
 -- Creating primary key on [Ingredientes_Id], [Produtos_Id] in table 'IngredienteProduto'
 ALTER TABLE [dbo].[IngredienteProduto]
 ADD CONSTRAINT [PK_IngredienteProduto]
     PRIMARY KEY NONCLUSTERED ([Ingredientes_Id], [Produtos_Id] ASC);
+GO
+
+-- Creating primary key on [Combos_Id], [Produtos_Id] in table 'ComboProduto'
+ALTER TABLE [dbo].[ComboProduto]
+ADD CONSTRAINT [PK_ComboProduto]
+    PRIMARY KEY NONCLUSTERED ([Combos_Id], [Produtos_Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -252,6 +289,38 @@ ADD CONSTRAINT [FK_StatusPedido]
 CREATE INDEX [IX_FK_StatusPedido]
 ON [dbo].[Pedidos]
     ([StatusId]);
+GO
+
+-- Creating foreign key on [Combos_Id] in table 'ComboProduto'
+ALTER TABLE [dbo].[ComboProduto]
+ADD CONSTRAINT [FK_ComboProduto_Combo]
+    FOREIGN KEY ([Combos_Id])
+    REFERENCES [dbo].[Combo]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Produtos_Id] in table 'ComboProduto'
+ALTER TABLE [dbo].[ComboProduto]
+ADD CONSTRAINT [FK_ComboProduto_Produto]
+    FOREIGN KEY ([Produtos_Id])
+    REFERENCES [dbo].[Produtos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ComboProduto_Produto'
+CREATE INDEX [IX_FK_ComboProduto_Produto]
+ON [dbo].[ComboProduto]
+    ([Produtos_Id]);
+GO
+
+-- Creating foreign key on [Id] in table 'Produtos_Combo'
+ALTER TABLE [dbo].[Combo]
+ADD CONSTRAINT [FK_Combo_inherits_Produto]
+    FOREIGN KEY ([Id])
+    REFERENCES [dbo].[Produtos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- --------------------------------------------------

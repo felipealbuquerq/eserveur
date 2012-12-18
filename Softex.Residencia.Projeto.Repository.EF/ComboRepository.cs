@@ -1,25 +1,25 @@
-﻿using Softex.Residencia.EServeur.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Softex.Residencia.EServeur.Model;
 
 namespace Softex.Residencia.EServeur.Repository.EF
 {
-    public class PedidoRepository : RepositoryBase<Pedido, int>, IPedidoRepository
+    public class ComboRepository : RepositoryBase<Combo, int>, IComboRepository
     {
-        public PedidoRepository()
+        public ComboRepository()
         {
             this.Context = EServeurEntitiesFactory.GetDatacontext();
-            this.ObjectSet = this.Context.Pedidos;
-        }
-        
-        public override string GetEntitySetName()
-        {
-            return this.Context.Pedidos.EntitySet.Name;
+            this.ObjectSet = this.Context.Combos;
         }
 
-        public override Pedido FindBy(int id)
+        public override string GetEntitySetName()
+        {
+            return this.Context.Combos.EntitySet.Name;
+        }
+
+        public override Combo FindBy(int id)
         {
             return this.ObjectSet.FirstOrDefault(i => i.Id == id);
         }

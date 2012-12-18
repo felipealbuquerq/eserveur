@@ -13,64 +13,71 @@ namespace Softex.Residencia.EServeur.Model
         private Categoria categoria;
         private Pedido pedido;
         private IList<Ingrediente> ingredientes;
+        private IList<Combo> combos;
 
         public Produto()
         {
             this.ingredientes = new List<Ingrediente>();
         }
 
-        public int Id
+        public virtual int Id
         {
             get { return this.id; }
             set { this.id = value; }
         }
 
-        public string Nome
+        public virtual string Nome
         {
             get { return this.nome; }
             set { this.nome = value; }
         }
 
-        public decimal Preco
+        public virtual decimal Preco
         {
             get { return this.preco; }
             set { this.preco = value; }
         }
 
-        public bool Promocao
+        public virtual bool Promocao
         {
             get { return this.promocao; }
             set { this.promocao = value; }
         }
 
-        public Pedido Pedido 
+        public virtual Pedido Pedido 
         {
             get { return this.pedido; }
             set { this.pedido = value; }
         }
 
-        public byte[] Imagem
+        public virtual byte[] Imagem
         {
             get { return this.imagem; }
             set { this.imagem = value; }
         }
 
-        public IList<Ingrediente> Ingredientes
+        public virtual IList<Ingrediente> Ingredientes
         {
             get { return ingredientes; }
             set { ingredientes = value; }
         }
 
-        public Categoria Categoria
+        public virtual Categoria Categoria
         {
             get { return categoria; }
             set { categoria = value; }
         }
 
-        public string Descricao
+        public virtual string Descricao
         {
             get { return descricao; }
             set { descricao = value; }
+        }
+
+        public IList<Combo> Combos
+        {
+            get { return combos; }
+            set { combos = value; }
         }
     }
 }

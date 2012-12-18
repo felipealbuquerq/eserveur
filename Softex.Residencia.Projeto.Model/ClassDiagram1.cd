@@ -28,7 +28,7 @@
       <FileName>Pedido.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Softex.Residencia.EServeur.Model.Produto" Collapsed="true">
+  <Class Name="Softex.Residencia.EServeur.Model.Produto">
     <Position X="7.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQACAAAAEQABABEgAQAAIAACEAAAAhQAAAAEAAEAAgA=</HashCode>
@@ -40,6 +40,13 @@
     <TypeIdentifier>
       <HashCode>AAADAAAAAAABAAAAAAAAAAAAAAAIAAAACAAAAAAAAgA=</HashCode>
       <FileName>Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Softex.Residencia.EServeur.Model.Combo">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAECAA=</HashCode>
+      <FileName>Combo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Softex.Residencia.EServeur.Model.ICategoriaRepository" Collapsed="true">

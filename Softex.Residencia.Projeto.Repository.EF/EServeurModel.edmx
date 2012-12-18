@@ -6,6 +6,7 @@
     <edmx:StorageModels>
     <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Alias="Self" Namespace="Softex.Residencia.EServeur.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
   <EntityContainer Name="SoftexResidenciaEServeurModelStoreContainer">
+<<<<<<< HEAD
     <EntitySet Name="Ingredientes" EntityType="Softex.Residencia.EServeur.Model.Store.Ingredientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pedidos" EntityType="Softex.Residencia.EServeur.Model.Store.Pedidos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Mesas" EntityType="Softex.Residencia.EServeur.Model.Store.Mesas" Schema="dbo" store:Type="Tables" />
@@ -13,6 +14,17 @@
     <EntitySet Name="Categorias" EntityType="Softex.Residencia.EServeur.Model.Store.Categorias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Status" EntityType="Softex.Residencia.EServeur.Model.Store.Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IngredienteProduto" EntityType="Softex.Residencia.EServeur.Model.Store.IngredienteProduto" Schema="dbo" store:Type="Tables" />
+=======
+    <EntitySet Name="Ingredientes" EntityType="Softex.Residencia.EServeur.Model.Store.Ingredientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pedidos" EntityType="Softex.Residencia.EServeur.Model.Store.Pedidos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Mesas" EntityType="Softex.Residencia.EServeur.Model.Store.Mesas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Produtos" EntityType="Softex.Residencia.EServeur.Model.Store.Produtos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categorias" EntityType="Softex.Residencia.EServeur.Model.Store.Categorias" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Status" EntityType="Softex.Residencia.EServeur.Model.Store.Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Produtos_Combo" EntityType="Softex.Residencia.EServeur.Model.Store.Produtos_Combo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IngredienteProduto" EntityType="Softex.Residencia.EServeur.Model.Store.IngredienteProduto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComboProduto" EntityType="Softex.Residencia.EServeur.Model.Store.ComboProduto" store:Type="Tables" Schema="dbo" />
+>>>>>>> remoteCarlos/master
     <AssociationSet Name="FK_IngredienteProduto_Ingrediente" Association="Softex.Residencia.EServeur.Model.Store.FK_IngredienteProduto_Ingrediente">
       <End EntitySet="Ingredientes" Role="Ingrediente" />
       <End EntitySet="IngredienteProduto" Role="IngredienteProduto" />
@@ -36,6 +48,18 @@
     <AssociationSet Name="StatusPedido" Association="Softex.Residencia.EServeur.Model.Store.StatusPedido">
       <End EntitySet="Status" Role="Status" />
       <End EntitySet="Pedidos" Role="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComboProduto_Combo" Association="Softex.Residencia.EServeur.Model.Store.FK_ComboProduto_Combo">
+      <End Role="Combo" EntitySet="Produtos_Combo" />
+      <End Role="ComboProduto" EntitySet="ComboProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComboProduto_Produto" Association="Softex.Residencia.EServeur.Model.Store.FK_ComboProduto_Produto">
+      <End Role="Produto" EntitySet="Produtos" />
+      <End Role="ComboProduto" EntitySet="ComboProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Combo_inherits_Produto" Association="Softex.Residencia.EServeur.Model.Store.FK_Combo_inherits_Produto">
+      <End Role="Produto" EntitySet="Produtos" />
+      <End Role="Combo" EntitySet="Produtos_Combo" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Ingredientes">
@@ -90,6 +114,13 @@
     <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
     <Property Name="Descricao" Nullable="false" MaxLength="200" Type="nvarchar" />
   </EntityType>
+  <EntityType Name="Produtos_Combo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Desconto" Type="decimal" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="IngredienteProduto">
     <Key>
       <PropertyRef Name="Ingredientes_Id" />
@@ -97,6 +128,14 @@
     </Key>
     <Property Name="Ingredientes_Id" Nullable="false" Type="int" />
     <Property Name="Produtos_Id" Nullable="false" Type="int" />
+  </EntityType>
+  <EntityType Name="ComboProduto">
+    <Key>
+      <PropertyRef Name="Combos_Id" />
+      <PropertyRef Name="Produtos_Id" />
+    </Key>
+    <Property Name="Combos_Id" Type="int" Nullable="false" />
+    <Property Name="Produtos_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="ProdutoPedido">
     <End Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="*" Role="Produto" />
@@ -170,6 +209,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ComboProduto_Combo">
+    <End Role="Combo" Type="Softex.Residencia.EServeur.Model.Store.Produtos_Combo" Multiplicity="1" />
+    <End Role="ComboProduto" Type="Softex.Residencia.EServeur.Model.Store.ComboProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Combo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComboProduto">
+        <PropertyRef Name="Combos_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComboProduto_Produto">
+    <End Role="ComboProduto" Type="Softex.Residencia.EServeur.Model.Store.ComboProduto" Multiplicity="*" />
+    <End Role="Produto" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComboProduto">
+        <PropertyRef Name="Produtos_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Combo_inherits_Produto">
+    <End Role="Produto" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="1" />
+    <End Role="Combo" Type="Softex.Residencia.EServeur.Model.Store.Produtos_Combo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Combo">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -200,6 +275,10 @@
           <AssociationSet Name="StatusPedido" Association="Softex.Residencia.EServeur.Model.StatusPedido">
             <End Role="Status" EntitySet="Status" />
             <End Role="Pedido" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="ComboProduto" Association="Softex.Residencia.EServeur.Model.ComboProduto">
+            <End Role="Combo" EntitySet="Produtos" />
+            <End Role="Produto" EntitySet="Produtos" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Ingrediente">
@@ -244,6 +323,7 @@
           <NavigationProperty Name="Ingredientes" Relationship="Softex.Residencia.EServeur.Model.IngredienteProduto" FromRole="Produto" ToRole="Ingrediente" />
           <NavigationProperty Name="Pedido" Relationship="Softex.Residencia.EServeur.Model.ProdutoPedido" FromRole="Produto" ToRole="Pedido" />
           <NavigationProperty Name="Categoria" Relationship="Softex.Residencia.EServeur.Model.ProdutoCategoria" FromRole="Produto" ToRole="Categoria" />
+          <NavigationProperty Name="Combos" Relationship="Softex.Residencia.EServeur.Model.ComboProduto" FromRole="Produto" ToRole="Combo" />
         </EntityType>
         <Association Name="IngredienteProduto">
           <End Type="Softex.Residencia.EServeur.Model.Ingrediente" Role="Ingrediente" Multiplicity="*" />
@@ -289,6 +369,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Combo" BaseType="Softex.Residencia.EServeur.Model.Produto">
+          <Property Type="Decimal" Name="Desconto" Nullable="false" />
+          <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.ComboProduto" FromRole="Combo" ToRole="Produto" />
+        </EntityType>
+        <Association Name="ComboProduto">
+          <End Type="Softex.Residencia.EServeur.Model.Combo" Role="Combo" Multiplicity="*" />
+          <End Type="Softex.Residencia.EServeur.Model.Produto" Role="Produto" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -331,6 +419,12 @@
           <ScalarProperty Name="Preco" ColumnName="Preco" />
           <ScalarProperty Name="Imagem" ColumnName="Imagem" />
           <ScalarProperty Name="Promocao" ColumnName="Promocao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Softex.Residencia.EServeur.Model.Combo)">
+        <MappingFragment StoreEntitySet="Produtos_Combo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Desconto" ColumnName="Desconto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -383,6 +477,14 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
+    <AssociationSetMapping Name="ComboProduto" TypeName="Softex.Residencia.EServeur.Model.ComboProduto" StoreEntitySet="ComboProduto">
+      <EndProperty Name="Combo">
+        <ScalarProperty Name="Id" ColumnName="Combos_Id" />
+      </EndProperty>
+      <EndProperty Name="Produto">
+        <ScalarProperty Name="Id" ColumnName="Produtos_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -429,6 +531,15 @@
         <AssociationConnector Association="Softex.Residencia.EServeur.Model.StatusPedido">
           <ConnectorPoint PointX="2" PointY="1.4228417968749998" />
           <ConnectorPoint PointX="2.875" PointY="1.4228417968749998" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Combo" Width="1.5" PointX="4.875" PointY="5.375" Height="1.4033821614583335" />
+        <InheritanceConnector EntityType="Softex.Residencia.EServeur.Model.Combo">
+          <ConnectorPoint PointX="4.25" PointY="6.0433775838216146" />
+          <ConnectorPoint PointX="4.875" PointY="6.0433775838216146" />
+        </InheritanceConnector>
+        <AssociationConnector Association="Softex.Residencia.EServeur.Model.ComboProduto">
+          <ConnectorPoint PointX="4.875" PointY="5.6466887919108073" />
+          <ConnectorPoint PointX="4.25" PointY="5.6466887919108073" />
         </AssociationConnector>
         </Diagram>
     </Diagrams>

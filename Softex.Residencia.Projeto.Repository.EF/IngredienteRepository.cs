@@ -13,12 +13,7 @@ namespace Softex.Residencia.EServeur.Repository.EF
             this.Context = EServeurEntitiesFactory.GetDatacontext();
             this.ObjectSet = this.Context.Ingredientes;
         }
-
-        public override IQueryable<Ingrediente> GetObjectSet()
-        {
-            return this.ObjectSet;
-        }
-
+        
         public override string GetEntitySetName()
         {
             return this.Context.Ingredientes.EntitySet.Name;

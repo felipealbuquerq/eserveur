@@ -9,12 +9,17 @@ namespace Softex.Residencia.EServeur.Repository.EF
 {
     public abstract class RepositoryBase<T, EntityKey> : IRepository<T, EntityKey> where T : class
     {
-        protected IQueryable<T> ObjectSet;
+        private IQueryable<T> objectSet;
         protected EServeurEntities Context;
 
-        public abstract IQueryable<T> GetObjectSet();
         public abstract string GetEntitySetName();
         public abstract T FindBy(EntityKey id);
+
+        public IQueryable<T> ObjectSet
+        {
+            get { return objectSet; }
+            set { objectSet = value; }
+        }
 
         public void Save()
         {
