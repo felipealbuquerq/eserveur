@@ -6,15 +6,7 @@
     <edmx:StorageModels>
     <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Alias="Self" Namespace="Softex.Residencia.EServeur.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
   <EntityContainer Name="SoftexResidenciaEServeurModelStoreContainer">
-<<<<<<< HEAD
-    <EntitySet Name="Ingredientes" EntityType="Softex.Residencia.EServeur.Model.Store.Ingredientes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Pedidos" EntityType="Softex.Residencia.EServeur.Model.Store.Pedidos" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Mesas" EntityType="Softex.Residencia.EServeur.Model.Store.Mesas" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Produtos" EntityType="Softex.Residencia.EServeur.Model.Store.Produtos" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Categorias" EntityType="Softex.Residencia.EServeur.Model.Store.Categorias" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Status" EntityType="Softex.Residencia.EServeur.Model.Store.Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IngredienteProduto" EntityType="Softex.Residencia.EServeur.Model.Store.IngredienteProduto" Schema="dbo" store:Type="Tables" />
-=======
     <EntitySet Name="Ingredientes" EntityType="Softex.Residencia.EServeur.Model.Store.Ingredientes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Pedidos" EntityType="Softex.Residencia.EServeur.Model.Store.Pedidos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Mesas" EntityType="Softex.Residencia.EServeur.Model.Store.Mesas" store:Type="Tables" Schema="dbo" />
@@ -22,9 +14,8 @@
     <EntitySet Name="Categorias" EntityType="Softex.Residencia.EServeur.Model.Store.Categorias" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Status" EntityType="Softex.Residencia.EServeur.Model.Store.Status" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Produtos_Combo" EntityType="Softex.Residencia.EServeur.Model.Store.Produtos_Combo" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="IngredienteProduto" EntityType="Softex.Residencia.EServeur.Model.Store.IngredienteProduto" store:Type="Tables" Schema="dbo" />
+
     <EntitySet Name="ComboProduto" EntityType="Softex.Residencia.EServeur.Model.Store.ComboProduto" store:Type="Tables" Schema="dbo" />
->>>>>>> remoteCarlos/master
     <AssociationSet Name="FK_IngredienteProduto_Ingrediente" Association="Softex.Residencia.EServeur.Model.Store.FK_IngredienteProduto_Ingrediente">
       <End EntitySet="Ingredientes" Role="Ingrediente" />
       <End EntitySet="IngredienteProduto" Role="IngredienteProduto" />

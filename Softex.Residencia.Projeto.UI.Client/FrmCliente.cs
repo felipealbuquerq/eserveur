@@ -29,7 +29,7 @@ namespace Softex.Residencia.Projeto.UI.Client
         private void CarregarInterface()
         {
             IEnumerable<Produto> produtos = this.produtoBusiness.RecuperarProdutosDisponiveis();
-
+            /*
             foreach (Produto produto in produtos)
             {
                 ThumbnailControl thumbnailControl = new ThumbnailControl();
@@ -40,11 +40,11 @@ namespace Softex.Residencia.Projeto.UI.Client
                     thumbnailControl.NomeProduto = produto.Nome;
                 }
 
-                int i = this.tabPratos.Controls.Count;
+                //int i = this.tabPratos.Controls.Count;
 
                 if (i > 0)
                 {
-                    Control c = this.tabPratos.Controls[i - 1];
+                    //Control c = this.tabPratos.Controls[i - 1];
 
                     if (c != null)
                     {
@@ -52,8 +52,8 @@ namespace Softex.Residencia.Projeto.UI.Client
                     }
                 }
                 
-                this.tabPratos.Controls.Add(thumbnailControl);
-            }
+                //this.tabPratos.Controls.Add(thumbnailControl);
+            }*/
         }
     }
 }

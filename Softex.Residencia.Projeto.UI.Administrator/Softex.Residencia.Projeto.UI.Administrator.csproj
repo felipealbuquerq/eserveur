@@ -67,17 +67,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmCadastroCategoria.cs">
+    <Compile Include="FrmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCadastroCategoria.Designer.cs">
-      <DependentUpon>FrmCadastroCategoria.cs</DependentUpon>
+    <Compile Include="FrmCategoria.Designer.cs">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCadastroCombo.cs">
+    <Compile Include="FrmCombo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCadastroCombo.Designer.cs">
-      <DependentUpon>FrmCadastroCombo.cs</DependentUpon>
+    <Compile Include="FrmCombo.Designer.cs">
+      <DependentUpon>FrmCombo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCadastroIngrediente.cs">
       <SubType>Form</SubType>
@@ -85,11 +85,17 @@
     <Compile Include="FrmCadastroIngrediente.Designer.cs">
       <DependentUpon>FrmCadastroIngrediente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCadastroProduto.cs">
+    <Compile Include="FrmIngrediente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCadastroProduto.Designer.cs">
-      <DependentUpon>FrmCadastroProduto.cs</DependentUpon>
+    <Compile Include="FrmIngrediente.Designer.cs">
+      <DependentUpon>FrmIngrediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProduto.Designer.cs">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -109,17 +115,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmCadastroCategoria.resx">
-      <DependentUpon>FrmCadastroCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCadastroCombo.resx">
-      <DependentUpon>FrmCadastroCombo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCombo.resx">
+      <DependentUpon>FrmCombo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastroIngrediente.resx">
       <DependentUpon>FrmCadastroIngrediente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCadastroProduto.resx">
-      <DependentUpon>FrmCadastroProduto.cs</DependentUpon>
+    <EmbeddedResource Include="FrmIngrediente.resx">
+      <DependentUpon>FrmIngrediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProduto.resx">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

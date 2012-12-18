@@ -34,7 +34,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmCadastroProduto);
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmProduto);
 
             /* TODO: Reparar o banco de dados
             if (frmCliente == null)
@@ -46,7 +46,28 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
              * */
 
-            frmCliente = new FrmCadastroProduto() { MdiParent = this }; // test
+            frmCliente = new FrmProduto() { MdiParent = this }; // test
+            frmCliente.Focus();
+        }
+
+        private void ingredienteToolStripMenuItem_Click(object sender, EventArgs e) {
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmIngrediente);
+
+            frmCliente = new FrmIngrediente() { MdiParent = this }; // test
+            frmCliente.Focus();
+        }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e) {
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmCategoria);
+
+            frmCliente = new FrmCategoria() { MdiParent = this }; // test
+            frmCliente.Focus();
+        }
+
+        private void combosToolStripMenuItem_Click(object sender, EventArgs e) {
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmCombo);
+
+            frmCliente = new FrmCombo() { MdiParent = this }; // test
             frmCliente.Focus();
         }
     }
