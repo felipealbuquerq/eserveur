@@ -250,7 +250,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(896, 506);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 23);
+            this.button3.Size = new System.Drawing.Size(140, 23);
             this.button3.TabIndex = 9;
             this.button3.Text = "Realizar pedido";
             this.button3.UseVisualStyleBackColor = true;

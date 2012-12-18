@@ -28,151 +28,186 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPratos = new System.Windows.Forms.TabPage();
-            this.tabBebidas = new System.Windows.Forms.TabPage();
-            this.lstBebidas = new System.Windows.Forms.ListView();
-            this.tabPromocoes = new System.Windows.Forms.TabPage();
-            this.lstPromocoes = new System.Windows.Forms.ListView();
-            this.btnRealizarPedido = new System.Windows.Forms.Button();
-            this.lblValorTotalPedido = new System.Windows.Forms.Label();
-            this.lstProdutos = new System.Windows.Forms.ListView();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabBebidas.SuspendLayout();
-            this.tabPromocoes.SuspendLayout();
+            this.Lista_Pedidos = new System.Windows.Forms.ListBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPratos);
-            this.tabControl1.Controls.Add(this.tabBebidas);
-            this.tabControl1.Controls.Add(this.tabPromocoes);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(951, 530);
+            this.tabControl1.Size = new System.Drawing.Size(841, 519);
             this.tabControl1.TabIndex = 0;
-            // 
-            // tabPratos
-            // 
-            this.tabPratos.Location = new System.Drawing.Point(4, 22);
-            this.tabPratos.Name = "tabPratos";
-            this.tabPratos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPratos.Size = new System.Drawing.Size(943, 504);
-            this.tabPratos.TabIndex = 0;
-            this.tabPratos.Text = "Pratos";
-            this.tabPratos.UseVisualStyleBackColor = true;
-            // 
-            // tabBebidas
-            // 
-            this.tabBebidas.Controls.Add(this.lstBebidas);
-            this.tabBebidas.Location = new System.Drawing.Point(4, 22);
-            this.tabBebidas.Name = "tabBebidas";
-            this.tabBebidas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBebidas.Size = new System.Drawing.Size(943, 504);
-            this.tabBebidas.TabIndex = 1;
-            this.tabBebidas.Text = "Bebidas";
-            this.tabBebidas.UseVisualStyleBackColor = true;
-            // 
-            // lstBebidas
-            // 
-            this.lstBebidas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstBebidas.Location = new System.Drawing.Point(3, 3);
-            this.lstBebidas.Name = "lstBebidas";
-            this.lstBebidas.Size = new System.Drawing.Size(937, 498);
-            this.lstBebidas.TabIndex = 0;
-            this.lstBebidas.UseCompatibleStateImageBehavior = false;
-            // 
-            // tabPromocoes
-            // 
-            this.tabPromocoes.Controls.Add(this.lstPromocoes);
-            this.tabPromocoes.Location = new System.Drawing.Point(4, 22);
-            this.tabPromocoes.Name = "tabPromocoes";
-            this.tabPromocoes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPromocoes.Size = new System.Drawing.Size(444, 420);
-            this.tabPromocoes.TabIndex = 2;
-            this.tabPromocoes.Text = "Promoções";
-            this.tabPromocoes.UseVisualStyleBackColor = true;
-            // 
-            // lstPromocoes
-            // 
-            this.lstPromocoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstPromocoes.Location = new System.Drawing.Point(3, 3);
-            this.lstPromocoes.Name = "lstPromocoes";
-            this.lstPromocoes.Size = new System.Drawing.Size(438, 414);
-            this.lstPromocoes.TabIndex = 0;
-            this.lstPromocoes.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnRealizarPedido
-            // 
-            this.btnRealizarPedido.Location = new System.Drawing.Point(996, 519);
-            this.btnRealizarPedido.Name = "btnRealizarPedido";
-            this.btnRealizarPedido.Size = new System.Drawing.Size(218, 23);
-            this.btnRealizarPedido.TabIndex = 2;
-            this.btnRealizarPedido.Text = "Realizar Pedido";
-            this.btnRealizarPedido.UseVisualStyleBackColor = true;
-            // 
-            // lblValorTotalPedido
-            // 
-            this.lblValorTotalPedido.AutoSize = true;
-            this.lblValorTotalPedido.Location = new System.Drawing.Point(993, 485);
-            this.lblValorTotalPedido.Name = "lblValorTotalPedido";
-            this.lblValorTotalPedido.Size = new System.Drawing.Size(85, 13);
-            this.lblValorTotalPedido.TabIndex = 3;
-            this.lblValorTotalPedido.Text = "Valor do Pedido:";
-            // 
-            // lstProdutos
-            // 
-            this.lstProdutos.Location = new System.Drawing.Point(996, 74);
-            this.lstProdutos.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.lstProdutos.Name = "lstProdutos";
-            this.lstProdutos.Size = new System.Drawing.Size(218, 384);
-            this.lstProdutos.TabIndex = 1;
-            this.lstProdutos.UseCompatibleStateImageBehavior = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1084, 482);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.textBox1.Location = new System.Drawing.Point(1079, 24);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 20);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.Size = new System.Drawing.Size(136, 25);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1075, 546);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(140, 23);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Cancelar pedido";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(918, 546);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 23);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Realizar pedido";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(859, 203);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(51, 45);
+            this.button2.TabIndex = 20;
+            this.button2.Text = ">>";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(859, 254);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 45);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "<<";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(1035, 41);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.ForestGreen;
+            this.textBox2.Location = new System.Drawing.Point(1079, 507);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 20);
-            this.textBox2.TabIndex = 6;
+            this.textBox2.Size = new System.Drawing.Size(136, 25);
+            this.textBox2.TabIndex = 18;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(913, 506);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 25);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Total do Pedido: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(993, 44);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(913, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Mesa:";
+            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Mesa: ";
+            // 
+            // Lista_Pedidos
+            // 
+            this.Lista_Pedidos.FormattingEnabled = true;
+            this.Lista_Pedidos.Location = new System.Drawing.Point(918, 63);
+            this.Lista_Pedidos.Name = "Lista_Pedidos";
+            this.Lista_Pedidos.Size = new System.Drawing.Size(297, 433);
+            this.Lista_Pedidos.TabIndex = 15;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(918, 588);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(140, 23);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "Valor da conta";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(1075, 588);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(140, 23);
+            this.button9.TabIndex = 28;
+            this.button9.Text = "Fechar conta";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(16, 546);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(110, 60);
+            this.button10.TabIndex = 29;
+            this.button10.Text = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(146, 546);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(110, 60);
+            this.button11.TabIndex = 30;
+            this.button11.Text = "button11";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(276, 546);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(110, 60);
+            this.button12.TabIndex = 31;
+            this.button12.Text = "Calculadora";
+            this.button12.UseVisualStyleBackColor = true;
             // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 569);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1227, 636);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lblValorTotalPedido);
-            this.Controls.Add(this.btnRealizarPedido);
-            this.Controls.Add(this.lstProdutos);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Lista_Pedidos);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
             this.Text = "E-Serveur";
-            this.tabControl1.ResumeLayout(false);
-            this.tabBebidas.ResumeLayout(false);
-            this.tabPromocoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,17 +216,20 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPratos;
-        private System.Windows.Forms.TabPage tabBebidas;
-        private System.Windows.Forms.TabPage tabPromocoes;
-        private System.Windows.Forms.ListView lstBebidas;
-        private System.Windows.Forms.ListView lstPromocoes;
-        private System.Windows.Forms.Button btnRealizarPedido;
-        private System.Windows.Forms.Label lblValorTotalPedido;
-        private System.Windows.Forms.ListView lstProdutos;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox Lista_Pedidos;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
 
     }
 }
