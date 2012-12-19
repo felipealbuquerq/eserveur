@@ -8,8 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Softex.Residencia.Projeto.UI.Administrator {
-    public partial class FrmCadastroIngrediente : Form {
-        public FrmCadastroIngrediente() {
+    public partial class FrmNotaFiscal : Form {
+        public FrmNotaFiscal() {
             InitializeComponent();
         }
     }

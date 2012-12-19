@@ -67,6 +67,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBDCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBDCategoria.Designer.cs">
+      <DependentUpon>FrmBDCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBDCombo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBDCombo.Designer.cs">
+      <DependentUpon>FrmBDCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBDIngrediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBDIngrediente.Designer.cs">
+      <DependentUpon>FrmBDIngrediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBDNotaFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBDNotaFiscal.Designer.cs">
+      <DependentUpon>FrmBDNotaFiscal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBDProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBDProduto.Designer.cs">
+      <DependentUpon>FrmBDProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,17 +109,29 @@
     <Compile Include="FrmCombo.Designer.cs">
       <DependentUpon>FrmCombo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCadastroIngrediente.cs">
+    <Compile Include="FrmConsultaPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCadastroIngrediente.Designer.cs">
-      <DependentUpon>FrmCadastroIngrediente.cs</DependentUpon>
+    <Compile Include="FrmConsultaPedido.Designer.cs">
+      <DependentUpon>FrmConsultaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNotaFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotaFiscal.Designer.cs">
+      <DependentUpon>FrmNotaFiscal.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmIngrediente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmIngrediente.Designer.cs">
       <DependentUpon>FrmIngrediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPedido.Designer.cs">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProduto.cs">
       <SubType>Form</SubType>
@@ -103,6 +145,12 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelatorios.Designer.cs">
+      <DependentUpon>FrmRelatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensagens.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,23 +163,47 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBDCategoria.resx">
+      <DependentUpon>FrmBDCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBDCombo.resx">
+      <DependentUpon>FrmBDCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBDIngrediente.resx">
+      <DependentUpon>FrmBDIngrediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBDNotaFiscal.resx">
+      <DependentUpon>FrmBDNotaFiscal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBDProduto.resx">
+      <DependentUpon>FrmBDProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCombo.resx">
       <DependentUpon>FrmCombo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCadastroIngrediente.resx">
-      <DependentUpon>FrmCadastroIngrediente.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConsultaPedido.resx">
+      <DependentUpon>FrmConsultaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotaFiscal.resx">
+      <DependentUpon>FrmNotaFiscal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngrediente.resx">
       <DependentUpon>FrmIngrediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedido.resx">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProduto.resx">
       <DependentUpon>FrmProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelatorios.resx">
+      <DependentUpon>FrmRelatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensagens.resx">
       <Generator>ResXFileCodeGenerator</Generator>

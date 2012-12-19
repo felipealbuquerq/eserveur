@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIngrediente));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnIngredienteNaoDisponivel = new System.Windows.Forms.Button();
             this.cboListaDeCategoria = new System.Windows.Forms.ComboBox();
             this.btnRemoverIngrediente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -38,7 +38,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnIngredienteNaoDisponivel);
             this.groupBox3.Controls.Add(this.cboListaDeCategoria);
             this.groupBox3.Controls.Add(this.btnRemoverIngrediente);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -49,16 +49,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de ingredientes";
             // 
-            // button1
+            // btnIngredienteNaoDisponivel
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(383, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 42);
-            this.button1.TabIndex = 4;
-            this.button1.UseMnemonic = false;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIngredienteNaoDisponivel.AccessibleDescription = "";
+            this.btnIngredienteNaoDisponivel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIngredienteNaoDisponivel.BackgroundImage")));
+            this.btnIngredienteNaoDisponivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIngredienteNaoDisponivel.Location = new System.Drawing.Point(383, 26);
+            this.btnIngredienteNaoDisponivel.Name = "btnIngredienteNaoDisponivel";
+            this.btnIngredienteNaoDisponivel.Size = new System.Drawing.Size(44, 42);
+            this.btnIngredienteNaoDisponivel.TabIndex = 4;
+            this.btnIngredienteNaoDisponivel.Tag = "";
+            this.btnIngredienteNaoDisponivel.UseMnemonic = false;
+            this.btnIngredienteNaoDisponivel.UseVisualStyleBackColor = true;
             // 
             // cboListaDeCategoria
             // 
@@ -88,7 +90,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 115);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(497, 102);
+            this.groupBox2.Size = new System.Drawing.Size(497, 98);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Adicionar novo ingrediente";
@@ -96,10 +98,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 45);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
+            this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome: ";
             // 
@@ -116,17 +118,17 @@
             // 
             // txtNomeNovaCategoria
             // 
-            this.txtNomeNovaCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeNovaCategoria.Location = new System.Drawing.Point(62, 42);
+            this.txtNomeNovaCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeNovaCategoria.Location = new System.Drawing.Point(74, 42);
             this.txtNomeNovaCategoria.Name = "txtNomeNovaCategoria";
-            this.txtNomeNovaCategoria.Size = new System.Drawing.Size(365, 21);
+            this.txtNomeNovaCategoria.Size = new System.Drawing.Size(353, 26);
             this.txtNomeNovaCategoria.TabIndex = 1;
             // 
             // FrmIngrediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 243);
+            this.ClientSize = new System.Drawing.Size(519, 231);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -148,6 +150,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAdicionarIngrediente;
         private System.Windows.Forms.TextBox txtNomeNovaCategoria;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnIngredienteNaoDisponivel;
     }
 }
