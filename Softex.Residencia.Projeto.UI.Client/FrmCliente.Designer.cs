@@ -29,59 +29,58 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.tabCategorias = new System.Windows.Forms.TabControl();
+            this.txtNumeroDaMesa = new System.Windows.Forms.TextBox();
+            this.btnCancelarPedido = new System.Windows.Forms.Button();
+            this.btnRealizarPedido = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTotalDoPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Lista_Pedidos = new System.Windows.Forms.ListBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnValorDaConta = new System.Windows.Forms.Button();
+            this.btnFecharConta = new System.Windows.Forms.Button();
+            this.btnAbrirCalculadora = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabCategorias
             // 
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(841, 519);
-            this.tabControl1.TabIndex = 0;
+            this.tabCategorias.Location = new System.Drawing.Point(12, 12);
+            this.tabCategorias.Name = "tabCategorias";
+            this.tabCategorias.SelectedIndex = 0;
+            this.tabCategorias.Size = new System.Drawing.Size(841, 519);
+            this.tabCategorias.TabIndex = 0;
             // 
-            // textBox1
+            // txtNumeroDaMesa
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.textBox1.Location = new System.Drawing.Point(1079, 24);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 25);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNumeroDaMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroDaMesa.ForeColor = System.Drawing.Color.ForestGreen;
+            this.txtNumeroDaMesa.Location = new System.Drawing.Point(1079, 24);
+            this.txtNumeroDaMesa.Multiline = true;
+            this.txtNumeroDaMesa.Name = "txtNumeroDaMesa";
+            this.txtNumeroDaMesa.Size = new System.Drawing.Size(136, 25);
+            this.txtNumeroDaMesa.TabIndex = 23;
+            this.txtNumeroDaMesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // button4
+            // btnCancelarPedido
             // 
-            this.button4.Location = new System.Drawing.Point(1075, 546);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 23);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Cancelar pedido";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCancelarPedido.Location = new System.Drawing.Point(1075, 546);
+            this.btnCancelarPedido.Name = "btnCancelarPedido";
+            this.btnCancelarPedido.Size = new System.Drawing.Size(140, 36);
+            this.btnCancelarPedido.TabIndex = 22;
+            this.btnCancelarPedido.Text = "Cancelar pedido";
+            this.btnCancelarPedido.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnRealizarPedido
             // 
-            this.button3.Location = new System.Drawing.Point(918, 546);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 23);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Realizar pedido";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRealizarPedido.Location = new System.Drawing.Point(918, 546);
+            this.btnRealizarPedido.Name = "btnRealizarPedido";
+            this.btnRealizarPedido.Size = new System.Drawing.Size(140, 36);
+            this.btnRealizarPedido.TabIndex = 21;
+            this.btnRealizarPedido.Text = "Realizar pedido";
+            this.btnRealizarPedido.UseVisualStyleBackColor = true;
+            this.btnRealizarPedido.Click += new System.EventHandler(this.btnRealizarPedido_Click);
             // 
             // button2
             // 
@@ -101,16 +100,17 @@
             this.button1.Text = "<<";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtTotalDoPedido
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.textBox2.Location = new System.Drawing.Point(1079, 507);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 25);
-            this.textBox2.TabIndex = 18;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotalDoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalDoPedido.ForeColor = System.Drawing.Color.ForestGreen;
+            this.txtTotalDoPedido.Location = new System.Drawing.Point(1079, 507);
+            this.txtTotalDoPedido.Multiline = true;
+            this.txtTotalDoPedido.Name = "txtTotalDoPedido";
+            this.txtTotalDoPedido.ReadOnly = true;
+            this.txtTotalDoPedido.Size = new System.Drawing.Size(136, 25);
+            this.txtTotalDoPedido.TabIndex = 18;
+            this.txtTotalDoPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -140,71 +140,51 @@
             this.Lista_Pedidos.Size = new System.Drawing.Size(297, 433);
             this.Lista_Pedidos.TabIndex = 15;
             // 
-            // button5
+            // btnValorDaConta
             // 
-            this.button5.Location = new System.Drawing.Point(918, 588);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(140, 23);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "Valor da conta";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnValorDaConta.Location = new System.Drawing.Point(918, 588);
+            this.btnValorDaConta.Name = "btnValorDaConta";
+            this.btnValorDaConta.Size = new System.Drawing.Size(140, 36);
+            this.btnValorDaConta.TabIndex = 24;
+            this.btnValorDaConta.Text = "Valor da conta";
+            this.btnValorDaConta.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnFecharConta
             // 
-            this.button9.Location = new System.Drawing.Point(1075, 588);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(140, 23);
-            this.button9.TabIndex = 28;
-            this.button9.Text = "Fechar conta";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnFecharConta.Location = new System.Drawing.Point(1075, 588);
+            this.btnFecharConta.Name = "btnFecharConta";
+            this.btnFecharConta.Size = new System.Drawing.Size(140, 36);
+            this.btnFecharConta.TabIndex = 28;
+            this.btnFecharConta.Text = "Fechar conta";
+            this.btnFecharConta.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnAbrirCalculadora
             // 
-            this.button10.Location = new System.Drawing.Point(16, 546);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(110, 60);
-            this.button10.TabIndex = 29;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(146, 546);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(110, 60);
-            this.button11.TabIndex = 30;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(276, 546);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(110, 60);
-            this.button12.TabIndex = 31;
-            this.button12.Text = "Calculadora";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnAbrirCalculadora.Location = new System.Drawing.Point(12, 551);
+            this.btnAbrirCalculadora.Name = "btnAbrirCalculadora";
+            this.btnAbrirCalculadora.Size = new System.Drawing.Size(110, 60);
+            this.btnAbrirCalculadora.TabIndex = 31;
+            this.btnAbrirCalculadora.Text = "Calculadora";
+            this.btnAbrirCalculadora.UseVisualStyleBackColor = true;
             // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 636);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnAbrirCalculadora);
+            this.Controls.Add(this.btnFecharConta);
+            this.Controls.Add(this.btnValorDaConta);
+            this.Controls.Add(this.txtNumeroDaMesa);
+            this.Controls.Add(this.btnCancelarPedido);
+            this.Controls.Add(this.btnRealizarPedido);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtTotalDoPedido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Lista_Pedidos);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabCategorias);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
             this.Text = "E-Serveur";
@@ -215,21 +195,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TabControl tabCategorias;
+        private System.Windows.Forms.TextBox txtNumeroDaMesa;
+        private System.Windows.Forms.Button btnCancelarPedido;
+        private System.Windows.Forms.Button btnRealizarPedido;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTotalDoPedido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox Lista_Pedidos;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnValorDaConta;
+        private System.Windows.Forms.Button btnFecharConta;
+        private System.Windows.Forms.Button btnAbrirCalculadora;
 
     }
 }

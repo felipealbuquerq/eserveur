@@ -21,15 +21,15 @@ namespace Softex.Residencia.Projeto.UI.Client
         {
             InitializeComponent();
 
-            this.produtoBusiness = new ProdutoBusiness();
+            //this.produtoBusiness = new ProdutoBusiness();
 
             this.CarregarInterface();
         }
 
         private void CarregarInterface()
         {
-            IEnumerable<Produto> produtos = this.produtoBusiness.RecuperarProdutosDisponiveis();
-            /*
+            /*IEnumerable<Produto> produtos = this.produtoBusiness.RecuperarProdutosDisponiveis();
+            
             foreach (Produto produto in produtos)
             {
                 ThumbnailControl thumbnailControl = new ThumbnailControl();
@@ -54,6 +54,16 @@ namespace Softex.Residencia.Projeto.UI.Client
                 
                 //this.tabPratos.Controls.Add(thumbnailControl);
             }*/
+        }
+
+        private void btnRealizarPedido_Click(object sender, EventArgs e) {
+            string entrada = txtTotalDoPedido.Text;
+            if (MessageBox.Show(string.Format("Efetuar pedido no valor: € {0:c}? \nMesa: {1}", entrada, txtNumeroDaMesa.Text), 
+                                "Confirmar pedido", 
+                                MessageBoxButtons.OKCancel) == DialogResult.Yes
+                                ) {
+                // Se ok proceder para efetuar o pedido e adicionar-lo na base de dados
+            }
         }
     }
 }
