@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IngredienteBusiness.cs" />
+    <Compile Include="MesaBusiness.cs" />
     <Compile Include="PedidoBusiness.cs" />
     <Compile Include="ProdutoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
