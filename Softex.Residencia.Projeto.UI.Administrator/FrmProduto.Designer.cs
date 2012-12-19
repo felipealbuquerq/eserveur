@@ -40,6 +40,7 @@
             this.chkListaDeIngredientesNovoProduto = new System.Windows.Forms.CheckedListBox();
             this.btnAdicionarImagemNovoProduto = new System.Windows.Forms.Button();
             this.picImagemNovoProduto = new System.Windows.Forms.PictureBox();
+            this.btnSalvarNovoProduto = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDescricaoNovoProduto = new System.Windows.Forms.RichTextBox();
             this.txtPrecoNovoProduto = new System.Windows.Forms.TextBox();
@@ -47,7 +48,8 @@
             this.txtNomeNovoProduto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSalvarNovoProduto = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProdutoSelecionado)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -115,15 +117,18 @@
             // btnCancelarRegistroNovoProduto
             // 
             this.btnCancelarRegistroNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarRegistroNovoProduto.Location = new System.Drawing.Point(579, 341);
+            this.btnCancelarRegistroNovoProduto.Location = new System.Drawing.Point(579, 369);
             this.btnCancelarRegistroNovoProduto.Name = "btnCancelarRegistroNovoProduto";
             this.btnCancelarRegistroNovoProduto.Size = new System.Drawing.Size(117, 23);
             this.btnCancelarRegistroNovoProduto.TabIndex = 19;
             this.btnCancelarRegistroNovoProduto.Text = "Cancelar";
             this.btnCancelarRegistroNovoProduto.UseVisualStyleBackColor = true;
+            this.btnCancelarRegistroNovoProduto.Click += new System.EventHandler(this.btnCancelarRegistroNovoProduto_Click);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cboCategoria);
+            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.chkListaDeIngredientesNovoProduto);
             this.groupBox3.Controls.Add(this.btnCancelarRegistroNovoProduto);
             this.groupBox3.Controls.Add(this.btnAdicionarImagemNovoProduto);
@@ -139,7 +144,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(11, 196);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(708, 379);
+            this.groupBox3.Size = new System.Drawing.Size(708, 404);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cadastrar novo produto";
@@ -148,7 +153,7 @@
             // 
             this.chkListaDeIngredientesNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkListaDeIngredientesNovoProduto.FormattingEnabled = true;
-            this.chkListaDeIngredientesNovoProduto.Location = new System.Drawing.Point(94, 60);
+            this.chkListaDeIngredientesNovoProduto.Location = new System.Drawing.Point(94, 95);
             this.chkListaDeIngredientesNovoProduto.Name = "chkListaDeIngredientesNovoProduto";
             this.chkListaDeIngredientesNovoProduto.Size = new System.Drawing.Size(342, 132);
             this.chkListaDeIngredientesNovoProduto.TabIndex = 12;
@@ -162,6 +167,7 @@
             this.btnAdicionarImagemNovoProduto.TabIndex = 9;
             this.btnAdicionarImagemNovoProduto.Text = "Upload imagem";
             this.btnAdicionarImagemNovoProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarImagemNovoProduto.Click += new System.EventHandler(this.btnAdicionarImagemNovoProduto_Click);
             // 
             // picImagemNovoProduto
             // 
@@ -173,11 +179,22 @@
             this.picImagemNovoProduto.TabIndex = 8;
             this.picImagemNovoProduto.TabStop = false;
             // 
+            // btnSalvarNovoProduto
+            // 
+            this.btnSalvarNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarNovoProduto.Location = new System.Drawing.Point(449, 369);
+            this.btnSalvarNovoProduto.Name = "btnSalvarNovoProduto";
+            this.btnSalvarNovoProduto.Size = new System.Drawing.Size(117, 23);
+            this.btnSalvarNovoProduto.TabIndex = 18;
+            this.btnSalvarNovoProduto.Text = "Salvar";
+            this.btnSalvarNovoProduto.UseVisualStyleBackColor = true;
+            this.btnSalvarNovoProduto.Click += new System.EventHandler(this.btnSalvarProduto_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(10, 248);
+            this.label6.Location = new System.Drawing.Point(10, 276);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 15);
             this.label6.TabIndex = 7;
@@ -186,7 +203,7 @@
             // txtDescricaoNovoProduto
             // 
             this.txtDescricaoNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoNovoProduto.Location = new System.Drawing.Point(94, 248);
+            this.txtDescricaoNovoProduto.Location = new System.Drawing.Point(94, 276);
             this.txtDescricaoNovoProduto.Name = "txtDescricaoNovoProduto";
             this.txtDescricaoNovoProduto.Size = new System.Drawing.Size(342, 116);
             this.txtDescricaoNovoProduto.TabIndex = 6;
@@ -195,7 +212,7 @@
             // txtPrecoNovoProduto
             // 
             this.txtPrecoNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoNovoProduto.Location = new System.Drawing.Point(94, 215);
+            this.txtPrecoNovoProduto.Location = new System.Drawing.Point(94, 243);
             this.txtPrecoNovoProduto.Name = "txtPrecoNovoProduto";
             this.txtPrecoNovoProduto.Size = new System.Drawing.Size(87, 21);
             this.txtPrecoNovoProduto.TabIndex = 5;
@@ -204,7 +221,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 218);
+            this.label5.Location = new System.Drawing.Point(10, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 15);
             this.label5.TabIndex = 4;
@@ -232,27 +249,36 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 60);
+            this.label3.Location = new System.Drawing.Point(10, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 15);
+            this.label3.Size = new System.Drawing.Size(78, 15);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Ingredientes";
+            this.label3.Text = "Ingredientes:";
             // 
-            // btnSalvarNovoProduto
+            // label1
             // 
-            this.btnSalvarNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarNovoProduto.Location = new System.Drawing.Point(449, 341);
-            this.btnSalvarNovoProduto.Name = "btnSalvarNovoProduto";
-            this.btnSalvarNovoProduto.Size = new System.Drawing.Size(117, 23);
-            this.btnSalvarNovoProduto.TabIndex = 18;
-            this.btnSalvarNovoProduto.Text = "Salvar";
-            this.btnSalvarNovoProduto.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 15);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Categoria:";
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(94, 56);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(342, 23);
+            this.cboCategoria.TabIndex = 21;
             // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 583);
+            this.ClientSize = new System.Drawing.Size(730, 612);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -289,5 +315,7 @@
         private System.Windows.Forms.TextBox txtNomeNovoProduto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.Label label1;
     }
 }
