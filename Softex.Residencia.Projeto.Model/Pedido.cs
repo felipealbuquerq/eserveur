@@ -9,9 +9,9 @@ namespace Softex.Residencia.EServeur.Model
         private int id;
         private DateTime horarioEntradaPedido;
         private DateTime horarioSaidaPedido;
-        private Mesa mesa;
         private IList<Produto> produtos;
         private int statusId;
+        private int mesaId;
         private Status status;
 
         public Pedido()
@@ -42,12 +42,6 @@ namespace Softex.Residencia.EServeur.Model
             get { return this.produtos.Sum(p => p.Preco); }
         }
 
-        public Mesa Mesa
-        {
-            get { return this.mesa; }
-            set { this.mesa = value; }
-        }
-
         public IList<Produto> Produtos
         {
             get { return this.produtos; }
@@ -64,6 +58,12 @@ namespace Softex.Residencia.EServeur.Model
         {
             get { return statusId; }
             set { statusId = value; }
+        }
+
+        public int MesaId
+        {
+            get { return mesaId; }
+            set { mesaId = value; }
         }
     }
 }
