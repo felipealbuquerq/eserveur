@@ -43,10 +43,10 @@
     <Compile Include="CategoriaBusiness.cs" />
     <Compile Include="Exceptions\CategoryAlreadyExistsException.cs" />
     <Compile Include="IngredienteBusiness.cs" />
-    <Compile Include="MesaBusiness.cs" />
     <Compile Include="PedidoBusiness.cs" />
     <Compile Include="ProdutoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatusBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Softex.Residencia.Projeto.Model\Softex.Residencia.EServeur.Model.csproj">
