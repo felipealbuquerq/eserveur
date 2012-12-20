@@ -76,6 +76,7 @@
             this.btnRemoverCategoria.TabIndex = 2;
             this.btnRemoverCategoria.UseMnemonic = false;
             this.btnRemoverCategoria.UseVisualStyleBackColor = true;
+            this.btnRemoverCategoria.Click += new System.EventHandler(this.btnRemoverCategoria_Click);
             // 
             // groupBox2
             // 

@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Softex.Residencia.EServeur.Business;
+using Softex.Residencia.EServeur.Business.Exceptions;
 using Softex.Residencia.EServeur.Model;
-using System.IO;
-using System.Drawing.Imaging;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Softex.Residencia.Projeto.UI.Administrator
 {
@@ -32,28 +31,94 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void PreencherCamposFormulario()
         {
-            this.cboListaDeProdutos.DisplayMember = "Nome";
-            this.cboListaDeProdutos.ValueMember = "Id";
-            this.cboListaDeProdutos.DataSource = this.produtoBusiness.RecuperarProdutos();
+            try
+            {
+                this.cboListaDeProdutos.Items.Clear();
 
-            this.cboCategoria.DisplayMember = "Nome";
-            this.cboCategoria.ValueMember = "Id";
-            this.cboCategoria.DataSource = this.categoriaBusiness.RecuperarCategorias();
+                foreach (Produto produto in this.produtoBusiness.RecuperarProdutos())
+                {
+                    this.cboListaDeProdutos.Items.Add(produto);
+                }
 
-            this.chkListaDeIngredientesNovoProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
+                this.cboListaDeProdutos.DisplayMember = "Nome";
+                this.cboListaDeProdutos.ValueMember = "Id";
+                this.cboListaDeProdutos.SelectedIndex = 0;
+
+                this.cboCategoria.DisplayMember = "Nome";
+                this.cboCategoria.ValueMember = "Id";
+                this.cboCategoria.DataSource = this.categoriaBusiness.RecuperarCategorias();
+
+                this.chkListaDeIngredientesNovoProduto.DataSource = null;
+                this.chkListaDeIngredientesNovoProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimparCamposFormulario()
+        {
+            this.txtNomeNovoProduto.Text = "";
+            this.txtDescricaoNovoProduto.Text = "";
+            this.txtPrecoNovoProduto.Text = "";
+
+            if (this.cboCategoria.SelectedIndex > 0)
+            {
+                this.cboCategoria.SelectedIndex = 0;
+            }
+            
+            this.picImagemNovoProduto.Image = null;
+        }
+
+        private void ValidarCamposFormulario()
+        {
+            if (string.IsNullOrWhiteSpace(this.txtNomeNovoProduto.Text))
+            {
+                throw new GenericWarningException("Informe o nome do produto!");
+            }
+
+            decimal d;
+            
+            if (!decimal.TryParse(this.txtPrecoNovoProduto.Text, out d))
+            {
+                throw new GenericWarningException("Informe o preço do produto corretamente!");
+            }
+
+            if (this.cboCategoria.SelectedValue == null)
+            {
+                throw new GenericWarningException("Informe a categoria do produto!");
+            }
+
+            if (this.picImagemNovoProduto.Image == null)
+            {
+                throw new GenericWarningException("Informe a imagem do produto!");
+            }
+
+            if (string.IsNullOrWhiteSpace(this.txtDescricaoNovoProduto.Text))
+            {
+                throw new GenericWarningException("Informe a descrição do produto!");
+            }
         }
 
         private void cboListaDeProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int produtoId = (int)this.cboListaDeProdutos.SelectedValue;
-            Produto produto = this.produtoBusiness.RecuperarProduto(produtoId);
-
-            using (MemoryStream ms = new MemoryStream(produto.Imagem))
+            try
             {
-                this.picProdutoSelecionado.Image = new Bitmap(ms);
-            }
+                Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
 
-            this.txtDescricaoProdutoSelecionado.Text = produto.Descricao;
+                using (MemoryStream ms = new MemoryStream(produto.Imagem))
+                {
+                    this.picProdutoSelecionado.Image = new Bitmap(ms);
+                }
+
+                this.txtDescricaoProdutoSelecionado.Text = produto.Descricao;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnAdicionarImagemNovoProduto_Click(object sender, EventArgs e)
@@ -68,13 +133,15 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
             try
             {
+                this.ValidarCamposFormulario();
+
                 Produto produto = new Produto()
-                {
-                    Nome = this.txtNomeNovoProduto.Text,
-                    Descricao = this.txtDescricaoNovoProduto.Text,
-                    Preco = Convert.ToDecimal(this.txtPrecoNovoProduto.Text),
-                    CategoriaId = (int)cboCategoria.SelectedValue
-                };
+                                      {
+                                          Nome = this.txtNomeNovoProduto.Text,
+                                          Descricao = this.txtDescricaoNovoProduto.Text,
+                                          Preco = Convert.ToDecimal(this.txtPrecoNovoProduto.Text),
+                                          CategoriaId = (int) cboCategoria.SelectedValue
+                                      };
 
                 using (MemoryStream ms = new MemoryStream())
                 {
@@ -86,17 +153,61 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
                 this.produtoBusiness.CadastrarProduto(produto);
 
-                MessageBox.Show(Mensagens.CadastroProdutoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Mensagens.CadastroProdutoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+
+                this.LimparCamposFormulario();
+                this.PreencherCamposFormulario();
+            }
+            catch (GenericWarningException ex)
+            {
+                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
             catch (Exception)
             {
-                MessageBox.Show(Mensagens.CadastroProdutoFalha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Mensagens.CadastroProdutoFalha, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 
         private void btnCancelarRegistroNovoProduto_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnRemoverProduto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.cboListaDeProdutos.SelectedItem == null)
+                {
+                    throw new GenericWarningException("Selecione o produto que deseja excluir!");
+                }
+
+                Produto produto = (Produto) this.cboListaDeProdutos.SelectedItem;
+
+                if (
+                    MessageBox.Show(Mensagens.ExcluirProduto, Mensagens.Mensagem, MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.produtoBusiness.RemoverProduto(produto.Id);
+                    this.PreencherCamposFormulario();
+
+                    MessageBox.Show(Mensagens.ProdutoExcluidoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+            catch (GenericWarningException ex)
+            {
+                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
     }
 }
