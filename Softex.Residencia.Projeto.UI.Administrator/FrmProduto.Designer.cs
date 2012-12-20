@@ -37,6 +37,8 @@
             this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.btnCancelarRegistroNovoProduto = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.chkListaDeIngredientesNovoProduto = new System.Windows.Forms.CheckedListBox();
             this.btnAdicionarImagemNovoProduto = new System.Windows.Forms.Button();
             this.picImagemNovoProduto = new System.Windows.Forms.PictureBox();
@@ -48,8 +50,6 @@
             this.txtNomeNovoProduto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProdutoSelecionado)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -102,6 +102,7 @@
             this.cboListaDeProdutos.Name = "cboListaDeProdutos";
             this.cboListaDeProdutos.Size = new System.Drawing.Size(492, 23);
             this.cboListaDeProdutos.TabIndex = 3;
+            this.cboListaDeProdutos.SelectedIndexChanged += new System.EventHandler(this.cboListaDeProdutos_SelectedIndexChanged);
             // 
             // btnRemoverProduto
             // 
@@ -148,6 +149,25 @@
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cadastrar novo produto";
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(94, 56);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(342, 23);
+            this.cboCategoria.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 15);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Categoria:";
             // 
             // chkListaDeIngredientesNovoProduto
             // 
@@ -254,25 +274,6 @@
             this.label3.Size = new System.Drawing.Size(78, 15);
             this.label3.TabIndex = 1;
             this.label3.Text = "Ingredientes:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Categoria:";
-            // 
-            // cboCategoria
-            // 
-            this.cboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(94, 56);
-            this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(342, 23);
-            this.cboCategoria.TabIndex = 21;
             // 
             // FrmProduto
             // 

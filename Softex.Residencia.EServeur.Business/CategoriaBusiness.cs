@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using Softex.Residencia.EServeur.Business.Exceptions;
 using Softex.Residencia.EServeur.Model;
 using Softex.Residencia.EServeur.Repository.EF;
 
@@ -22,6 +23,15 @@ namespace Softex.Residencia.EServeur.Business
             if (categoria == null)
             {
                 throw new ArgumentNullException();
+            }
+
+            //Verifica se já existe uma categoria cadastrada com o nome informado 
+            foreach (string nome in this.RecuperarNomesCategorias())
+            {
+                if (nome == categoria.Nome)
+                {
+                    throw new CategoryAlreadyExistsException();
+                }   
             }
 
             this.repository.Add(categoria);

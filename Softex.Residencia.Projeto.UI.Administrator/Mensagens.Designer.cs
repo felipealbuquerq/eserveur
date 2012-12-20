@@ -61,6 +61,24 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Não foi possível cadastrar a categoria!.
+        /// </summary>
+        internal static string CadastroCategoriaFalha {
+            get {
+                return ResourceManager.GetString("CadastroCategoriaFalha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Categoria cadastrada com sucesso!.
+        /// </summary>
+        internal static string CadastroCategoriaSucesso {
+            get {
+                return ResourceManager.GetString("CadastroCategoriaSucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Não foi possível cadastrar o produto!.
         /// </summary>
         internal static string CadastroProdutoFalha {

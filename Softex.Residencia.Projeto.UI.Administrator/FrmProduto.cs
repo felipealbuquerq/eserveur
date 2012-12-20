@@ -30,14 +30,30 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             this.PreencherCamposFormulario();
         }
 
-
         private void PreencherCamposFormulario()
         {
+            this.cboListaDeProdutos.DisplayMember = "Nome";
+            this.cboListaDeProdutos.ValueMember = "Id";
+            this.cboListaDeProdutos.DataSource = this.produtoBusiness.RecuperarProdutos();
+
             this.cboCategoria.DisplayMember = "Nome";
             this.cboCategoria.ValueMember = "Id";
             this.cboCategoria.DataSource = this.categoriaBusiness.RecuperarCategorias();
 
             this.chkListaDeIngredientesNovoProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
+        }
+
+        private void cboListaDeProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int produtoId = (int)this.cboListaDeProdutos.SelectedValue;
+            Produto produto = this.produtoBusiness.RecuperarProduto(produtoId);
+
+            using (MemoryStream ms = new MemoryStream(produto.Imagem))
+            {
+                this.picProdutoSelecionado.Image = new Bitmap(ms);
+            }
+
+            this.txtDescricaoProdutoSelecionado.Text = produto.Descricao;
         }
 
         private void btnAdicionarImagemNovoProduto_Click(object sender, EventArgs e)

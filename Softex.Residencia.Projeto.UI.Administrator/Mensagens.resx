@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CadastroCategoriaFalha" xml:space="preserve">
+    <value>Não foi possível cadastrar a categoria!</value>
+  </data>
+  <data name="CadastroCategoriaSucesso" xml:space="preserve">
+    <value>Categoria cadastrada com sucesso!</value>
+  </data>
   <data name="CadastroProdutoFalha" xml:space="preserve">
     <value>Não foi possível cadastrar o produto!</value>
   </data>
