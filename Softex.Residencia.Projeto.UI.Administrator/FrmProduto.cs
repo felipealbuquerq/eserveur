@@ -35,12 +35,15 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             this.cboListaDeProdutos.DisplayMember = "Nome";
             this.cboListaDeProdutos.ValueMember = "Id";
             this.cboListaDeProdutos.DataSource = this.produtoBusiness.RecuperarProdutos();
+            this.cboListaDeProdutos.Refresh();
 
             this.cboCategoria.DisplayMember = "Nome";
             this.cboCategoria.ValueMember = "Id";
             this.cboCategoria.DataSource = this.categoriaBusiness.RecuperarCategorias();
 
             this.chkListaDeIngredientesNovoProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
+
+            this.txtNomeNovoProduto.Text = "";
         }
 
         private void cboListaDeProdutos_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,6 +88,8 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 }
 
                 this.produtoBusiness.CadastrarProduto(produto);
+
+                this.PreencherCamposFormulario();
 
                 MessageBox.Show(Mensagens.CadastroProdutoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
