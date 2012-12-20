@@ -129,6 +129,9 @@
   <data name="CadastroProdutoSucesso" xml:space="preserve">
     <value>Produto cadastrado com sucesso!</value>
   </data>
+  <data name="CategoriaExcluidaSucesso" xml:space="preserve">
+    <value>Categoria excluída com sucesso!</value>
+  </data>
   <data name="ExcluirProduto" xml:space="preserve">
     <value>Tem certeza que deseja excluir esse produto?</value>
   </data>

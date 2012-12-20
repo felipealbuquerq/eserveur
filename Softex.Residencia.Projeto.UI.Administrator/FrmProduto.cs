@@ -178,15 +178,35 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void btnRemoverProduto_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Mensagens.ExcluirProduto, Mensagens.Mensagem, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
+                if (this.cboListaDeProdutos.SelectedItem == null)
+                {
+                    throw new GenericWarningException("Selecione o produto que deseja excluir!");
+                }
 
-                this.produtoBusiness.RemoverProduto(produto.Id);
-                this.PreencherCamposFormulario();
+                Produto produto = (Produto) this.cboListaDeProdutos.SelectedItem;
 
-                MessageBox.Show(Mensagens.ProdutoExcluidoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                if (
+                    MessageBox.Show(Mensagens.ExcluirProduto, Mensagens.Mensagem, MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.produtoBusiness.RemoverProduto(produto.Id);
+                    this.PreencherCamposFormulario();
+
+                    MessageBox.Show(Mensagens.ProdutoExcluidoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+            catch (GenericWarningException ex)
+            {
+                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
     }

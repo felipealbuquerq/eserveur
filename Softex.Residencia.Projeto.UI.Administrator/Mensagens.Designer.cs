@@ -97,6 +97,15 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categoria excluída com sucesso!.
+        /// </summary>
+        internal static string CategoriaExcluidaSucesso {
+            get {
+                return ResourceManager.GetString("CategoriaExcluidaSucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tem certeza que deseja excluir esse produto?.
         /// </summary>
         internal static string ExcluirProduto {
