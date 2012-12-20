@@ -17,24 +17,46 @@ namespace Softex.Residencia.Projeto.UI.Administrator
     {
         private readonly IngredienteBusiness ingredienteBusiness;
         private readonly ProdutoBusiness produtoBusiness;
+        private readonly CategoriaBusiness categoriaBusiness;
 
         public FrmProduto()
         {
             InitializeComponent();
 
-            //this.ingredienteBusiness = new IngredienteBusiness();
-            //this.produtoBusiness = new ProdutoBusiness();
+            this.ingredienteBusiness = new IngredienteBusiness();
+            this.produtoBusiness = new ProdutoBusiness();
+            this.categoriaBusiness = new CategoriaBusiness();
 
-            //this.CarregarIngredientes();
+            this.PreencherCamposFormulario();
         }
 
-
-        private void CarregarIngredientes()
+        private void PreencherCamposFormulario()
         {
+            this.cboListaDeProdutos.DisplayMember = "Nome";
+            this.cboListaDeProdutos.ValueMember = "Id";
+            this.cboListaDeProdutos.DataSource = this.produtoBusiness.RecuperarProdutos();
+
+            this.cboCategoria.DisplayMember = "Nome";
+            this.cboCategoria.ValueMember = "Id";
+            this.cboCategoria.DataSource = this.categoriaBusiness.RecuperarCategorias();
+
             this.chkListaDeIngredientesNovoProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
         }
 
-        private void btnAdicionarImagemPrato_Click(object sender, EventArgs e)
+        private void cboListaDeProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int produtoId = (int)this.cboListaDeProdutos.SelectedValue;
+            Produto produto = this.produtoBusiness.RecuperarProduto(produtoId);
+
+            using (MemoryStream ms = new MemoryStream(produto.Imagem))
+            {
+                this.picProdutoSelecionado.Image = new Bitmap(ms);
+            }
+
+            this.txtDescricaoProdutoSelecionado.Text = produto.Descricao;
+        }
+
+        private void btnAdicionarImagemNovoProduto_Click(object sender, EventArgs e)
         {
             if (this.openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -42,36 +64,39 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
         }
 
-		// botao para salvar prato
-		// TODO: modificar de prato a produto
-        private void btnSalvarPrato_Click(object sender, EventArgs e)
+        private void btnSalvarProduto_Click(object sender, EventArgs e)
         {
-            Categoria categoria = new Categoria(){
-                                          Nome = "Produtos"
-                                      };
-
-            Produto produto = new Produto()
+            try
             {
-                Nome = this.txtNomeNovoProduto.Text,
-                Descricao = this.txtDescricaoNovoProduto.Text,
-                Preco = Convert.ToDecimal(this.txtPrecoNovoProduto.Text),
-                Categoria = categoria
-            };
+                Produto produto = new Produto()
+                {
+                    Nome = this.txtNomeNovoProduto.Text,
+                    Descricao = this.txtDescricaoNovoProduto.Text,
+                    Preco = Convert.ToDecimal(this.txtPrecoNovoProduto.Text),
+                    CategoriaId = (int)cboCategoria.SelectedValue
+                };
 
-            using (MemoryStream ms = new MemoryStream())
-            {
-                Image image = this.picImagemNovoProduto.Image;
-                image.Save(ms, ImageFormat.Png);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    Image image = this.picImagemNovoProduto.Image;
+                    image.Save(ms, ImageFormat.Png);
 
-                produto.Imagem = ms.ToArray();
+                    produto.Imagem = ms.ToArray();
+                }
+
+                this.produtoBusiness.CadastrarProduto(produto);
+
+                MessageBox.Show(Mensagens.CadastroProdutoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            this.produtoBusiness.CadastrarProduto(produto);
+            catch (Exception)
+            {
+                MessageBox.Show(Mensagens.CadastroProdutoFalha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void btnCancelarRegistroNovoProduto_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
-
     }
 }

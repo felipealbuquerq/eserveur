@@ -8,16 +8,21 @@ namespace Softex.Residencia.EServeur.Model
         private string nome;
         private string descricao;
         private decimal preco;
-        private bool promocao;
         private byte[] imagem;
+        private int pedidoId;
+        private int categoriaId;
         private Categoria categoria;
-        private Pedido pedido;
+        private IList<Pedido> pedidos;
         private IList<Ingrediente> ingredientes;
-        private IList<Combo> combos;
+        private IList<Produto> produtos;
+        private IList<Produto> combos;
 
         public Produto()
         {
-            this.ingredientes = new List<Ingrediente>();
+            this.Ingredientes = new List<Ingrediente>();
+            this.Produtos = new List<Produto>();
+            this.Combos = new List<Produto>();
+            this.Pedidos = new List<Pedido>();
         }
 
         public virtual int Id
@@ -36,18 +41,6 @@ namespace Softex.Residencia.EServeur.Model
         {
             get { return this.preco; }
             set { this.preco = value; }
-        }
-
-        public virtual bool Promocao
-        {
-            get { return this.promocao; }
-            set { this.promocao = value; }
-        }
-
-        public virtual Pedido Pedido 
-        {
-            get { return this.pedido; }
-            set { this.pedido = value; }
         }
 
         public virtual byte[] Imagem
@@ -74,10 +67,34 @@ namespace Softex.Residencia.EServeur.Model
             set { descricao = value; }
         }
 
-        public IList<Combo> Combos
+        public IList<Produto> Produtos
+        {
+            get { return produtos; }
+            set { produtos = value; }
+        }
+
+        public int PedidoId
+        {
+            get { return pedidoId; }
+            set { pedidoId = value; }
+        }
+
+        public int CategoriaId
+        {
+            get { return categoriaId; }
+            set { categoriaId = value; }
+        }
+
+        public IList<Produto> Combos
         {
             get { return combos; }
             set { combos = value; }
+        }
+
+        public IList<Pedido> Pedidos
+        {
+            get { return pedidos; }
+            set { pedidos = value; }
         }
     }
 }

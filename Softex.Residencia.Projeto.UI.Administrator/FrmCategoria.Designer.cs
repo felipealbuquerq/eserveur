@@ -100,6 +100,7 @@
             this.btnAdicionarCategoria.TabIndex = 2;
             this.btnAdicionarCategoria.UseMnemonic = false;
             this.btnAdicionarCategoria.UseVisualStyleBackColor = true;
+            this.btnAdicionarCategoria.Click += new System.EventHandler(this.btnAdicionarCategoria_Click);
             // 
             // txtNomeNovaCategoria
             // 

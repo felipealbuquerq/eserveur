@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaBusiness.cs" />
+    <Compile Include="Exceptions\CategoryAlreadyExistsException.cs" />
     <Compile Include="IngredienteBusiness.cs" />
     <Compile Include="PedidoBusiness.cs" />
     <Compile Include="ProdutoBusiness.cs" />
