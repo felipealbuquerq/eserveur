@@ -37,7 +37,11 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
                 this.cboListaDeCategoria.DisplayMember = "Nome";
                 this.cboListaDeCategoria.ValueMember = "Id";
-                this.cboListaDeCategoria.SelectedItem = 0;
+
+                if (this.cboListaDeCategoria.Items.Count > 0)
+                {
+                    this.cboListaDeCategoria.SelectedItem = 0;
+                }
             }
             catch (Exception)
             {

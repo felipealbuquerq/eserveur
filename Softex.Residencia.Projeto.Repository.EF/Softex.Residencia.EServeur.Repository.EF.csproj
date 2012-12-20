@@ -49,9 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaRepository.cs" />
+    <Compile Include="ClienteRepository.cs" />
     <Compile Include="EServeurEntities.cs" />
     <Compile Include="EServeurEntitiesFactory.cs" />
     <Compile Include="IngredienteRepository.cs" />
+    <Compile Include="NotaFiscalRepository.cs" />
     <Compile Include="PedidoRepository.cs" />
     <Compile Include="ProdutoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

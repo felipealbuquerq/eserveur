@@ -42,7 +42,11 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
                 this.cboListaDeProdutos.DisplayMember = "Nome";
                 this.cboListaDeProdutos.ValueMember = "Id";
-                this.cboListaDeProdutos.SelectedIndex = 0;
+
+                if (this.cboListaDeProdutos.Items.Count > 0)
+                {
+                    this.cboListaDeProdutos.SelectedIndex = 0;
+                }
 
                 this.cboCategoria.DisplayMember = "Nome";
                 this.cboCategoria.ValueMember = "Id";

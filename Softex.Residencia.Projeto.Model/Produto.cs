@@ -9,13 +9,13 @@ namespace Softex.Residencia.EServeur.Model
         private string descricao;
         private decimal preco;
         private byte[] imagem;
-        private int pedidoId;
         private int categoriaId;
         private Categoria categoria;
         private IList<Pedido> pedidos;
         private IList<Ingrediente> ingredientes;
         private IList<Produto> produtos;
         private IList<Produto> combos;
+        private IList<NotaFiscal> notasFiscais;
 
         public Produto()
         {
@@ -23,45 +23,46 @@ namespace Softex.Residencia.EServeur.Model
             this.Produtos = new List<Produto>();
             this.Combos = new List<Produto>();
             this.Pedidos = new List<Pedido>();
+            this.notasFiscais = new List<NotaFiscal>();
         }
 
-        public virtual int Id
+        public int Id
         {
             get { return this.id; }
             set { this.id = value; }
         }
 
-        public virtual string Nome
+        public string Nome
         {
             get { return this.nome; }
             set { this.nome = value; }
         }
 
-        public virtual decimal Preco
+        public decimal Preco
         {
             get { return this.preco; }
             set { this.preco = value; }
         }
 
-        public virtual byte[] Imagem
+        public byte[] Imagem
         {
             get { return this.imagem; }
             set { this.imagem = value; }
         }
 
-        public virtual IList<Ingrediente> Ingredientes
+        public IList<Ingrediente> Ingredientes
         {
             get { return ingredientes; }
             set { ingredientes = value; }
         }
 
-        public virtual Categoria Categoria
+        public Categoria Categoria
         {
             get { return categoria; }
             set { categoria = value; }
         }
 
-        public virtual string Descricao
+        public string Descricao
         {
             get { return descricao; }
             set { descricao = value; }
@@ -71,12 +72,6 @@ namespace Softex.Residencia.EServeur.Model
         {
             get { return produtos; }
             set { produtos = value; }
-        }
-
-        public int PedidoId
-        {
-            get { return pedidoId; }
-            set { pedidoId = value; }
         }
 
         public int CategoriaId
@@ -95,6 +90,12 @@ namespace Softex.Residencia.EServeur.Model
         {
             get { return pedidos; }
             set { pedidos = value; }
+        }
+
+        public IList<NotaFiscal> NotasFiscais
+        {
+            get { return notasFiscais; }
+            set { notasFiscais = value; }
         }
     }
 }
