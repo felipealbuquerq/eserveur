@@ -43,8 +43,14 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
             this.chkListaDeIngredientesNovoProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
 
-            this.txtNomeNovoProduto.Text = "";
+            
         }
+		
+		private void limparCamposFormularioNovoProduto()
+		{
+			this.txtNomeNovoProduto.Text = "";
+			this.txtDescricaoNovoProduto = "";
+		}
 
         private void cboListaDeProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -90,6 +96,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.produtoBusiness.CadastrarProduto(produto);
 
                 this.PreencherCamposFormulario();
+				this.limparCamposFormularioNovoProduto();
 
                 MessageBox.Show(Mensagens.CadastroProdutoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
