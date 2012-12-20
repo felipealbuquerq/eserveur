@@ -43,13 +43,11 @@ namespace Softex.Residencia.EServeur.Business
             return this.repository.FindAll();
         }
 
-        // TODO: Comentar esse codigo
         public IEnumerable<Produto> RecuperarProdutos(Expression<Func<Produto, bool>> filter)
         {
             return this.repository.FindBy(filter);
         }
 
-        // TODO: Comentar a necessidade do overload
         public IEnumerable<Produto> RecuperarProdutos(Expression<Func<Produto, bool>> filter, int index, int count)
         {
             return this.repository.FindBy(filter, index, count);
@@ -63,8 +61,11 @@ namespace Softex.Residencia.EServeur.Business
             {
                 if (produto.Ingredientes.Count > 0)
                 {
+                    //Conta a quantidade de ingredientes disponíveis
                     int qtdIngredientesDisponiveis = produto.Ingredientes.Count(ingrediente => ingrediente.Disponivel);
 
+                    //Verifica se a quantidade de ingredientes do produto é igual 
+                    //a quantidade de ingredientes disponíveis
                     if (produto.Ingredientes.Count == qtdIngredientesDisponiveis)
                     {
                         produtos.Add(produto);

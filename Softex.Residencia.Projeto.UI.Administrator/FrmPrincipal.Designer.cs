@@ -215,35 +215,35 @@
             // ingredientesToolStripMenuItem
             // 
             this.ingredientesToolStripMenuItem.Name = "ingredientesToolStripMenuItem";
-            this.ingredientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ingredientesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.ingredientesToolStripMenuItem.Text = "Ingredientes";
             this.ingredientesToolStripMenuItem.Click += new System.EventHandler(this.ingredientesToolStripMenuItem_Click);
             // 
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // combosToolStripMenuItem1
             // 
             this.combosToolStripMenuItem1.Name = "combosToolStripMenuItem1";
-            this.combosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.combosToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.combosToolStripMenuItem1.Text = "Combos";
             this.combosToolStripMenuItem1.Click += new System.EventHandler(this.combosToolStripMenuItem1_Click);
             // 
             // faturasToolStripMenuItem1
             // 
             this.faturasToolStripMenuItem1.Name = "faturasToolStripMenuItem1";
-            this.faturasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.faturasToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.faturasToolStripMenuItem1.Text = "Notas Fiscais";
             this.faturasToolStripMenuItem1.Click += new System.EventHandler(this.faturasToolStripMenuItem1_Click);
             // 
@@ -384,6 +384,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FrmPrincipal";
             this.Text = "e-Serveur";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.tsbAdicionarProduto.ResumeLayout(false);
