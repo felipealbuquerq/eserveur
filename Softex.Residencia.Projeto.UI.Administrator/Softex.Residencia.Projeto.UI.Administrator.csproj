@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAjudaSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjudaSobre.Designer.cs">
+      <DependentUpon>FrmAjudaSobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBDCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAjudaSobre.resx">
+      <DependentUpon>FrmAjudaSobre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBDCategoria.resx">
       <DependentUpon>FrmBDCategoria.cs</DependentUpon>
     </EmbeddedResource>
