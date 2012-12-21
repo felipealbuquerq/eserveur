@@ -37,6 +37,7 @@ namespace Softex.Residencia.EServeur.Business {
             return this.repository.FindBy(notafiscalID);
         }
 
+        /*
         public NotaFiscal RecuperarNotaFiscal(int numero)
         {
             if (numero <= 0)
@@ -55,7 +56,7 @@ namespace Softex.Residencia.EServeur.Business {
             }
 
             throw new NotaFiscalNaoExisteException();
-        }
+        }*/
 
         public IEnumerable<NotaFiscal> RecuperarNotasFiscais()
         {

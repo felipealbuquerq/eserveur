@@ -1,7 +1,7 @@
 [e-Serveur](https://github.com/marcwebbie/eserveur) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](https://github.com/marcwebbie/eserveur)
 =================
 
-e-Serveur é um sistema de gestao de para micro/pequena empresas do setor de gastronomia by 
+e-Serveur é um sistema de gestao(automação) de para micro/pequena empresas do setor de gastronomia by 
 [Marcondes Silva](https://github.com/marcwebbie), [Felipe Rosacruz](mailto:feliperosacruz@gmail.com), [Carlox Max](mailto:max28@oi.com.br), [Deyvid Maciel](mailto:deyvid.maciel@bol.com.br).
 
 
@@ -20,6 +20,7 @@ Funcionalidades
 ============
 
 + Gestão de caixa;
++ Geração de cardápios;
 + Gestão da disponibilidade dos produtos vendidos;
 + Impressão de pedidos;
 + Gerenciar a disponibilidade dos pratos a partir dos ingredientes disponíveis;
@@ -54,7 +55,7 @@ Authors
 **Deyvid Maciel**
 
 
-Copyright and license
+Copyright e licença
 ---------------------
 
 This program is free software: you can redistribute it and/or modify
