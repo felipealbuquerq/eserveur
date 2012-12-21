@@ -43,9 +43,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.cboListaDeProdutos.DisplayMember = "Nome";
                 this.cboListaDeProdutos.ValueMember = "Id";
 
-<<<<<<< HEAD
-            
-=======
                 if (this.cboListaDeProdutos.Items.Count > 0)
                 {
                     this.cboListaDeProdutos.SelectedIndex = 0;
@@ -76,13 +73,13 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
             
             this.picImagemNovoProduto.Image = null;
->>>>>>> 45b2defa60dd67583dd1b7f51104023a8a888706
+
         }
 		
 		private void limparCamposFormularioNovoProduto()
 		{
 			this.txtNomeNovoProduto.Text = "";
-			this.txtDescricaoNovoProduto = "";
+			this.txtDescricaoNovoProduto.Text = "";
 		}
 
         private void ValidarCamposFormulario()
@@ -167,13 +164,12 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
                 this.produtoBusiness.CadastrarProduto(produto);
 
-<<<<<<< HEAD
                 this.PreencherCamposFormulario();
 				this.limparCamposFormularioNovoProduto();
-=======
+
                 MessageBox.Show(Mensagens.CadastroProdutoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
->>>>>>> 45b2defa60dd67583dd1b7f51104023a8a888706
+
 
                 this.LimparCamposFormulario();
                 this.PreencherCamposFormulario();

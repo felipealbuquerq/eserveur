@@ -186,5 +186,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             frmCliente = new FrmBDNotaFiscal() { MdiParent = this }; // test
             frmCliente.Focus();
         }
+
+        private void atendenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
