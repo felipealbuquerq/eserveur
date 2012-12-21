@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCategoria));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -31,6 +32,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAdicionarCategoria = new System.Windows.Forms.Button();
             this.txtNomeNovaCategoria = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -74,8 +76,10 @@
             this.btnRemoverCategoria.Name = "btnRemoverCategoria";
             this.btnRemoverCategoria.Size = new System.Drawing.Size(36, 33);
             this.btnRemoverCategoria.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnRemoverCategoria, "Remover categoria");
             this.btnRemoverCategoria.UseMnemonic = false;
             this.btnRemoverCategoria.UseVisualStyleBackColor = true;
+            this.btnRemoverCategoria.Click += new System.EventHandler(this.btnRemoverCategoria_Click);
             // 
             // groupBox2
             // 
@@ -98,6 +102,7 @@
             this.btnAdicionarCategoria.Name = "btnAdicionarCategoria";
             this.btnAdicionarCategoria.Size = new System.Drawing.Size(36, 33);
             this.btnAdicionarCategoria.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnAdicionarCategoria, "Adicionar categoria");
             this.btnAdicionarCategoria.UseMnemonic = false;
             this.btnAdicionarCategoria.UseVisualStyleBackColor = true;
             this.btnAdicionarCategoria.Click += new System.EventHandler(this.btnAdicionarCategoria_Click);
@@ -136,5 +141,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cboListaDeCategoria;
         private System.Windows.Forms.Button btnRemoverCategoria;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

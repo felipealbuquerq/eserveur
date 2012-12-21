@@ -188,7 +188,7 @@
             // 
             this.relatóriosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("relatóriosToolStripMenuItem1.Image")));
             this.relatóriosToolStripMenuItem1.Name = "relatóriosToolStripMenuItem1";
-            this.relatóriosToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.relatóriosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.relatóriosToolStripMenuItem1.Text = "Relatórios";
             this.relatóriosToolStripMenuItem1.Click += new System.EventHandler(this.relatóriosToolStripMenuItem1_Click);
             // 
@@ -196,7 +196,7 @@
             // 
             this.faturasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("faturasToolStripMenuItem.Image")));
             this.faturasToolStripMenuItem.Name = "faturasToolStripMenuItem";
-            this.faturasToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.faturasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.faturasToolStripMenuItem.Text = "Nota Fiscal";
             this.faturasToolStripMenuItem.Click += new System.EventHandler(this.faturasToolStripMenuItem_Click);
             // 
@@ -215,35 +215,35 @@
             // ingredientesToolStripMenuItem
             // 
             this.ingredientesToolStripMenuItem.Name = "ingredientesToolStripMenuItem";
-            this.ingredientesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.ingredientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ingredientesToolStripMenuItem.Text = "Ingredientes";
             this.ingredientesToolStripMenuItem.Click += new System.EventHandler(this.ingredientesToolStripMenuItem_Click);
             // 
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // combosToolStripMenuItem1
             // 
             this.combosToolStripMenuItem1.Name = "combosToolStripMenuItem1";
-            this.combosToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.combosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.combosToolStripMenuItem1.Text = "Combos";
             this.combosToolStripMenuItem1.Click += new System.EventHandler(this.combosToolStripMenuItem1_Click);
             // 
             // faturasToolStripMenuItem1
             // 
             this.faturasToolStripMenuItem1.Name = "faturasToolStripMenuItem1";
-            this.faturasToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.faturasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.faturasToolStripMenuItem1.Text = "Notas Fiscais";
             this.faturasToolStripMenuItem1.Click += new System.EventHandler(this.faturasToolStripMenuItem1_Click);
             // 
@@ -259,13 +259,13 @@
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sobreToolStripMenuItem.Text = "Sobre";
             // 
             // ajudaToolStripMenuItem1
             // 
             this.ajudaToolStripMenuItem1.Name = "ajudaToolStripMenuItem1";
-            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
+            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.ajudaToolStripMenuItem1.Text = "Ajuda";
             // 
             // tsbAdicionarProduto
@@ -344,7 +344,7 @@
             this.tsbGerarRelatorio.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbGerarRelatorio.Name = "tsbGerarRelatorio";
             this.tsbGerarRelatorio.Size = new System.Drawing.Size(23, 22);
-            this.tsbGerarRelatorio.Text = "toolStripButton8";
+            this.tsbGerarRelatorio.Text = "Gerar Relatórios";
             this.tsbGerarRelatorio.Click += new System.EventHandler(this.tsbGerarRelatorio_Click);
             // 
             // tsbGerarNotaFiscal
@@ -354,7 +354,7 @@
             this.tsbGerarNotaFiscal.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbGerarNotaFiscal.Name = "tsbGerarNotaFiscal";
             this.tsbGerarNotaFiscal.Size = new System.Drawing.Size(23, 22);
-            this.tsbGerarNotaFiscal.Text = "toolStripButton9";
+            this.tsbGerarNotaFiscal.Text = "Gerar notas fiscais";
             this.tsbGerarNotaFiscal.Click += new System.EventHandler(this.tsbGerarNotaFiscal_Click);
             // 
             // tsbAjuda

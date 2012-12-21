@@ -11,7 +11,8 @@
     <RootNamespace>Softex.Residencia.Projeto.UI.Administrator</RootNamespace>
     <AssemblyName>Softex.Residencia.Projeto.UI.Administrator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -67,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAjudaSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjudaSobre.Designer.cs">
+      <DependentUpon>FrmAjudaSobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBDCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +165,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAjudaSobre.resx">
+      <DependentUpon>FrmAjudaSobre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBDCategoria.resx">
       <DependentUpon>FrmBDCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +283,9 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
