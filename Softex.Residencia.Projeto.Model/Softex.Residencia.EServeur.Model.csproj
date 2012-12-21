@@ -56,13 +56,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="ICategoriaRepository.cs" />
+    <Compile Include="IClienteRepository.cs" />
     <Compile Include="IIngredienteRepository.cs" />
     <Compile Include="Ingrediente.cs" />
+    <Compile Include="INotaFiscalRepository.cs" />
     <Compile Include="IPedidoRepository.cs" />
     <Compile Include="IProdutoRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IStatusRepository.cs" />
+    <Compile Include="NotaFiscal.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
