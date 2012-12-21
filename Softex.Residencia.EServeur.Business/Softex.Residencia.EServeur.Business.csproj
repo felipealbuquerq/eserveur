@@ -41,13 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaBusiness.cs" />
+    <Compile Include="ClienteBusiness.cs" />
     <Compile Include="Exceptions\CategoryAlreadyExistsException.cs" />
     <Compile Include="Exceptions\GenericWarningException.cs" />
+    <Compile Include="Exceptions\NotaFiscalNaoExisteException.cs" />
     <Compile Include="IngredienteBusiness.cs" />
     <Compile Include="NotaFiscalBusiness.cs" />
     <Compile Include="PedidoBusiness.cs" />
     <Compile Include="ProdutoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatusBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Softex.Residencia.Projeto.Model\Softex.Residencia.EServeur.Model.csproj">

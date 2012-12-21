@@ -71,6 +71,7 @@ namespace Softex.Residencia.EServeur.Business
             this.repository.Save();
         }
 
+        //método de remoção de um ingrediente
         public void RemoverIngrediente(int ingredienteId)
         {
             if (ingredienteId <= 0)
