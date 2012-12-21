@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaBusiness.cs" />
+    <Compile Include="ClienteBusiness.cs" />
     <Compile Include="Exceptions\CategoryAlreadyExistsException.cs" />
     <Compile Include="Exceptions\GenericWarningException.cs" />
     <Compile Include="Exceptions\NotaFiscalNaoExisteException.cs" />
