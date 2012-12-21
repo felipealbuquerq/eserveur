@@ -66,6 +66,21 @@ namespace Softex.Residencia.EServeur.Business
                                             //Verifica se o horario de saida é nulo, o que significa que o pedido ainda não foi atendido
                                             p.HorarioSaida == null);
         }
+
+        public decimal RecuperarValorPedidosEmEspera()
+        {
+            IEnumerable<Pedido> pedidos = this.RecuperarPedidosEmEspera();
+            decimal valorPedidos = 0;
+            foreach (Pedido ped_temp in pedidos)
+            {
+                foreach (Produto prod_temp in ped_temp.Produtos)
+                {
+                    valorPedidos += prod_temp.Preco;
+                }
+            }
+            return valorPedidos;
+        }
+
         
         public void RemoverPedido(int pedidoId)
         {
