@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 12/19/2012 21:40:23
+-- Date Created: 12/21/2012 06:37:00
 -- Generated from EDMX file: D:\CSProjects\eserveur\Softex.Residencia.Projeto.Repository.EF\EServeurModel.edmx
 -- --------------------------------------------------
 
@@ -22,6 +22,15 @@ IF OBJECT_ID(N'[dbo].[FK_IngredienteProduto_Ingrediente]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_IngredienteProduto_Produto]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[IngredienteProduto] DROP CONSTRAINT [FK_IngredienteProduto_Produto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_NotaFiscal_Clientes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NotasFiscais] DROP CONSTRAINT [FK_NotaFiscal_Clientes];
+GO
+IF OBJECT_ID(N'[dbo].[FK_NotasFiscaisProdutos_NotasFiscais]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NotasFiscaisProdutos] DROP CONSTRAINT [FK_NotasFiscaisProdutos_NotasFiscais];
+GO
+IF OBJECT_ID(N'[dbo].[FK_NotasFiscaisProdutos_Produtos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NotasFiscaisProdutos] DROP CONSTRAINT [FK_NotasFiscaisProdutos_Produtos];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PedidosProdutos_Pedidos]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PedidosProdutos] DROP CONSTRAINT [FK_PedidosProdutos_Pedidos];
@@ -49,11 +58,20 @@ GO
 IF OBJECT_ID(N'[dbo].[Categorias]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Categorias];
 GO
+IF OBJECT_ID(N'[dbo].[Clientes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Clientes];
+GO
 IF OBJECT_ID(N'[dbo].[IngredienteProduto]', 'U') IS NOT NULL
     DROP TABLE [dbo].[IngredienteProduto];
 GO
 IF OBJECT_ID(N'[dbo].[Ingredientes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Ingredientes];
+GO
+IF OBJECT_ID(N'[dbo].[NotasFiscais]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[NotasFiscais];
+GO
+IF OBJECT_ID(N'[dbo].[NotasFiscaisProdutos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[NotasFiscaisProdutos];
 GO
 IF OBJECT_ID(N'[dbo].[Pedidos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Pedidos];
@@ -101,6 +119,32 @@ CREATE TABLE [dbo].[Pedidos] (
 );
 GO
 
+-- Creating table 'Status'
+CREATE TABLE [dbo].[Status] (
+    [Id] int  NOT NULL,
+    [Descricao] nvarchar(200)  NOT NULL
+);
+GO
+
+-- Creating table 'Clientes'
+CREATE TABLE [dbo].[Clientes] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Nome] nvarchar(60)  NOT NULL,
+    [CpfCnpj] nvarchar(18)  NOT NULL,
+    [Endereco] nvarchar(150)  NULL
+);
+GO
+
+-- Creating table 'NotasFiscais'
+CREATE TABLE [dbo].[NotasFiscais] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Numero] int  NOT NULL,
+    [ClienteId] int  NULL,
+    [Data] datetime  NOT NULL,
+    [Valor] decimal(19,4)  NOT NULL
+);
+GO
+
 -- Creating table 'Produtos'
 CREATE TABLE [dbo].[Produtos] (
     [Id] int IDENTITY(1,1) NOT NULL,
@@ -112,16 +156,16 @@ CREATE TABLE [dbo].[Produtos] (
 );
 GO
 
--- Creating table 'Status'
-CREATE TABLE [dbo].[Status] (
-    [Id] int  NOT NULL,
-    [Descricao] nvarchar(200)  NOT NULL
-);
-GO
-
 -- Creating table 'IngredienteProduto'
 CREATE TABLE [dbo].[IngredienteProduto] (
     [Ingredientes_Id] int  NOT NULL,
+    [Produtos_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'NotasFiscaisProdutos'
+CREATE TABLE [dbo].[NotasFiscaisProdutos] (
+    [NotasFiscais_Id] int  NOT NULL,
     [Produtos_Id] int  NOT NULL
 );
 GO
@@ -162,15 +206,27 @@ ADD CONSTRAINT [PK_Pedidos]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Produtos'
-ALTER TABLE [dbo].[Produtos]
-ADD CONSTRAINT [PK_Produtos]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
 -- Creating primary key on [Id] in table 'Status'
 ALTER TABLE [dbo].[Status]
 ADD CONSTRAINT [PK_Status]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Clientes'
+ALTER TABLE [dbo].[Clientes]
+ADD CONSTRAINT [PK_Clientes]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'NotasFiscais'
+ALTER TABLE [dbo].[NotasFiscais]
+ADD CONSTRAINT [PK_NotasFiscais]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Produtos'
+ALTER TABLE [dbo].[Produtos]
+ADD CONSTRAINT [PK_Produtos]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -178,6 +234,12 @@ GO
 ALTER TABLE [dbo].[IngredienteProduto]
 ADD CONSTRAINT [PK_IngredienteProduto]
     PRIMARY KEY NONCLUSTERED ([Ingredientes_Id], [Produtos_Id] ASC);
+GO
+
+-- Creating primary key on [NotasFiscais_Id], [Produtos_Id] in table 'NotasFiscaisProdutos'
+ALTER TABLE [dbo].[NotasFiscaisProdutos]
+ADD CONSTRAINT [PK_NotasFiscaisProdutos]
+    PRIMARY KEY NONCLUSTERED ([NotasFiscais_Id], [Produtos_Id] ASC);
 GO
 
 -- Creating primary key on [Pedidos_Id], [Produtos_Id] in table 'PedidosProdutos'
@@ -196,20 +258,6 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [CategoriaId] in table 'Produtos'
-ALTER TABLE [dbo].[Produtos]
-ADD CONSTRAINT [FK_ProdutoCategoria]
-    FOREIGN KEY ([CategoriaId])
-    REFERENCES [dbo].[Categorias]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ProdutoCategoria'
-CREATE INDEX [IX_FK_ProdutoCategoria]
-ON [dbo].[Produtos]
-    ([CategoriaId]);
-GO
-
 -- Creating foreign key on [StatusId] in table 'Pedidos'
 ALTER TABLE [dbo].[Pedidos]
 ADD CONSTRAINT [FK_StatusPedido]
@@ -224,9 +272,37 @@ ON [dbo].[Pedidos]
     ([StatusId]);
 GO
 
+-- Creating foreign key on [CategoriaId] in table 'Produtos'
+ALTER TABLE [dbo].[Produtos]
+ADD CONSTRAINT [FK_ProdutoCategoria]
+    FOREIGN KEY ([CategoriaId])
+    REFERENCES [dbo].[Categorias]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProdutoCategoria'
+CREATE INDEX [IX_FK_ProdutoCategoria]
+ON [dbo].[Produtos]
+    ([CategoriaId]);
+GO
+
+-- Creating foreign key on [ClienteId] in table 'NotasFiscais'
+ALTER TABLE [dbo].[NotasFiscais]
+ADD CONSTRAINT [FK_NotaFiscal_Clientes]
+    FOREIGN KEY ([ClienteId])
+    REFERENCES [dbo].[Clientes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_NotaFiscal_Clientes'
+CREATE INDEX [IX_FK_NotaFiscal_Clientes]
+ON [dbo].[NotasFiscais]
+    ([ClienteId]);
+GO
+
 -- Creating foreign key on [Ingredientes_Id] in table 'IngredienteProduto'
 ALTER TABLE [dbo].[IngredienteProduto]
-ADD CONSTRAINT [FK_IngredienteProduto_Ingredientes]
+ADD CONSTRAINT [FK_IngredienteProduto_Ingrediente]
     FOREIGN KEY ([Ingredientes_Id])
     REFERENCES [dbo].[Ingredientes]
         ([Id])
@@ -247,9 +323,32 @@ ON [dbo].[IngredienteProduto]
     ([Produtos_Id]);
 GO
 
+-- Creating foreign key on [NotasFiscais_Id] in table 'NotasFiscaisProdutos'
+ALTER TABLE [dbo].[NotasFiscaisProdutos]
+ADD CONSTRAINT [FK_NotasFiscaisProdutos_NotasFiscais]
+    FOREIGN KEY ([NotasFiscais_Id])
+    REFERENCES [dbo].[NotasFiscais]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Produtos_Id] in table 'NotasFiscaisProdutos'
+ALTER TABLE [dbo].[NotasFiscaisProdutos]
+ADD CONSTRAINT [FK_NotasFiscaisProdutos_Produtos]
+    FOREIGN KEY ([Produtos_Id])
+    REFERENCES [dbo].[Produtos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_NotasFiscaisProdutos_Produtos'
+CREATE INDEX [IX_FK_NotasFiscaisProdutos_Produtos]
+ON [dbo].[NotasFiscaisProdutos]
+    ([Produtos_Id]);
+GO
+
 -- Creating foreign key on [Pedidos_Id] in table 'PedidosProdutos'
 ALTER TABLE [dbo].[PedidosProdutos]
-ADD CONSTRAINT [FK_PedidosProdutos_Pedidos]
+ADD CONSTRAINT [FK_PedidosProdutos_Pedido]
     FOREIGN KEY ([Pedidos_Id])
     REFERENCES [dbo].[Pedidos]
         ([Id])
