@@ -43,6 +43,7 @@
     <Compile Include="CategoriaBusiness.cs" />
     <Compile Include="Exceptions\CategoryAlreadyExistsException.cs" />
     <Compile Include="Exceptions\GenericWarningException.cs" />
+    <Compile Include="Exceptions\NotaFiscalNaoExisteException.cs" />
     <Compile Include="IngredienteBusiness.cs" />
     <Compile Include="NotaFiscalBusiness.cs" />
     <Compile Include="PedidoBusiness.cs" />
