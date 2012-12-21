@@ -191,5 +191,24 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
 
         }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmConta);
+
+            /* 
+             * TODO: Reparar o banco de dados
+            if (frmCliente == null)
+            {
+                frmCliente = new FrmCadastroProduto
+                {
+                    MdiParent = this
+                };
+            }
+            */
+
+            frmCliente = new FrmConta() { MdiParent = this }; // test
+            frmCliente.Focus();
+        }
     }
 }

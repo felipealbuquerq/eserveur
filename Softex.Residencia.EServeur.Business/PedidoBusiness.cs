@@ -56,15 +56,20 @@ namespace Softex.Residencia.EServeur.Business
 
         public IEnumerable<Pedido> RecuperarPedidosEmEspera()
         {
-            DateTime dataAtual = DateTime.Now;
-
-            
             return this.RecuperarPedidos(p =>
-                                            //Subtrai o horario atual com o horario em que o pedido foi realizado
-                                            //e verifica se o intervalo é menor ou igual a 3 horas.
-                                            dataAtual.Subtract(p.HorarioEntrada).Hours <= 3 &&
                                             //Verifica se o horario de saida é nulo, o que significa que o pedido ainda não foi atendido
                                             p.HorarioSaida == null);
+        }
+
+        public IEnumerable<Pedido> RecuperarPedidosEmEspera(int numeroDaMesa)
+        {
+            //Verifica se o horario de saida é nulo, o que significa que o pedido ainda não foi atendido
+            return this.RecuperarPedidos(p => p.MesaId == numeroDaMesa && p.HorarioSaida == null);
+        }
+
+        public IEnumerable<Pedido> RecuperarPedidosPendentes(int numeroDaMesa)
+        {
+            return this.RecuperarPedidos(p => p.MesaId == numeroDaMesa && p.Status.Id == (int)StatusPedido.NaoPago);
         }
 
         public decimal RecuperarValorPedidosEmEspera()
