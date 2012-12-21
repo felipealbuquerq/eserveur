@@ -97,6 +97,33 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categoria excluída com sucesso!.
+        /// </summary>
+        internal static string CategoriaExcluidaSucesso {
+            get {
+                return ResourceManager.GetString("CategoriaExcluidaSucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tem certeza que deseja excluir esse produto?.
+        /// </summary>
+        internal static string ExcluirProduto {
+            get {
+                return ResourceManager.GetString("ExcluirProduto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Falha na aplicação!.
+        /// </summary>
+        internal static string Falha {
+            get {
+                return ResourceManager.GetString("Falha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingrediente cadastrado com sucesso!.
         /// </summary>
         internal static string IngredienteCadastrado {
@@ -120,6 +147,15 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         internal static string PrecoIngredienteInvalido {
             get {
                 return ResourceManager.GetString("PrecoIngredienteInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Produto excluído com sucesso!.
+        /// </summary>
+        internal static string ProdutoExcluidoSucesso {
+            get {
+                return ResourceManager.GetString("ProdutoExcluidoSucesso", resourceCulture);
             }
         }
     }

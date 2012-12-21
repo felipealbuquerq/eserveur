@@ -129,6 +129,15 @@
   <data name="CadastroProdutoSucesso" xml:space="preserve">
     <value>Produto cadastrado com sucesso!</value>
   </data>
+  <data name="CategoriaExcluidaSucesso" xml:space="preserve">
+    <value>Categoria excluída com sucesso!</value>
+  </data>
+  <data name="ExcluirProduto" xml:space="preserve">
+    <value>Tem certeza que deseja excluir esse produto?</value>
+  </data>
+  <data name="Falha" xml:space="preserve">
+    <value>Falha na aplicação!</value>
+  </data>
   <data name="IngredienteCadastrado" xml:space="preserve">
     <value>Ingrediente cadastrado com sucesso!</value>
   </data>
@@ -137,5 +146,8 @@
   </data>
   <data name="PrecoIngredienteInvalido" xml:space="preserve">
     <value>Informe o preço do ingrediente corretamente!</value>
+  </data>
+  <data name="ProdutoExcluidoSucesso" xml:space="preserve">
+    <value>Produto excluído com sucesso!</value>
   </data>
 </root>

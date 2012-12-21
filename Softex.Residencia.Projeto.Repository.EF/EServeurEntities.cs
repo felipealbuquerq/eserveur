@@ -14,6 +14,8 @@ namespace Softex.Residencia.EServeur.Repository.EF
         private ObjectSet<Ingrediente> ingredientes;
         private ObjectSet<Pedido> pedidos;
         private ObjectSet<Status> status;
+        private ObjectSet<Cliente> clientes;
+        private ObjectSet<NotaFiscal> notasFiscais;
 
         public EServeurEntities()
             : base("name=EServeurEntities", "EServeurEntities")
@@ -23,6 +25,8 @@ namespace Softex.Residencia.EServeur.Repository.EF
             this.Produtos = CreateObjectSet<Produto>();
             this.Categorias = CreateObjectSet<Categoria>();
             this.Status = CreateObjectSet<Status>();
+            this.clientes = CreateObjectSet<Cliente>();
+            this.notasFiscais = CreateObjectSet<NotaFiscal>();
 
             base.ContextOptions.LazyLoadingEnabled = true;
         }
@@ -55,6 +59,18 @@ namespace Softex.Residencia.EServeur.Repository.EF
         {
             get { return status; }
             set { status = value; }
+        }
+
+        public ObjectSet<Cliente> Clientes
+        {
+            get { return clientes; }
+            set { clientes = value; }
+        }
+
+        public ObjectSet<NotaFiscal> NotasFiscais
+        {
+            get { return notasFiscais; }
+            set { notasFiscais = value; }
         }
     }
 }
