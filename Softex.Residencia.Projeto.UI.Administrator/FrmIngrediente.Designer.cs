@@ -85,6 +85,7 @@
             this.toolTip1.SetToolTip(this.btnRemoverIngrediente, "Remover ingrediente do banco de dados");
             this.btnRemoverIngrediente.UseMnemonic = false;
             this.btnRemoverIngrediente.UseVisualStyleBackColor = true;
+            this.btnRemoverIngrediente.Click += new System.EventHandler(this.btnRemoverIngrediente_Click);
             // 
             // groupBox2
             // 

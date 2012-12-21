@@ -106,6 +106,15 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tem certeza que deseja excluir esse ingrediente?.
+        /// </summary>
+        internal static string ExcluirIngrediente {
+            get {
+                return ResourceManager.GetString("ExcluirIngrediente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tem certeza que deseja excluir esse produto?.
         /// </summary>
         internal static string ExcluirProduto {
@@ -129,6 +138,15 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         internal static string IngredienteCadastrado {
             get {
                 return ResourceManager.GetString("IngredienteCadastrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingrediente excluido com sucesso!.
+        /// </summary>
+        internal static string IngredienteExcluidoSucesso {
+            get {
+                return ResourceManager.GetString("IngredienteExcluidoSucesso", resourceCulture);
             }
         }
         

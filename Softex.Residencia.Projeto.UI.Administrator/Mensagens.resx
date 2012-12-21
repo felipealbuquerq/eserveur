@@ -132,6 +132,9 @@
   <data name="CategoriaExcluidaSucesso" xml:space="preserve">
     <value>Categoria excluída com sucesso!</value>
   </data>
+  <data name="ExcluirIngrediente" xml:space="preserve">
+    <value>Tem certeza que deseja excluir esse ingrediente?</value>
+  </data>
   <data name="ExcluirProduto" xml:space="preserve">
     <value>Tem certeza que deseja excluir esse produto?</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="IngredienteCadastrado" xml:space="preserve">
     <value>Ingrediente cadastrado com sucesso!</value>
+  </data>
+  <data name="IngredienteExcluidoSucesso" xml:space="preserve">
+    <value>Ingrediente excluido com sucesso!</value>
   </data>
   <data name="Mensagem" xml:space="preserve">
     <value>Mensagem</value>

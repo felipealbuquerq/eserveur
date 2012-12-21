@@ -80,5 +80,39 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
                 MessageBox.Show(Mensagens.CadastroCategoriaFalha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnRemoverIngrediente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.cboListaDeIngrediente.SelectedItem == null)
+                {
+                    throw new GenericWarningException("Selecione o ingrediente que deseja excluir!");
+                }
+
+                Ingrediente ingrediente = (Ingrediente)this.cboListaDeIngrediente.SelectedItem;
+
+                if (
+                    MessageBox.Show(Mensagens.ExcluirIngrediente, Mensagens.Mensagem, MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.ingredienteBusiness.RemoverIngrediente(ingrediente.Id);
+                    this.CarregarIngredientes();
+
+                    MessageBox.Show(Mensagens.IngredienteExcluidoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+            catch (GenericWarningException ex)
+            {
+                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
     }
 }
