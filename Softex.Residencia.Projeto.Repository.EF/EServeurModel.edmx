@@ -360,7 +360,7 @@
           <Property Type="Int32" Name="MesaId" Nullable="false" />
           <Property Type="Int32" Name="ProdutoId" Nullable="false" />
           <Property Type="Int32" Name="QtdProduto" Nullable="false" />
-          <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.FK_Pedidos_Produtos" FromRole="Pedidos" ToRole="Produtos" />
+          <NavigationProperty Name="Produto" Relationship="Softex.Residencia.EServeur.Model.FK_Pedidos_Produtos" FromRole="Pedidos" ToRole="Produtos" />
           <NavigationProperty Name="Status" Relationship="Softex.Residencia.EServeur.Model.FK_Pedidos_Status" FromRole="Pedidos" ToRole="Status" />
         </EntityType>
         <EntityType Name="Produto">

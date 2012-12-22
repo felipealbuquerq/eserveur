@@ -123,6 +123,9 @@
   <data name="CadastroCategoriaSucesso" xml:space="preserve">
     <value>Categoria cadastrada com sucesso!</value>
   </data>
+  <data name="CadastroIngredienteFalha" xml:space="preserve">
+    <value>Não foi possível cadastrar o ingrediente!</value>
+  </data>
   <data name="CadastroProdutoFalha" xml:space="preserve">
     <value>Não foi possível cadastrar o produto!</value>
   </data>
@@ -141,11 +144,17 @@
   <data name="Falha" xml:space="preserve">
     <value>Falha na aplicação!</value>
   </data>
+  <data name="IndisponibilizarIngrediente" xml:space="preserve">
+    <value>Tem certeza que deseja tornar esse ingrediente indisponível?</value>
+  </data>
   <data name="IngredienteCadastrado" xml:space="preserve">
     <value>Ingrediente cadastrado com sucesso!</value>
   </data>
   <data name="IngredienteExcluidoSucesso" xml:space="preserve">
     <value>Ingrediente excluido com sucesso!</value>
+  </data>
+  <data name="IngredienteIndisponivel" xml:space="preserve">
+    <value>Ingrediente {0} indisponível!</value>
   </data>
   <data name="Mensagem" xml:space="preserve">
     <value>Mensagem</value>

@@ -57,12 +57,13 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
 
                 Ingrediente novoIngrediente = new Ingrediente()
                 {
-                    Nome = this.txtNomeNovaIngrediente.Text
+                    Nome = this.txtNomeNovaIngrediente.Text,
+                    Disponivel = true
                 };
 
                 this.ingredienteBusiness.CadastrarIngrediente(novoIngrediente);
 
-                MessageBox.Show(Mensagens.CadastroCategoriaSucesso, Mensagens.Mensagem, MessageBoxButtons.OK,
+                MessageBox.Show(Mensagens.IngredienteCadastrado, Mensagens.Mensagem, MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
 
                 this.CarregarIngredientes();
@@ -77,7 +78,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
             }
             catch (Exception)
             {
-                MessageBox.Show(Mensagens.CadastroCategoriaFalha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Mensagens.CadastroIngredienteFalha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -92,8 +93,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
 
                 Ingrediente ingrediente = (Ingrediente)this.cboListaDeIngrediente.SelectedItem;
 
-                if (
-                    MessageBox.Show(Mensagens.ExcluirIngrediente, Mensagens.Mensagem, MessageBoxButtons.YesNo,
+                if (MessageBox.Show(Mensagens.ExcluirIngrediente, Mensagens.Mensagem, MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     this.ingredienteBusiness.RemoverIngrediente(ingrediente.Id);
@@ -105,13 +105,41 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
             }
             catch (GenericWarningException ex)
             {
-                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception)
             {
-                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnIngredienteNaoDisponivel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.cboListaDeIngrediente.SelectedItem == null)
+                {
+                    throw new GenericWarningException("Selecione o ingrediente que deseja indisponibilizar!");
+                }
+
+                Ingrediente ingrediente = (Ingrediente)this.cboListaDeIngrediente.SelectedItem;
+
+                if (MessageBox.Show(Mensagens.IndisponibilizarIngrediente, Mensagens.Mensagem, MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.ingredienteBusiness.IndisponibilizarIngrediente(ingrediente.Id);
+
+                    MessageBox.Show(string.Format(Mensagens.IngredienteIndisponivel, ingrediente.Nome), Mensagens.Mensagem, MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+            catch (GenericWarningException ex)
+            {
+                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

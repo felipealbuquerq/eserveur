@@ -64,6 +64,7 @@
             this.toolTip1.SetToolTip(this.btnIngredienteNaoDisponivel, "Modificar a disponibilidade");
             this.btnIngredienteNaoDisponivel.UseMnemonic = false;
             this.btnIngredienteNaoDisponivel.UseVisualStyleBackColor = true;
+            this.btnIngredienteNaoDisponivel.Click += new System.EventHandler(this.btnIngredienteNaoDisponivel_Click);
             // 
             // cboListaDeIngrediente
             // 

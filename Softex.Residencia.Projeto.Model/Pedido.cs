@@ -12,6 +12,7 @@ namespace Softex.Residencia.EServeur.Model
         private int qtdProduto;
         private int statusId;
         private int mesaId;
+        private int produtoId;
         private Produto produto;
         private Status status;
 
@@ -41,6 +42,12 @@ namespace Softex.Residencia.EServeur.Model
         public decimal ValorPedido
         {
             get { return this.produto.Preco * this.qtdProduto; }
+        }
+
+        public int ProdutoId
+        {
+            get { return produtoId; }
+            set { produtoId = value; }
         }
 
         public Produto Produto

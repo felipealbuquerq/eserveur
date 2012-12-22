@@ -22,7 +22,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             pedidoBusiness = new PedidoBusiness();
 
             this.lblTotal.Text = string.Format("{0:c}", 0);
-
         }
 
 
