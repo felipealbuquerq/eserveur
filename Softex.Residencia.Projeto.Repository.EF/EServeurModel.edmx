@@ -13,7 +13,6 @@
           <EntitySet Name="NotasFiscais" EntityType="Softex.Residencia.EServeur.Model.Store.NotasFiscais" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="NotasFiscaisProdutos" EntityType="Softex.Residencia.EServeur.Model.Store.NotasFiscaisProdutos" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Pedidos" EntityType="Softex.Residencia.EServeur.Model.Store.Pedidos" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PedidosProdutos" EntityType="Softex.Residencia.EServeur.Model.Store.PedidosProdutos" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Produtos" EntityType="Softex.Residencia.EServeur.Model.Store.Produtos" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ProdutosCombo" EntityType="Softex.Residencia.EServeur.Model.Store.ProdutosCombo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Status" EntityType="Softex.Residencia.EServeur.Model.Store.Status" store:Type="Tables" Schema="dbo" />
@@ -21,7 +20,7 @@
             <End Role="Ingredientes" EntitySet="Ingredientes" />
             <End Role="IngredienteProduto" EntitySet="IngredienteProduto" />
           </AssociationSet>
-          <AssociationSet Name="FK_IngredienteProduto_Produtos" Association="Softex.Residencia.EServeur.Model.Store.FK_IngredienteProduto_Produtos">
+          <AssociationSet Name="FK_IngredienteProduto_Produto" Association="Softex.Residencia.EServeur.Model.Store.FK_IngredienteProduto_Produto">
             <End Role="Produtos" EntitySet="Produtos" />
             <End Role="IngredienteProduto" EntitySet="IngredienteProduto" />
           </AssociationSet>
@@ -37,29 +36,25 @@
             <End Role="Produtos" EntitySet="Produtos" />
             <End Role="NotasFiscaisProdutos" EntitySet="NotasFiscaisProdutos" />
           </AssociationSet>
-          <AssociationSet Name="FK_PedidosProdutos_Pedido" Association="Softex.Residencia.EServeur.Model.Store.FK_PedidosProdutos_Pedido">
+          <AssociationSet Name="FK_Pedidos_Produtos" Association="Softex.Residencia.EServeur.Model.Store.FK_Pedidos_Produtos">
+            <End Role="Produtos" EntitySet="Produtos" />
             <End Role="Pedidos" EntitySet="Pedidos" />
-            <End Role="PedidosProdutos" EntitySet="PedidosProdutos" />
           </AssociationSet>
-          <AssociationSet Name="FK_PedidosProdutos_Produtos" Association="Softex.Residencia.EServeur.Model.Store.FK_PedidosProdutos_Produtos">
-            <End Role="Produtos" EntitySet="Produtos" />
-            <End Role="PedidosProdutos" EntitySet="PedidosProdutos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProdutoCategoria" Association="Softex.Residencia.EServeur.Model.Store.FK_ProdutoCategoria">
-            <End Role="Categorias" EntitySet="Categorias" />
-            <End Role="Produtos" EntitySet="Produtos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProdutosCombo_Produtos" Association="Softex.Residencia.EServeur.Model.Store.FK_ProdutosCombo_Produtos">
-            <End Role="Produtos" EntitySet="Produtos" />
-            <End Role="ProdutosCombo" EntitySet="ProdutosCombo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProdutosCombo_Produtos1" Association="Softex.Residencia.EServeur.Model.Store.FK_ProdutosCombo_Produtos1">
-            <End Role="Produtos" EntitySet="Produtos" />
-            <End Role="ProdutosCombo" EntitySet="ProdutosCombo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StatusPedido" Association="Softex.Residencia.EServeur.Model.Store.FK_StatusPedido">
+          <AssociationSet Name="FK_Pedidos_Status" Association="Softex.Residencia.EServeur.Model.Store.FK_Pedidos_Status">
             <End Role="Status" EntitySet="Status" />
             <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProdutoCombo_ItemProduto" Association="Softex.Residencia.EServeur.Model.Store.FK_ProdutoCombo_ItemProduto">
+            <End Role="Produtos" EntitySet="Produtos" />
+            <End Role="ProdutosCombo" EntitySet="ProdutosCombo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProdutoCombo_Produto" Association="Softex.Residencia.EServeur.Model.Store.FK_ProdutoCombo_Produto">
+            <End Role="Produtos" EntitySet="Produtos" />
+            <End Role="ProdutosCombo" EntitySet="ProdutosCombo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produtos_Categorias" Association="Softex.Residencia.EServeur.Model.Store.FK_Produtos_Categorias">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Produtos" EntitySet="Produtos" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Categorias">
@@ -75,16 +70,16 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="60" />
-          <Property Name="CpfCnpj" Type="nvarchar" Nullable="false" MaxLength="18" />
+          <Property Name="CPF_CNPJ" Type="nvarchar" Nullable="false" MaxLength="18" />
           <Property Name="Endereco" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="IngredienteProduto">
           <Key>
-            <PropertyRef Name="Ingredientes_Id" />
-            <PropertyRef Name="Produtos_Id" />
+            <PropertyRef Name="IngredientesId" />
+            <PropertyRef Name="ProdutosId" />
           </Key>
-          <Property Name="Ingredientes_Id" Type="int" Nullable="false" />
-          <Property Name="Produtos_Id" Type="int" Nullable="false" />
+          <Property Name="IngredientesId" Type="int" Nullable="false" />
+          <Property Name="ProdutosId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Ingredientes">
           <Key>
@@ -103,15 +98,16 @@
           <Property Name="Numero" Type="int" Nullable="false" />
           <Property Name="ClienteId" Type="int" />
           <Property Name="Data" Type="datetime" Nullable="false" />
-          <Property Name="Valor" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Valor" Type="money" Nullable="false" />
+          <Property Name="Cancelado" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="NotasFiscaisProdutos">
           <Key>
-            <PropertyRef Name="NotasFiscais_Id" />
-            <PropertyRef Name="Produtos_Id" />
+            <PropertyRef Name="NotaFiscalId" />
+            <PropertyRef Name="ProdutoId" />
           </Key>
-          <Property Name="NotasFiscais_Id" Type="int" Nullable="false" />
-          <Property Name="Produtos_Id" Type="int" Nullable="false" />
+          <Property Name="NotaFiscalId" Type="int" Nullable="false" />
+          <Property Name="ProdutoId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Pedidos">
           <Key>
@@ -119,17 +115,11 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="HorarioEntrada" Type="datetime" Nullable="false" />
-          <Property Name="HorarioSaida" Type="datetime" Nullable="false" />
+          <Property Name="HorarioSaida" Type="datetime" />
           <Property Name="StatusId" Type="int" Nullable="false" />
           <Property Name="MesaId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="PedidosProdutos">
-          <Key>
-            <PropertyRef Name="Pedidos_Id" />
-            <PropertyRef Name="Produtos_Id" />
-          </Key>
-          <Property Name="Pedidos_Id" Type="int" Nullable="false" />
-          <Property Name="Produtos_Id" Type="int" Nullable="false" />
+          <Property Name="ProdutoId" Type="int" Nullable="false" />
+          <Property Name="QtdProduto" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Produtos">
           <Key>
@@ -137,18 +127,18 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="60" />
-          <Property Name="Descricao" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Descricao" Type="nvarchar" MaxLength="200" />
           <Property Name="Preco" Type="decimal" Nullable="false" />
-          <Property Name="Imagem" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Imagem" Type="varbinary(max)" />
           <Property Name="CategoriaId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ProdutosCombo">
           <Key>
-            <PropertyRef Name="Combos_Id" />
-            <PropertyRef Name="Produtos_Id" />
+            <PropertyRef Name="ProdutoId" />
+            <PropertyRef Name="ItemProdutoId" />
           </Key>
-          <Property Name="Combos_Id" Type="int" Nullable="false" />
-          <Property Name="Produtos_Id" Type="int" Nullable="false" />
+          <Property Name="ProdutoId" Type="int" Nullable="false" />
+          <Property Name="ItemProdutoId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -165,11 +155,11 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="IngredienteProduto">
-              <PropertyRef Name="Ingredientes_Id" />
+              <PropertyRef Name="IngredientesId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_IngredienteProduto_Produtos">
+        <Association Name="FK_IngredienteProduto_Produto">
           <End Role="Produtos" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="1" />
           <End Role="IngredienteProduto" Type="Softex.Residencia.EServeur.Model.Store.IngredienteProduto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -177,7 +167,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="IngredienteProduto">
-              <PropertyRef Name="Produtos_Id" />
+              <PropertyRef Name="ProdutosId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -201,7 +191,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="NotasFiscaisProdutos">
-              <PropertyRef Name="NotasFiscais_Id" />
+              <PropertyRef Name="NotaFiscalId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -213,71 +203,23 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="NotasFiscaisProdutos">
-              <PropertyRef Name="Produtos_Id" />
+              <PropertyRef Name="ProdutoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PedidosProdutos_Pedido">
-          <End Role="Pedidos" Type="Softex.Residencia.EServeur.Model.Store.Pedidos" Multiplicity="1" />
-          <End Role="PedidosProdutos" Type="Softex.Residencia.EServeur.Model.Store.PedidosProdutos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pedidos">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PedidosProdutos">
-              <PropertyRef Name="Pedidos_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PedidosProdutos_Produtos">
+        <Association Name="FK_Pedidos_Produtos">
           <End Role="Produtos" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="1" />
-          <End Role="PedidosProdutos" Type="Softex.Residencia.EServeur.Model.Store.PedidosProdutos" Multiplicity="*" />
+          <End Role="Pedidos" Type="Softex.Residencia.EServeur.Model.Store.Pedidos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Produtos">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="PedidosProdutos">
-              <PropertyRef Name="Produtos_Id" />
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="ProdutoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ProdutoCategoria">
-          <End Role="Categorias" Type="Softex.Residencia.EServeur.Model.Store.Categorias" Multiplicity="1" />
-          <End Role="Produtos" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Categorias">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Produtos">
-              <PropertyRef Name="CategoriaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProdutosCombo_Produtos">
-          <End Role="Produtos" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="1" />
-          <End Role="ProdutosCombo" Type="Softex.Residencia.EServeur.Model.Store.ProdutosCombo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Produtos">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ProdutosCombo">
-              <PropertyRef Name="Combos_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProdutosCombo_Produtos1">
-          <End Role="Produtos" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="1" />
-          <End Role="ProdutosCombo" Type="Softex.Residencia.EServeur.Model.Store.ProdutosCombo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Produtos">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ProdutosCombo">
-              <PropertyRef Name="Produtos_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StatusPedido">
+        <Association Name="FK_Pedidos_Status">
           <End Role="Status" Type="Softex.Residencia.EServeur.Model.Store.Status" Multiplicity="1" />
           <End Role="Pedidos" Type="Softex.Residencia.EServeur.Model.Store.Pedidos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -289,97 +231,91 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProdutoCombo_ItemProduto">
+          <End Role="Produtos" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="1" />
+          <End Role="ProdutosCombo" Type="Softex.Residencia.EServeur.Model.Store.ProdutosCombo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produtos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProdutosCombo">
+              <PropertyRef Name="ItemProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProdutoCombo_Produto">
+          <End Role="Produtos" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="1" />
+          <End Role="ProdutosCombo" Type="Softex.Residencia.EServeur.Model.Store.ProdutosCombo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produtos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProdutosCombo">
+              <PropertyRef Name="ProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produtos_Categorias">
+          <End Role="Categorias" Type="Softex.Residencia.EServeur.Model.Store.Categorias" Multiplicity="1" />
+          <End Role="Produtos" Type="Softex.Residencia.EServeur.Model.Store.Produtos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produtos">
+              <PropertyRef Name="CategoriaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Softex.Residencia.EServeur.Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="EServeurEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categorias" EntityType="Softex.Residencia.EServeur.Model.Categoria" />
-          <EntitySet Name="Ingredientes" EntityType="Softex.Residencia.EServeur.Model.Ingrediente" />
-          <EntitySet Name="Pedidos" EntityType="Softex.Residencia.EServeur.Model.Pedido" />
-          <EntitySet Name="Status" EntityType="Softex.Residencia.EServeur.Model.Status" />
-          <AssociationSet Name="FK_StatusPedido" Association="Softex.Residencia.EServeur.Model.FK_StatusPedido">
-            <End Role="Status" EntitySet="Status" />
-            <End Role="Pedidos" EntitySet="Pedidos" />
-          </AssociationSet>
           <EntitySet Name="Clientes" EntityType="Softex.Residencia.EServeur.Model.Cliente" />
+          <EntitySet Name="Ingredientes" EntityType="Softex.Residencia.EServeur.Model.Ingrediente" />
           <EntitySet Name="NotasFiscais" EntityType="Softex.Residencia.EServeur.Model.NotaFiscal" />
+          <EntitySet Name="Pedidos" EntityType="Softex.Residencia.EServeur.Model.Pedido" />
           <EntitySet Name="Produtos" EntityType="Softex.Residencia.EServeur.Model.Produto" />
-          <AssociationSet Name="FK_ProdutoCategoria" Association="Softex.Residencia.EServeur.Model.FK_ProdutoCategoria">
-            <End Role="Categoria" EntitySet="Categorias" />
+          <EntitySet Name="Status" EntityType="Softex.Residencia.EServeur.Model.Status" />
+          <AssociationSet Name="FK_Produtos_Categorias" Association="Softex.Residencia.EServeur.Model.FK_Produtos_Categorias">
+            <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Produtos" EntitySet="Produtos" />
           </AssociationSet>
           <AssociationSet Name="FK_NotaFiscal_Clientes" Association="Softex.Residencia.EServeur.Model.FK_NotaFiscal_Clientes">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="NotasFiscais" EntitySet="NotasFiscais" />
           </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_Produtos" Association="Softex.Residencia.EServeur.Model.FK_Pedidos_Produtos">
+            <End Role="Produtos" EntitySet="Produtos" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_Status" Association="Softex.Residencia.EServeur.Model.FK_Pedidos_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
           <AssociationSet Name="IngredienteProduto" Association="Softex.Residencia.EServeur.Model.IngredienteProduto">
-            <End Role="Ingrediente" EntitySet="Ingredientes" />
+            <End Role="Ingredientes" EntitySet="Ingredientes" />
             <End Role="Produtos" EntitySet="Produtos" />
           </AssociationSet>
           <AssociationSet Name="NotasFiscaisProdutos" Association="Softex.Residencia.EServeur.Model.NotasFiscaisProdutos">
             <End Role="NotasFiscais" EntitySet="NotasFiscais" />
             <End Role="Produtos" EntitySet="Produtos" />
           </AssociationSet>
-          <AssociationSet Name="PedidosProdutos" Association="Softex.Residencia.EServeur.Model.PedidosProdutos">
-            <End Role="Pedido" EntitySet="Pedidos" />
-            <End Role="Produtos" EntitySet="Produtos" />
-          </AssociationSet>
           <AssociationSet Name="ProdutosCombo" Association="Softex.Residencia.EServeur.Model.ProdutosCombo">
             <End Role="Produtos" EntitySet="Produtos" />
             <End Role="Produtos1" EntitySet="Produtos" />
           </AssociationSet>
-          </EntityContainer>
+        </EntityContainer>
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Nome" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.FK_ProdutoCategoria" FromRole="Categoria" ToRole="Produtos" />
+          <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.FK_Produtos_Categorias" FromRole="Categorias" ToRole="Produtos" />
         </EntityType>
-        <EntityType Name="Ingrediente">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Nome" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Type="Decimal" Name="Preco" Nullable="false" Precision="18" Scale="0" />
-          <Property Type="Boolean" Name="Disponivel" Nullable="false" />
-          <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.IngredienteProduto" FromRole="Ingrediente" ToRole="Produtos" />
-        </EntityType>
-        <EntityType Name="Pedido">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="DateTime" Name="HorarioEntrada" Nullable="false" />
-          <Property Type="DateTime" Name="HorarioSaida" Nullable="false" />
-          <Property Type="Int32" Name="StatusId" Nullable="false" />
-          <Property Type="Int32" Name="MesaId" Nullable="false" />
-          <NavigationProperty Name="Status" Relationship="Softex.Residencia.EServeur.Model.FK_StatusPedido" FromRole="Pedidos" ToRole="Status" />
-          <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.PedidosProdutos" FromRole="Pedido" ToRole="Produtos" />
-        </EntityType>
-        <EntityType Name="Status">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Descricao" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Pedidos" Relationship="Softex.Residencia.EServeur.Model.FK_StatusPedido" FromRole="Status" ToRole="Pedidos" />
-        </EntityType>
-        <Association Name="FK_StatusPedido">
-          <End Type="Softex.Residencia.EServeur.Model.Status" Role="Status" Multiplicity="1" />
-          <End Type="Softex.Residencia.EServeur.Model.Pedido" Role="Pedidos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Status">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Pedidos">
-              <PropertyRef Name="StatusId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="Id" />
@@ -390,6 +326,16 @@
           <Property Type="String" Name="Endereco" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NotasFiscais" Relationship="Softex.Residencia.EServeur.Model.FK_NotaFiscal_Clientes" FromRole="Clientes" ToRole="NotasFiscais" />
         </EntityType>
+        <EntityType Name="Ingrediente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Preco" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="Disponivel" Nullable="false" />
+          <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.IngredienteProduto" FromRole="Ingredientes" ToRole="Produtos" />
+        </EntityType>
         <EntityType Name="NotaFiscal">
           <Key>
             <PropertyRef Name="Id" />
@@ -399,8 +345,23 @@
           <Property Type="Int32" Name="ClienteId" />
           <Property Type="DateTime" Name="Data" Nullable="false" />
           <Property Type="Decimal" Name="Valor" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Boolean" Name="Cancelado" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Softex.Residencia.EServeur.Model.FK_NotaFiscal_Clientes" FromRole="NotasFiscais" ToRole="Clientes" />
           <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.NotasFiscaisProdutos" FromRole="NotasFiscais" ToRole="Produtos" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="HorarioEntrada" Nullable="false" />
+          <Property Type="DateTime" Name="HorarioSaida" />
+          <Property Type="Int32" Name="StatusId" Nullable="false" />
+          <Property Type="Int32" Name="MesaId" Nullable="false" />
+          <Property Type="Int32" Name="ProdutoId" Nullable="false" />
+          <Property Type="Int32" Name="QtdProduto" Nullable="false" />
+          <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.FK_Pedidos_Produtos" FromRole="Pedidos" ToRole="Produtos" />
+          <NavigationProperty Name="Status" Relationship="Softex.Residencia.EServeur.Model.FK_Pedidos_Status" FromRole="Pedidos" ToRole="Status" />
         </EntityType>
         <EntityType Name="Produto">
           <Key>
@@ -408,22 +369,30 @@
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Nome" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Descricao" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descricao" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Decimal" Name="Preco" Nullable="false" Precision="18" Scale="0" />
-          <Property Type="Binary" Name="Imagem" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="Binary" Name="Imagem" MaxLength="Max" FixedLength="false" />
           <Property Type="Int32" Name="CategoriaId" Nullable="false" />
-          <NavigationProperty Name="Categoria" Relationship="Softex.Residencia.EServeur.Model.FK_ProdutoCategoria" FromRole="Produtos" ToRole="Categoria" />
-          <NavigationProperty Name="Ingredientes" Relationship="Softex.Residencia.EServeur.Model.IngredienteProduto" FromRole="Produtos" ToRole="Ingrediente" />
+          <NavigationProperty Name="Categoria" Relationship="Softex.Residencia.EServeur.Model.FK_Produtos_Categorias" FromRole="Produtos" ToRole="Categorias" />
+          <NavigationProperty Name="Pedidos" Relationship="Softex.Residencia.EServeur.Model.FK_Pedidos_Produtos" FromRole="Produtos" ToRole="Pedidos" />
+          <NavigationProperty Name="Ingredientes" Relationship="Softex.Residencia.EServeur.Model.IngredienteProduto" FromRole="Produtos" ToRole="Ingredientes" />
           <NavigationProperty Name="NotasFiscais" Relationship="Softex.Residencia.EServeur.Model.NotasFiscaisProdutos" FromRole="Produtos" ToRole="NotasFiscais" />
-          <NavigationProperty Name="Pedidos" Relationship="Softex.Residencia.EServeur.Model.PedidosProdutos" FromRole="Produtos" ToRole="Pedido" />
           <NavigationProperty Name="Produtos" Relationship="Softex.Residencia.EServeur.Model.ProdutosCombo" FromRole="Produtos" ToRole="Produtos1" />
           <NavigationProperty Name="Combos" Relationship="Softex.Residencia.EServeur.Model.ProdutosCombo" FromRole="Produtos1" ToRole="Produtos" />
         </EntityType>
-        <Association Name="FK_ProdutoCategoria">
-          <End Type="Softex.Residencia.EServeur.Model.Categoria" Role="Categoria" Multiplicity="1" />
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Descricao" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Pedidos" Relationship="Softex.Residencia.EServeur.Model.FK_Pedidos_Status" FromRole="Status" ToRole="Pedidos" />
+        </EntityType>
+        <Association Name="FK_Produtos_Categorias">
+          <End Type="Softex.Residencia.EServeur.Model.Categoria" Role="Categorias" Multiplicity="1" />
           <End Type="Softex.Residencia.EServeur.Model.Produto" Role="Produtos" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Categoria">
+            <Principal Role="Categorias">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Produtos">
@@ -443,16 +412,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Pedidos_Produtos">
+          <End Type="Softex.Residencia.EServeur.Model.Produto" Role="Produtos" Multiplicity="1" />
+          <End Type="Softex.Residencia.EServeur.Model.Pedido" Role="Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produtos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="ProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_Status">
+          <End Type="Softex.Residencia.EServeur.Model.Status" Role="Status" Multiplicity="1" />
+          <End Type="Softex.Residencia.EServeur.Model.Pedido" Role="Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="IngredienteProduto">
-          <End Type="Softex.Residencia.EServeur.Model.Ingrediente" Role="Ingrediente" Multiplicity="*" />
+          <End Type="Softex.Residencia.EServeur.Model.Ingrediente" Role="Ingredientes" Multiplicity="*" />
           <End Type="Softex.Residencia.EServeur.Model.Produto" Role="Produtos" Multiplicity="*" />
         </Association>
         <Association Name="NotasFiscaisProdutos">
           <End Type="Softex.Residencia.EServeur.Model.NotaFiscal" Role="NotasFiscais" Multiplicity="*" />
-          <End Type="Softex.Residencia.EServeur.Model.Produto" Role="Produtos" Multiplicity="*" />
-        </Association>
-        <Association Name="PedidosProdutos">
-          <End Type="Softex.Residencia.EServeur.Model.Pedido" Role="Pedido" Multiplicity="*" />
           <End Type="Softex.Residencia.EServeur.Model.Produto" Role="Produtos" Multiplicity="*" />
         </Association>
         <Association Name="ProdutosCombo">
@@ -465,109 +454,104 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SoftexResidenciaEServeurModelStoreContainer" CdmEntityContainer="EServeurEntities">
-    <EntitySetMapping Name="Categorias">
-      <EntityTypeMapping TypeName="IsTypeOf(Softex.Residencia.EServeur.Model.Categoria)">
-        <MappingFragment StoreEntitySet="Categorias">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nome" ColumnName="Nome" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Ingredientes">
-      <EntityTypeMapping TypeName="IsTypeOf(Softex.Residencia.EServeur.Model.Ingrediente)">
-        <MappingFragment StoreEntitySet="Ingredientes">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nome" ColumnName="Nome" />
-          <ScalarProperty Name="Preco" ColumnName="Preco" />
-          <ScalarProperty Name="Disponivel" ColumnName="Disponivel" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Pedidos">
-      <EntityTypeMapping TypeName="IsTypeOf(Softex.Residencia.EServeur.Model.Pedido)">
-        <MappingFragment StoreEntitySet="Pedidos">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="HorarioEntrada" ColumnName="HorarioEntrada" />
-          <ScalarProperty Name="HorarioSaida" ColumnName="HorarioSaida" />
-          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
-          <ScalarProperty Name="MesaId" ColumnName="MesaId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Status">
-      <EntityTypeMapping TypeName="IsTypeOf(Softex.Residencia.EServeur.Model.Status)">
-        <MappingFragment StoreEntitySet="Status">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Clientes">
-      <EntityTypeMapping TypeName="IsTypeOf(Softex.Residencia.EServeur.Model.Cliente)">
-        <MappingFragment StoreEntitySet="Clientes">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nome" ColumnName="Nome" />
-          <ScalarProperty Name="CpfCnpj" ColumnName="CpfCnpj" />
-          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="NotasFiscais">
-      <EntityTypeMapping TypeName="IsTypeOf(Softex.Residencia.EServeur.Model.NotaFiscal)">
-        <MappingFragment StoreEntitySet="NotasFiscais">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Numero" ColumnName="Numero" />
-          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
-          <ScalarProperty Name="Data" ColumnName="Data" />
-          <ScalarProperty Name="Valor" ColumnName="Valor" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Produtos">
-      <EntityTypeMapping TypeName="IsTypeOf(Softex.Residencia.EServeur.Model.Produto)">
-        <MappingFragment StoreEntitySet="Produtos">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nome" ColumnName="Nome" />
-          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
-          <ScalarProperty Name="Preco" ColumnName="Preco" />
-          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
-          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="IngredienteProduto" TypeName="Softex.Residencia.EServeur.Model.IngredienteProduto" StoreEntitySet="IngredienteProduto">
-      <EndProperty Name="Ingrediente">
-        <ScalarProperty Name="Id" ColumnName="Ingredientes_Id" />
-      </EndProperty>
-      <EndProperty Name="Produtos">
-        <ScalarProperty Name="Id" ColumnName="Produtos_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="NotasFiscaisProdutos" TypeName="Softex.Residencia.EServeur.Model.NotasFiscaisProdutos" StoreEntitySet="NotasFiscaisProdutos">
-      <EndProperty Name="NotasFiscais">
-        <ScalarProperty Name="Id" ColumnName="NotasFiscais_Id" />
-      </EndProperty>
-      <EndProperty Name="Produtos">
-        <ScalarProperty Name="Id" ColumnName="Produtos_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="PedidosProdutos" TypeName="Softex.Residencia.EServeur.Model.PedidosProdutos" StoreEntitySet="PedidosProdutos">
-      <EndProperty Name="Pedido">
-        <ScalarProperty Name="Id" ColumnName="Pedidos_Id" />
-      </EndProperty>
-      <EndProperty Name="Produtos">
-        <ScalarProperty Name="Id" ColumnName="Produtos_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProdutosCombo" TypeName="Softex.Residencia.EServeur.Model.ProdutosCombo" StoreEntitySet="ProdutosCombo">
-      <EndProperty Name="Produtos">
-        <ScalarProperty Name="Id" ColumnName="Combos_Id" />
-      </EndProperty>
-      <EndProperty Name="Produtos1">
-        <ScalarProperty Name="Id" ColumnName="Produtos_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-  </EntityContainerMapping>
+          <EntitySetMapping Name="Categorias">
+            <EntityTypeMapping TypeName="Softex.Residencia.EServeur.Model.Categoria">
+              <MappingFragment StoreEntitySet="Categorias">
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="Softex.Residencia.EServeur.Model.Cliente">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="CpfCnpj" ColumnName="CPF_CNPJ" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingredientes">
+            <EntityTypeMapping TypeName="Softex.Residencia.EServeur.Model.Ingrediente">
+              <MappingFragment StoreEntitySet="Ingredientes">
+                <ScalarProperty Name="Disponivel" ColumnName="Disponivel" />
+                <ScalarProperty Name="Preco" ColumnName="Preco" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotasFiscais">
+            <EntityTypeMapping TypeName="Softex.Residencia.EServeur.Model.NotaFiscal">
+              <MappingFragment StoreEntitySet="NotasFiscais">
+                <ScalarProperty Name="Cancelado" ColumnName="Cancelado" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pedidos">
+            <EntityTypeMapping TypeName="Softex.Residencia.EServeur.Model.Pedido">
+              <MappingFragment StoreEntitySet="Pedidos">
+                <ScalarProperty Name="QtdProduto" ColumnName="QtdProduto" />
+                <ScalarProperty Name="ProdutoId" ColumnName="ProdutoId" />
+                <ScalarProperty Name="MesaId" ColumnName="MesaId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="HorarioSaida" ColumnName="HorarioSaida" />
+                <ScalarProperty Name="HorarioEntrada" ColumnName="HorarioEntrada" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produtos">
+            <EntityTypeMapping TypeName="Softex.Residencia.EServeur.Model.Produto">
+              <MappingFragment StoreEntitySet="Produtos">
+                <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+                <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+                <ScalarProperty Name="Preco" ColumnName="Preco" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="Softex.Residencia.EServeur.Model.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="IngredienteProduto" TypeName="Softex.Residencia.EServeur.Model.IngredienteProduto" StoreEntitySet="IngredienteProduto">
+            <EndProperty Name="Produtos">
+              <ScalarProperty Name="Id" ColumnName="ProdutosId" />
+            </EndProperty>
+            <EndProperty Name="Ingredientes">
+              <ScalarProperty Name="Id" ColumnName="IngredientesId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="NotasFiscaisProdutos" TypeName="Softex.Residencia.EServeur.Model.NotasFiscaisProdutos" StoreEntitySet="NotasFiscaisProdutos">
+            <EndProperty Name="Produtos">
+              <ScalarProperty Name="Id" ColumnName="ProdutoId" />
+            </EndProperty>
+            <EndProperty Name="NotasFiscais">
+              <ScalarProperty Name="Id" ColumnName="NotaFiscalId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProdutosCombo" TypeName="Softex.Residencia.EServeur.Model.ProdutosCombo" StoreEntitySet="ProdutosCombo">
+            <EndProperty Name="Produtos1">
+              <ScalarProperty Name="Id" ColumnName="ProdutoId" />
+            </EndProperty>
+            <EndProperty Name="Produtos">
+              <ScalarProperty Name="Id" ColumnName="ItemProdutoId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
@@ -588,44 +572,44 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="EServeurModel">
-        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Categoria" Width="1.5" PointX="6.5" PointY="0.5" Height="1.5956835937499996" />
-        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Ingrediente" Width="1.5" PointX="6.5" PointY="2.25" Height="1.9802864583333317" />
-        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Pedido" Width="1.5" PointX="2.5" PointY="0.5" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Status" Width="1.5" PointX="0.5" PointY="0.5" Height="1.5956835937500031" />
-        <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_StatusPedido" >
-          <ConnectorPoint PointX="2" PointY="1.2978417968750016" />
-          <ConnectorPoint PointX="2.5" PointY="1.2978417968750016" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Cliente" Width="1.5" PointX="0.5" PointY="3.375" Height="1.9802864583333388" />
-        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.NotaFiscal" Width="1.5" PointX="2.5" PointY="3.375" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Produto" Width="1.5" PointX="4.5" PointY="0.5" Height="3.3263964843750067" />
-        <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_ProdutoCategoria" >
-          <ConnectorPoint PointX="6.5" PointY="1.297841796875" />
-          <ConnectorPoint PointX="6" PointY="1.297841796875" />
+        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Categoria" Width="1.5" PointX="2.625" PointY="3.25" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Cliente" Width="1.5" PointX="0.5" PointY="0.5" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Ingrediente" Width="1.5" PointX="4.75" PointY="4.25" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.NotaFiscal" Width="1.5" PointX="2.625" PointY="0.5" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Pedido" Width="1.5" PointX="6.875" PointY="0.5" Height="2.7494921875000102" />
+        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Produto" Width="1.5" PointX="4.75" PointY="0.5" Height="3.3263964843750102" />
+        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Status" Width="1.5" PointX="9" PointY="0.5" Height="1.595683593749996" />
+        <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_Produtos_Categorias" >
+          <ConnectorPoint PointX="4.125" PointY="3.5381982421875051" />
+          <ConnectorPoint PointX="4.75" PointY="3.5381982421875051" />
         </AssociationConnector>
         <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_NotaFiscal_Clientes" >
-          <ConnectorPoint PointX="2" PointY="4.3651432291666694" />
-          <ConnectorPoint PointX="2.5" PointY="4.3651432291666694" />
+          <ConnectorPoint PointX="2" PointY="1.4901432291666623" />
+          <ConnectorPoint PointX="2.625" PointY="1.4901432291666623" />
+        </AssociationConnector>
+        <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_Pedidos_Produtos" >
+          <ConnectorPoint PointX="6.25" PointY="1.8747460937500051" />
+          <ConnectorPoint PointX="6.875" PointY="1.8747460937500051" />
+        </AssociationConnector>
+        <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_Pedidos_Status" >
+          <ConnectorPoint PointX="9" PointY="1.297841796874998" />
+          <ConnectorPoint PointX="8.375" PointY="1.297841796874998" />
         </AssociationConnector>
         <AssociationConnector Association="Softex.Residencia.EServeur.Model.IngredienteProduto" >
-          <ConnectorPoint PointX="6.5" PointY="3.0381982421875033" />
-          <ConnectorPoint PointX="6" PointY="3.0381982421875033" />
+          <ConnectorPoint PointX="5.5" PointY="4.25" />
+          <ConnectorPoint PointX="5.5" PointY="3.8263964843750102" />
         </AssociationConnector>
         <AssociationConnector Association="Softex.Residencia.EServeur.Model.NotasFiscaisProdutos" >
-          <ConnectorPoint PointX="4" PointY="3.6006982421875033" />
-          <ConnectorPoint PointX="4.5" PointY="3.6006982421875033" />
-        </AssociationConnector>
-        <AssociationConnector Association="Softex.Residencia.EServeur.Model.PedidosProdutos" >
-          <ConnectorPoint PointX="4" PointY="1.6824446614583331" />
-          <ConnectorPoint PointX="4.5" PointY="1.6824446614583331" />
+          <ConnectorPoint PointX="4.125" PointY="1.7785953776041694" />
+          <ConnectorPoint PointX="4.75" PointY="1.7785953776041694" />
         </AssociationConnector>
         <AssociationConnector Association="Softex.Residencia.EServeur.Model.ProdutosCombo" >
-          <ConnectorPoint PointX="5.0319230769230767" PointY="3.8263964843750067" />
-          <ConnectorPoint PointX="5.0319230769230767" PointY="4.0763964843750067" />
-          <ConnectorPoint PointX="5.4784615384615378" PointY="4.0763964843750067" />
-          <ConnectorPoint PointX="5.4784615384615378" PointY="3.8263964843750067" />
+          <ConnectorPoint PointX="5.2819230769230767" PointY="0.5" />
+          <ConnectorPoint PointX="5.2819230769230767" PointY="0.25" />
+          <ConnectorPoint PointX="5.7284615384615378" PointY="0.25" />
+          <ConnectorPoint PointX="5.7284615384615378" PointY="0.5" />
         </AssociationConnector>
-        </Diagram>
+      </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>

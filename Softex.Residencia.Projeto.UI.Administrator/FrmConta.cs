@@ -29,12 +29,9 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         private void adicionarProdutosNaLista(List<Pedido> pedidosNaoPagos)
         {
             foreach (var pedido in pedidosNaoPagos)
-	        {
-                foreach (var produto in pedido.Produtos)
-                {
-                    this.lsbListaDeProdutos.Items.Add(produto.Nome);
-                }
-	        }
+            {
+                this.lsbListaDeProdutos.Items.Add(pedido.Produto.Nome);
+            }
         }
 
         private void btnConsultarMesa_Click(object sender, EventArgs e)
@@ -42,7 +39,5 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             List<Pedido> listaDePedidosNaoPagos = pedidoBusiness.RecuperarPedidosPendentes(Convert.ToInt32(this.txtNumeroMesa.Text)).ToList();
             adicionarProdutosNaLista(listaDePedidosNaoPagos);
         }
-
-
     }
 }

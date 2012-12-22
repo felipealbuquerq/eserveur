@@ -38,7 +38,7 @@ namespace Softex.Residencia.EServeur.Business
             return this.repository.FindBy(pedidoId);
         }
 
-		// Metodo para recuperator todos os pedidos
+        // Metodo para recuperator todos os pedidos
         public IEnumerable<Pedido> RecuperarPedidos()
         {
             return this.repository.FindAll();
@@ -57,7 +57,7 @@ namespace Softex.Residencia.EServeur.Business
         public IEnumerable<Pedido> RecuperarPedidosEmEspera()
         {
             return this.RecuperarPedidos(p =>
-                                            //Verifica se o horario de saida é nulo, o que significa que o pedido ainda não foi atendido
+                //Verifica se o horario de saida é nulo, o que significa que o pedido ainda não foi atendido
                                             p.HorarioSaida == null);
         }
 
@@ -72,21 +72,29 @@ namespace Softex.Residencia.EServeur.Business
             return this.RecuperarPedidos(p => p.MesaId == numeroDaMesa && p.Status.Id == (int)StatusPedido.NaoPago);
         }
 
+        public decimal RecuperarValorPedidosPendentes(int numeroDaMesa)
+        {
+            IEnumerable<Pedido> pedidos = this.RecuperarPedidosPendentes(numeroDaMesa);
+            decimal valorPedidos = 0;
+            foreach (Pedido ped_temp in pedidos)
+            {
+                valorPedidos += ped_temp.ValorPedido;
+            }
+            return valorPedidos;
+        }
+
         public decimal RecuperarValorPedidosEmEspera()
         {
             IEnumerable<Pedido> pedidos = this.RecuperarPedidosEmEspera();
             decimal valorPedidos = 0;
             foreach (Pedido ped_temp in pedidos)
             {
-                foreach (Produto prod_temp in ped_temp.Produtos)
-                {
-                    valorPedidos += prod_temp.Preco;
-                }
+                valorPedidos += ped_temp.ValorPedido;
             }
             return valorPedidos;
         }
 
-        
+
         public void RemoverPedido(int pedidoId)
         {
             if (pedidoId <= 0)

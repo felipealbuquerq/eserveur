@@ -12,6 +12,7 @@ namespace Softex.Residencia.EServeur.Model
         private int clienteId;
         private DateTime data;
         private decimal valor;
+        private bool cancelado;
         private Cliente cliente;
         private IList<Produto> produtos;
 
@@ -43,6 +44,12 @@ namespace Softex.Residencia.EServeur.Model
         {
             get { return valor; }
             set { valor = value; }
+        }
+
+        public bool Cancelado
+        {
+            get { return cancelado; }
+            set { cancelado = value; }
         }
 
         public Cliente Cliente
