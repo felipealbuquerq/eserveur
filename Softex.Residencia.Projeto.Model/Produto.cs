@@ -57,7 +57,7 @@ namespace Softex.Residencia.EServeur.Model
             set { this.imagem = value; }
         }
 
-        public IList<Ingrediente> Ingredientes
+        public virtual IList<Ingrediente> Ingredientes
         {
             get { return ingredientes; }
             set { ingredientes = value; }
@@ -75,7 +75,7 @@ namespace Softex.Residencia.EServeur.Model
             set { descricao = value; }
         }
 
-        public IList<Produto> Produtos
+        public virtual IList<Produto> Produtos
         {
             get { return produtos; }
             set { produtos = value; }
@@ -87,19 +87,19 @@ namespace Softex.Residencia.EServeur.Model
             set { categoriaId = value; }
         }
 
-        public IList<Produto> Combos
+        public virtual IList<Produto> Combos
         {
             get { return combos; }
             set { combos = value; }
         }
 
-        public IList<Pedido> Pedidos
+        public virtual IList<Pedido> Pedidos
         {
             get { return pedidos; }
             set { pedidos = value; }
         }
 
-        public IList<NotaFiscal> NotasFiscais
+        public virtual IList<NotaFiscal> NotasFiscais
         {
             get { return notasFiscais; }
             set { notasFiscais = value; }

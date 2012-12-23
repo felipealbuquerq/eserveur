@@ -34,7 +34,7 @@ namespace Softex.Residencia.EServeur.Model
             set { this.disponivel = value; }
         }
 
-        public IList<Produto> Produtos
+        public virtual IList<Produto> Produtos
         {
             get { return this.produtos; }
             set { this.produtos = value; }

@@ -29,7 +29,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
             foreach (var pedido in pedidosNaoPagos)
             {
-                this.lsbListaDeProdutos.Items.Add(pedido.Produto.Nome);
+                foreach (var produto in pedido.Produtos)
+                {
+                    this.lsbListaDeProdutos.Items.Add(produto.Nome);
+                }                
             }
         }
 

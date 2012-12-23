@@ -51,9 +51,13 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.cboCategoria.DisplayMember = "Nome";
                 this.cboCategoria.ValueMember = "Id";
                 this.cboCategoria.DataSource = this.categoriaBusiness.RecuperarCategorias();
+                               
+                this.chkListaDeIngredientesNovoProduto.Items.Clear();
 
-                this.chkListaDeIngredientesNovoProduto.DataSource = null;
-                this.chkListaDeIngredientesNovoProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
+                foreach (string nomeIngrediente in this.ingredienteBusiness.RecuperarNomesIngredientes())
+                {
+                    this.chkListaDeIngredientesNovoProduto.Items.Add(nomeIngrediente);
+                }
             }
             catch (Exception)
             {
@@ -73,14 +77,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
             
             this.picImagemNovoProduto.Image = null;
-
         }
-		
-		private void limparCamposFormularioNovoProduto()
-		{
-			this.txtNomeNovoProduto.Text = "";
-			this.txtDescricaoNovoProduto.Text = "";
-		}
 
         private void ValidarCamposFormulario()
         {
@@ -90,7 +87,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
 
             decimal d;
-            
+
             if (!decimal.TryParse(this.txtPrecoNovoProduto.Text, out d))
             {
                 throw new GenericWarningException("Informe o preço do produto corretamente!");
@@ -147,12 +144,12 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.ValidarCamposFormulario();
 
                 Produto produto = new Produto()
-                                      {
-                                          Nome = this.txtNomeNovoProduto.Text,
-                                          Descricao = this.txtDescricaoNovoProduto.Text,
-                                          Preco = Convert.ToDecimal(this.txtPrecoNovoProduto.Text),
-                                          CategoriaId = (int) cboCategoria.SelectedValue
-                                      };
+                {
+                    Nome = this.txtNomeNovoProduto.Text,
+                    Descricao = this.txtDescricaoNovoProduto.Text,
+                    Preco = Convert.ToDecimal(this.txtPrecoNovoProduto.Text),
+                    CategoriaId = (int) cboCategoria.SelectedValue
+                };
 
                 using (MemoryStream ms = new MemoryStream())
                 {
@@ -162,14 +159,20 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                     produto.Imagem = ms.ToArray();
                 }
 
-                this.produtoBusiness.CadastrarProduto(produto);
+                foreach (string item in this.chkListaDeIngredientesNovoProduto.SelectedItems)
+                {
+                    Ingrediente ingrediente = this.ingredienteBusiness.RecuperarIngredientes(i => i.Nome == item).FirstOrDefault();
 
-                this.PreencherCamposFormulario();
-				this.limparCamposFormularioNovoProduto();
+                    if (ingrediente != null)
+                    {
+                        produto.Ingredientes.Add(ingrediente);
+                    }                    
+                }
+
+                this.produtoBusiness.CadastrarProduto(produto);                
 
                 MessageBox.Show(Mensagens.CadastroProdutoSucesso, Mensagens.Mensagem, MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
-
 
                 this.LimparCamposFormulario();
                 this.PreencherCamposFormulario();

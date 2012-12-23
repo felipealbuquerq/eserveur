@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Softex.Residencia.Projeto.UI.Client;
+using Softex.Residencia.EServeur.Business;
+using Softex.Residencia.EServeur.Model;
 
 namespace Softex.Residencia.Projeto.UI.Administrator
 {

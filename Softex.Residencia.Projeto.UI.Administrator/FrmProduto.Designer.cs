@@ -39,17 +39,17 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chkListaDeIngredientesNovoProduto = new System.Windows.Forms.CheckedListBox();
             this.btnAdicionarImagemNovoProduto = new System.Windows.Forms.Button();
             this.picImagemNovoProduto = new System.Windows.Forms.PictureBox();
             this.btnSalvarNovoProduto = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDescricaoNovoProduto = new System.Windows.Forms.RichTextBox();
-            this.txtPrecoNovoProduto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNomeNovoProduto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.chkListaDeIngredientesNovoProduto = new System.Windows.Forms.ListBox();
+            this.txtPrecoNovoProduto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProdutoSelecionado)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -129,9 +129,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.chkListaDeIngredientesNovoProduto);
             this.groupBox3.Controls.Add(this.cboCategoria);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.chkListaDeIngredientesNovoProduto);
             this.groupBox3.Controls.Add(this.btnCancelarRegistroNovoProduto);
             this.groupBox3.Controls.Add(this.btnAdicionarImagemNovoProduto);
             this.groupBox3.Controls.Add(this.picImagemNovoProduto);
@@ -169,15 +169,6 @@
             this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 20;
             this.label1.Text = "Categoria:";
-            // 
-            // chkListaDeIngredientesNovoProduto
-            // 
-            this.chkListaDeIngredientesNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkListaDeIngredientesNovoProduto.FormattingEnabled = true;
-            this.chkListaDeIngredientesNovoProduto.Location = new System.Drawing.Point(94, 95);
-            this.chkListaDeIngredientesNovoProduto.Name = "chkListaDeIngredientesNovoProduto";
-            this.chkListaDeIngredientesNovoProduto.Size = new System.Drawing.Size(342, 132);
-            this.chkListaDeIngredientesNovoProduto.TabIndex = 12;
             // 
             // btnAdicionarImagemNovoProduto
             // 
@@ -230,14 +221,6 @@
             this.txtDescricaoNovoProduto.TabIndex = 6;
             this.txtDescricaoNovoProduto.Text = "";
             // 
-            // txtPrecoNovoProduto
-            // 
-            this.txtPrecoNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoNovoProduto.Location = new System.Drawing.Point(94, 243);
-            this.txtPrecoNovoProduto.Name = "txtPrecoNovoProduto";
-            this.txtPrecoNovoProduto.Size = new System.Drawing.Size(87, 21);
-            this.txtPrecoNovoProduto.TabIndex = 5;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -276,6 +259,25 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Ingredientes:";
             // 
+            // chkListaDeIngredientesNovoProduto
+            // 
+            this.chkListaDeIngredientesNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkListaDeIngredientesNovoProduto.FormattingEnabled = true;
+            this.chkListaDeIngredientesNovoProduto.ItemHeight = 15;
+            this.chkListaDeIngredientesNovoProduto.Location = new System.Drawing.Point(94, 95);
+            this.chkListaDeIngredientesNovoProduto.Name = "chkListaDeIngredientesNovoProduto";
+            this.chkListaDeIngredientesNovoProduto.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.chkListaDeIngredientesNovoProduto.Size = new System.Drawing.Size(342, 124);
+            this.chkListaDeIngredientesNovoProduto.TabIndex = 22;
+            // 
+            // txtPrecoNovoProduto
+            // 
+            this.txtPrecoNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoNovoProduto.Location = new System.Drawing.Point(94, 243);
+            this.txtPrecoNovoProduto.Name = "txtPrecoNovoProduto";
+            this.txtPrecoNovoProduto.Size = new System.Drawing.Size(87, 21);
+            this.txtPrecoNovoProduto.TabIndex = 5;
+            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,18 +308,18 @@
         private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.Button btnCancelarRegistroNovoProduto;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckedListBox chkListaDeIngredientesNovoProduto;
         private System.Windows.Forms.Button btnAdicionarImagemNovoProduto;
         private System.Windows.Forms.PictureBox picImagemNovoProduto;
         private System.Windows.Forms.Button btnSalvarNovoProduto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox txtDescricaoNovoProduto;
-        private System.Windows.Forms.TextBox txtPrecoNovoProduto;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNomeNovoProduto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox chkListaDeIngredientesNovoProduto;
+        private System.Windows.Forms.TextBox txtPrecoNovoProduto;
     }
 }
