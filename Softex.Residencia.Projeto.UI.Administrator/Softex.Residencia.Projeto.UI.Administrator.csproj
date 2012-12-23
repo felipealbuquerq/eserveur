@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAboutBox.Designer.cs">
+      <DependentUpon>FrmAboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAjudaSobre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,18 @@
     <Compile Include="FrmRelatorios.Designer.cs">
       <DependentUpon>FrmRelatorios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTestProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTestProduto.Designer.cs">
+      <DependentUpon>FrmTestProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTestProduto2cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTestProduto2cs.Designer.cs">
+      <DependentUpon>FrmTestProduto2cs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensagens.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,6 +189,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAboutBox.resx">
+      <DependentUpon>FrmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAjudaSobre.resx">
       <DependentUpon>FrmAjudaSobre.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +239,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRelatorios.resx">
       <DependentUpon>FrmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTestProduto.resx">
+      <DependentUpon>FrmTestProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTestProduto2cs.resx">
+      <DependentUpon>FrmTestProduto2cs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensagens.resx">
       <Generator>ResXFileCodeGenerator</Generator>

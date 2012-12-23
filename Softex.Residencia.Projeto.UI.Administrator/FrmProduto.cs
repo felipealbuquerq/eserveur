@@ -61,6 +61,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
         }
 
+        //
         private void LimparCamposFormulario()
         {
             this.txtNomeNovoProduto.Text = "";
@@ -73,15 +74,16 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
             
             this.picImagemNovoProduto.Image = null;
-
         }
 		
+        //
 		private void limparCamposFormularioNovoProduto()
 		{
 			this.txtNomeNovoProduto.Text = "";
 			this.txtDescricaoNovoProduto.Text = "";
 		}
 
+        //
         private void ValidarCamposFormulario()
         {
             if (string.IsNullOrWhiteSpace(this.txtNomeNovoProduto.Text))
@@ -112,6 +114,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
         }
 
+        //
         private void cboListaDeProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -129,9 +132,9 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             {
                 MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
+        //
         private void btnAdicionarImagemNovoProduto_Click(object sender, EventArgs e)
         {
             if (this.openFileDialog.ShowDialog() == DialogResult.OK)
@@ -140,6 +143,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
         }
 
+        //
         private void btnSalvarProduto_Click(object sender, EventArgs e)
         {
             try
@@ -186,11 +190,13 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
         }
 
+        //
         private void btnCancelarRegistroNovoProduto_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //
         private void btnRemoverProduto_Click(object sender, EventArgs e)
         {
             try

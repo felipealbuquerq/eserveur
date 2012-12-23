@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softex.Residencia.Projeto.UI.Client", "Softex.Residencia.Projeto.UI.Client\Softex.Residencia.Projeto.UI.Client.csproj", "{FB2D1BBD-BBFD-4BE0-8EC2-3844086D26A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softex.Residencia.Projeto.UI.Administrator", "Softex.Residencia.Projeto.UI.Administrator\Softex.Residencia.Projeto.UI.Administrator.csproj", "{02FB2D46-508A-4B22-92BC-C7BB928B3586}"
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softex.Residencia.EServeur.Model", "Softex.Residencia.Projeto.Model\Softex.Residencia.EServeur.Model.csproj", "{BC0C12D8-C0F1-47DD-88B8-BD2332AACDDA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softex.Residencia.EServeur.Business", "Softex.Residencia.EServeur.Business\Softex.Residencia.EServeur.Business.csproj", "{F033B2B7-C983-4570-B109-D5CAE94448A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softex.Residencia.Projeto.UI.Kitchen", "Softex.Residencia.Projeto.UI.Kitchen\Softex.Residencia.Projeto.UI.Kitchen.csproj", "{87FCE936-0F07-43ED-BC73-0E1148611319}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,16 @@ Global
 		{F033B2B7-C983-4570-B109-D5CAE94448A9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F033B2B7-C983-4570-B109-D5CAE94448A9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F033B2B7-C983-4570-B109-D5CAE94448A9}.Release|x86.ActiveCfg = Release|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{87FCE936-0F07-43ED-BC73-0E1148611319}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

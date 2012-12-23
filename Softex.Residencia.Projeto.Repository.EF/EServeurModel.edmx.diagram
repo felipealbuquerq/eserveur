@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2515348da60e42a19ec874e94d99ca5c" Name="Diagram1">
+      <Diagram DiagramId="2515348da60e42a19ec874e94d99ca5c" Name="Diagram1" ZoomLevel="109">
         <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Categoria" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Ingrediente" Width="1.5" PointX="0.5" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Produto" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Produto" Width="1.5" PointX="2.875" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_Categorias_Produtos" ManuallyRouted="false" />
         <AssociationConnector Association="Softex.Residencia.EServeur.Model.ProdutosIngredientes" ManuallyRouted="false" />
         <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Mesa" Width="1.5" PointX="6.5" PointY="1.75" IsExpanded="true" />
