@@ -97,5 +97,15 @@ namespace Softex.Residencia.EServeur.Business
             this.repository.Remove(produto);
             this.repository.Save();
         }
+
+        public IEnumerable<Produto> RecuperarCombos()
+        {
+            return this.repository.FindBy(produto => produto.IsCombo);
+        }
+
+        public IList<string> RecuperarNomesCombos()
+        {
+            return this.RecuperarCombos().Select(i => i.Nome).ToList();
+        }
     }
 }

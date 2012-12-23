@@ -9,16 +9,14 @@ namespace Softex.Residencia.EServeur.Model
         private int id;
         private DateTime horarioEntradaPedido;
         private DateTime horarioSaidaPedido;
-        private int qtdProduto;
         private int statusId;
         private int mesaId;
-        private int produtoId;
-        private Produto produto;
+        private IList<Produto> produtos;
         private Status status;
 
         public Pedido()
         {
-
+            this.Produtos = new List<Produto>();
         }
 
         public int Id
@@ -41,26 +39,17 @@ namespace Softex.Residencia.EServeur.Model
 
         public decimal ValorPedido
         {
-            get { return this.produto.Preco * this.qtdProduto; }
+            get { return this.produtos.Sum(p => p.Preco); }
         }
 
-        public int ProdutoId
+
+
+        public IList<Produto> Produtos
         {
-            get { return produtoId; }
-            set { produtoId = value; }
+            get { return this.produtos; }
+            set { this.produtos = value; }
         }
 
-        public Produto Produto
-        {
-            get { return this.produto; }
-            set { this.produto = value; }
-        }
-
-        public int QtdProduto
-        {
-            get { return qtdProduto; }
-            set { qtdProduto = value; }
-        }
 
         public Status Status
         {

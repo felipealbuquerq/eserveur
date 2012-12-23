@@ -8,6 +8,7 @@ namespace Softex.Residencia.EServeur.Model
         private string nome;
         private string descricao;
         private decimal preco;
+        private bool isCombo;
         private byte[] imagem;
         private int categoriaId;
         private Categoria categoria;
@@ -42,6 +43,12 @@ namespace Softex.Residencia.EServeur.Model
         {
             get { return this.preco; }
             set { this.preco = value; }
+        }
+
+        public bool IsCombo
+        {
+            get { return isCombo; }
+            set { isCombo = value; }
         }
 
         public byte[] Imagem
