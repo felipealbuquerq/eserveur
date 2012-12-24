@@ -47,10 +47,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e) {
-            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmProduto);
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmBackupProduto);
 
             if (frmCliente == null) {
-                frmCliente = new FrmProduto() { MdiParent = this }; // test
+                frmCliente = new FrmBackupProduto() { MdiParent = this }; // test
             }
 
             frmCliente.Focus();
@@ -226,9 +226,9 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void produtoTesteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmTestProduto);
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmProduto);
             if (frmCliente == null) {
-                frmCliente = new FrmTestProduto() { MdiParent = this };
+                frmCliente = new FrmProduto() { MdiParent = this };
             }
             frmCliente.Focus();
         }

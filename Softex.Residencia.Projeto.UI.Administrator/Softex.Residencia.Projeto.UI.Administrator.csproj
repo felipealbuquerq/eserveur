@@ -158,11 +158,11 @@
     <Compile Include="FrmPedido.Designer.cs">
       <DependentUpon>FrmPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmProduto.cs">
+    <Compile Include="FrmBackupProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProduto.Designer.cs">
-      <DependentUpon>FrmProduto.cs</DependentUpon>
+    <Compile Include="FrmBackupProduto.Designer.cs">
+      <DependentUpon>FrmBackupProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -176,11 +176,11 @@
     <Compile Include="FrmRelatorios.Designer.cs">
       <DependentUpon>FrmRelatorios.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTestProduto.cs">
+    <Compile Include="FrmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTestProduto.Designer.cs">
-      <DependentUpon>FrmTestProduto.cs</DependentUpon>
+    <Compile Include="FrmProduto.Designer.cs">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Mensagens.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -234,8 +234,8 @@
     <EmbeddedResource Include="FrmPedido.resx">
       <DependentUpon>FrmPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProduto.resx">
-      <DependentUpon>FrmProduto.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBackupProduto.resx">
+      <DependentUpon>FrmBackupProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -243,8 +243,8 @@
     <EmbeddedResource Include="FrmRelatorios.resx">
       <DependentUpon>FrmRelatorios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTestProduto.resx">
-      <DependentUpon>FrmTestProduto.cs</DependentUpon>
+    <EmbeddedResource Include="FrmProduto.resx">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensagens.resx">
       <Generator>ResXFileCodeGenerator</Generator>
