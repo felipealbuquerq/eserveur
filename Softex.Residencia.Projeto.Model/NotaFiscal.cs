@@ -7,61 +7,18 @@ namespace Softex.Residencia.EServeur.Model
 {
     public class NotaFiscal
     {
-        private int id;
-        private int numero;
-        private int clienteId;
-        private DateTime data;
-        private decimal valor;
-        private bool cancelado;
-        private Cliente cliente;
-        private IList<Produto> produtos;
-
-        public int Id
+        public NotaFiscal()
         {
-            get { return id; }
-            set { id = value; }
+            this.Produtos = new List<Produto>();
         }
 
-        public int Numero
-        {
-            get { return numero; }
-            set { numero = value; }
-        }
-
-        public int ClienteId
-        {
-            get { return clienteId; }
-            set { clienteId = value; }
-        }
-
-        public DateTime Data
-        {
-            get { return data; }
-            set { data = value; }
-        }
-
-        public decimal Valor
-        {
-            get { return valor; }
-            set { valor = value; }
-        }
-
-        public bool Cancelado
-        {
-            get { return cancelado; }
-            set { cancelado = value; }
-        }
-
-        public Cliente Cliente
-        {
-            get { return cliente; }
-            set { cliente = value; }
-        }
-
-        public IList<Produto> Produtos
-        {
-            get { return produtos; }
-            set { produtos = value; }
-        }
+        public int Id { get; set; }
+        public int Numero { get; set; }
+        public int ClienteId { get; set; }
+        public DateTime Data { get; set; }
+        public decimal Valor { get; set; }
+        public bool Cancelado { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual IList<Produto> Produtos { get; set; }
     }
 }

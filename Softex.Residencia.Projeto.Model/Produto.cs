@@ -4,105 +4,27 @@ namespace Softex.Residencia.EServeur.Model
 {
     public class Produto
     {
-        private int id;
-        private string nome;
-        private string descricao;
-        private decimal preco;
-        private bool isCombo;
-        private byte[] imagem;
-        private int categoriaId;
-        private Categoria categoria;
-        private IList<Pedido> pedidos;
-        private IList<Ingrediente> ingredientes;
-        private IList<Produto> produtos;
-        private IList<Produto> combos;
-        private IList<NotaFiscal> notasFiscais;
-
         public Produto()
         {
             this.Ingredientes = new List<Ingrediente>();
             this.Produtos = new List<Produto>();
             this.Combos = new List<Produto>();
-            this.Pedidos = new List<Pedido>();
-            this.notasFiscais = new List<NotaFiscal>();
+            this.ItensPedidos = new List<ItemPedido>();
+            this.NotasFiscais = new List<NotaFiscal>();
         }
 
-        public int Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        public string Nome
-        {
-            get { return this.nome; }
-            set { this.nome = value; }
-        }
-
-        public decimal Preco
-        {
-            get { return this.preco; }
-            set { this.preco = value; }
-        }
-
-        public bool IsCombo
-        {
-            get { return isCombo; }
-            set { isCombo = value; }
-        }
-
-        public byte[] Imagem
-        {
-            get { return this.imagem; }
-            set { this.imagem = value; }
-        }
-
-        public virtual IList<Ingrediente> Ingredientes
-        {
-            get { return ingredientes; }
-            set { ingredientes = value; }
-        }
-
-        public Categoria Categoria
-        {
-            get { return categoria; }
-            set { categoria = value; }
-        }
-
-        public string Descricao
-        {
-            get { return descricao; }
-            set { descricao = value; }
-        }
-
-        public virtual IList<Produto> Produtos
-        {
-            get { return produtos; }
-            set { produtos = value; }
-        }
-
-        public int CategoriaId
-        {
-            get { return categoriaId; }
-            set { categoriaId = value; }
-        }
-
-        public virtual IList<Produto> Combos
-        {
-            get { return combos; }
-            set { combos = value; }
-        }
-
-        public virtual IList<Pedido> Pedidos
-        {
-            get { return pedidos; }
-            set { pedidos = value; }
-        }
-
-        public virtual IList<NotaFiscal> NotasFiscais
-        {
-            get { return notasFiscais; }
-            set { notasFiscais = value; }
-        }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public decimal Preco { get; set; }
+        public bool IsCombo { get; set; }
+        public byte[] Imagem { get; set; }
+        public int CategoriaId { get; set; }
+        public virtual Categoria Categoria { get; set; }
+        public virtual IList<Produto> Produtos { get; set; }
+        public virtual IList<Ingrediente> Ingredientes { get; set; }
+        public virtual IList<Produto> Combos { get; set; }
+        public virtual IList<ItemPedido> ItensPedidos { get; set; }
+        public virtual IList<NotaFiscal> NotasFiscais { get; set; }
     }
 }

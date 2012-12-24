@@ -7,26 +7,13 @@ namespace Softex.Residencia.EServeur.Model
 {
     public class Status
     {
-        private int id;
-        private string decricao;
-        private IList<Pedido> pedidos;
-
-        public int Id
+        public Status()
         {
-            get { return this.id; }
-            set { this.id = value; }
+            this.Pedidos = new List<Pedido>();
         }
 
-        public string Descricao
-        {
-            get { return this.decricao; }
-            set { this.decricao = value; }
-        }
-
-        public IList<Pedido> Pedidos
-        {
-            get { return this.pedidos; }
-            set { this.pedidos = value; }
-        }
+        public int Id { get; set; }
+        public string Descricao { get; set; }
+        public virtual IList<Pedido> Pedidos { get; set; }
     }
 }
