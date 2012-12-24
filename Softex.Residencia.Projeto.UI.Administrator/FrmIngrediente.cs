@@ -114,5 +114,16 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
                                 MessageBoxIcon.Error);
             }
         }
+
+        private void ingredienteSelecionado(object sender, EventArgs e)
+        {
+            Ingrediente ingredienteSelecionado = (Ingrediente)cboListaDeIngrediente.SelectedItem;
+            if (ingredienteSelecionado.Disponivel) {
+                btnModificarDisponibilidade.BackgroundImage = 
+            }
+            else {
+
+            }
+        }
     }
 }

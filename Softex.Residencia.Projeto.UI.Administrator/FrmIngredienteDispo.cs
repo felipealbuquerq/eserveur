@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Softex.Residencia.Projeto.UI.Administrator
 {
-    public partial class FrmTestProduto2cs : Form
+    public partial class FrmIngredienteDispo : Form
     {
-        public FrmTestProduto2cs()
+        public FrmIngredienteDispo()
         {
             InitializeComponent();
         }

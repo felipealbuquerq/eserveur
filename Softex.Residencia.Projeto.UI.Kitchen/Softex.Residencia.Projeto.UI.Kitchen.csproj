@@ -32,6 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -76,6 +78,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Softex.Residencia.EServeur.Business\Softex.Residencia.EServeur.Business.csproj">
+      <Project>{f033b2b7-c983-4570-b109-d5cae94448a9}</Project>
+      <Name>Softex.Residencia.EServeur.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Softex.Residencia.Projeto.Model\Softex.Residencia.EServeur.Model.csproj">
+      <Project>{bc0c12d8-c0f1-47dd-88b8-bd2332aacdda}</Project>
+      <Name>Softex.Residencia.EServeur.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
