@@ -46,15 +46,27 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
             }
         }
 
+
+
+        /// <summary>
+        /// EVENTOS
+        /// </summary>
+
         private void btnAdicionarIngrediente_Click(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(this.txtNomeNovaIngrediente.Text))
+               
+                if (string.IsNullOrWhiteSpace(this.cboListaDeIngrediente.Text))
                 {
                     throw new GenericWarningException("Informe o nome do ingrediente!");
                 }
+                else if ( this.ingredienteBusiness.RecuperarIngrediente((this.cboListaDeIngrediente.Text) ){
 
+                }
+                else{
+
+                }
                 Ingrediente novoIngrediente = new Ingrediente()
                 {
                     Nome = this.txtNomeNovaIngrediente.Text
@@ -66,6 +78,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
                                 MessageBoxIcon.Information);
 
                 this.CarregarIngredientes();
+                
             }
             catch (GenericWarningException ex)
             {
@@ -118,12 +131,38 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         private void ingredienteSelecionado(object sender, EventArgs e)
         {
             Ingrediente ingredienteSelecionado = (Ingrediente)cboListaDeIngrediente.SelectedItem;
+
             if (ingredienteSelecionado.Disponivel) {
-                continue;
+                this.btnDisponivel.Enabled = true;
+                this.btnDisponivel.Show();
+                this.btnNaoDisponivel.Hide();
+                this.lblDisponibilidade.Text = "Disponível";
             }
             else {
-                continue;
+                this.btnNaoDisponivel.Enabled = true;
+                this.btnNaoDisponivel.Show();
+                this.btnDisponivel.Hide();
+                this.lblDisponibilidade.Text = "Não disponível";
             }
         }
+
+
+        private void btnDisponivel_Click(object sender, EventArgs e)
+        {
+            this.btnNaoDisponivel.Enabled = true;
+            this.btnNaoDisponivel.Show();
+            this.btnDisponivel.Hide();
+            this.lblDisponibilidade.Text = "Não disponível";
+        }
+
+        private void btnNaoDisponivel_Click(object sender, EventArgs e)
+        {
+            this.btnDisponivel.Enabled = true;
+            this.btnDisponivel.Show();
+            this.btnNaoDisponivel.Hide();
+            this.lblDisponibilidade.Text = "Disponível";
+        }
+
+
     }
 }

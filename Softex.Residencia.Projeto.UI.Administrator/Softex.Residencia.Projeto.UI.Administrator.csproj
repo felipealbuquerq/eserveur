@@ -134,6 +134,12 @@
     <Compile Include="FrmConta.Designer.cs">
       <DependentUpon>FrmConta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmIngredienteDispo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngredienteDispo.Designer.cs">
+      <DependentUpon>FrmIngredienteDispo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNotaFiscal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,12 +182,6 @@
     <Compile Include="FrmTestProduto.Designer.cs">
       <DependentUpon>FrmTestProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTestProduto2cs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTestProduto2cs.Designer.cs">
-      <DependentUpon>FrmTestProduto2cs.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mensagens.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,6 +222,9 @@
     <EmbeddedResource Include="FrmConta.resx">
       <DependentUpon>FrmConta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngredienteDispo.resx">
+      <DependentUpon>FrmIngredienteDispo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNotaFiscal.resx">
       <DependentUpon>FrmNotaFiscal.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,9 +245,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTestProduto.resx">
       <DependentUpon>FrmTestProduto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTestProduto2cs.resx">
-      <DependentUpon>FrmTestProduto2cs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensagens.resx">
       <Generator>ResXFileCodeGenerator</Generator>
