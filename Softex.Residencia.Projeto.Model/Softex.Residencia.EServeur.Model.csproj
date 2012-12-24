@@ -66,6 +66,7 @@
     <Compile Include="IProdutoRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IStatusRepository.cs" />
+    <Compile Include="ItemPedido.cs" />
     <Compile Include="NotaFiscal.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Produto.cs" />

@@ -13,6 +13,7 @@ namespace Softex.Residencia.EServeur.Repository.EF
         private ObjectSet<Categoria> categorias;
         private ObjectSet<Ingrediente> ingredientes;
         private ObjectSet<Pedido> pedidos;
+        private ObjectSet<ItemPedido> itensPedidos;
         private ObjectSet<Status> status;
         private ObjectSet<Cliente> clientes;
         private ObjectSet<NotaFiscal> notasFiscais;
@@ -21,8 +22,9 @@ namespace Softex.Residencia.EServeur.Repository.EF
             : base("name=EServeurEntities", "EServeurEntities")
         {
             this.Ingredientes = CreateObjectSet<Ingrediente>();
+            this.ItensPedidos = CreateObjectSet<ItemPedido>();
             this.Pedidos = CreateObjectSet<Pedido>();
-            this.Produtos = CreateObjectSet<Produto>();
+            this.Produtos = CreateObjectSet<Produto>();            
             this.Categorias = CreateObjectSet<Categoria>();
             this.Status = CreateObjectSet<Status>();
             this.clientes = CreateObjectSet<Cliente>();
@@ -34,13 +36,19 @@ namespace Softex.Residencia.EServeur.Repository.EF
         public ObjectSet<Ingrediente> Ingredientes
         {
             get { return this.ingredientes; }
-            private set { this.ingredientes = value; }
+            set { this.ingredientes = value; }
         }
 
         public ObjectSet<Pedido> Pedidos
         {
             get { return this.pedidos; }
-            private set { this.pedidos = value; }
+            set { this.pedidos = value; }
+        }
+
+        public ObjectSet<ItemPedido> ItensPedidos
+        {
+            get { return itensPedidos; }
+            set { itensPedidos = value; }
         }
 
         public ObjectSet<Produto> Produtos
