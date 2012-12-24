@@ -50,14 +50,14 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(this.txtNomeNovaIngrediente.Text))
+                if (string.IsNullOrWhiteSpace(this.cboListaDeIngrediente.Text))
                 {
                     throw new GenericWarningException("Informe o nome do ingrediente!");
                 }
 
                 Ingrediente novoIngrediente = new Ingrediente()
                 {
-                    Nome = this.txtNomeNovaIngrediente.Text,
+                    Nome = this.cboListaDeIngrediente.Text,
                     Disponivel = true
                 };
 
@@ -140,6 +140,20 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
             catch (Exception)
             {
                 MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ingredienteSelecionado(object sender, EventArgs e)
+        {
+            Ingrediente ingredienteSelecionado = (Ingrediente)cboListaDeIngrediente.SelectedItem;
+            
+            if (ingredienteSelecionado.Disponivel)
+            {
+                this.ingredienteBusiness.IndisponibilizarIngrediente(ingredienteSelecionado.Id);
+            }
+            else
+            {
+                this.ingredienteBusiness.DisponibilizarIngrediente(ingredienteSelecionado.Id);
             }
         }
     }

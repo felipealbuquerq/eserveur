@@ -71,6 +71,19 @@ namespace Softex.Residencia.EServeur.Business
             this.repository.Save();
         }
 
+        public void DisponibilizarIngrediente(int ingredienteId)
+        {
+            if (ingredienteId <= 0)
+            {
+                return;
+            }
+
+            Ingrediente ingrediente = this.RecuperarIngrediente(ingredienteId);
+            ingrediente.Disponivel = true;
+
+            this.repository.Save();
+        }
+
         //método de remoção de um ingrediente
         public void RemoverIngrediente(int ingredienteId)
         {
