@@ -48,37 +48,37 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
 
 
 
-        /// <summary>
-        /// EVENTOS
-        /// </summary>
-
+        /*
+         * Adicionar novo ingrediente ao banco de dados
+         */
         private void btnAdicionarIngrediente_Click(object sender, EventArgs e)
         {
+            // Tentar adicionar o ingrediente ao banco de dados
             try
             {
-               
                 if (string.IsNullOrWhiteSpace(this.cboListaDeIngrediente.Text))
                 {
                     throw new GenericWarningException("Informe o nome do ingrediente!");
                 }
-                else if ( this.ingredienteBusiness.RecuperarIngrediente((this.cboListaDeIngrediente.Text) ){
-
-                }
                 else{
-
+                    foreach (var ing in ingredienteBusiness.RecuperarIngredientes()) {
+                        if (ing.Nome == this.cboListaDeIngrediente.Text) {
+                            throw new GenericWarningException("Ingrediente com o mesmo nome já está registrado!");
+                        }
+                    }
                 }
                 Ingrediente novoIngrediente = new Ingrediente()
                 {
-                    Nome = this.txtNomeNovaIngrediente.Text
+                    Nome = this.cboListaDeIngrediente.Text,
+                    Disponivel = (this.btnDisponivel.Enabled) ? true : false // Se o botão de disponibilidade está disponível
                 };
 
                 this.ingredienteBusiness.CadastrarIngrediente(novoIngrediente);
 
-                MessageBox.Show(Mensagens.CadastroCategoriaSucesso, Mensagens.Mensagem, MessageBoxButtons.OK,
+                MessageBox.Show("Ingrediente registrado com sucesso", Mensagens.Mensagem, MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
 
-                this.CarregarIngredientes();
-                
+                this.CarregarIngredientes();   
             }
             catch (GenericWarningException ex)
             {
@@ -94,6 +94,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
             }
         }
 
+
+        /*
+         * Remover ingrediente selecionado do banco de dados
+         */
         private void btnRemoverIngrediente_Click(object sender, EventArgs e)
         {
             try
@@ -127,6 +131,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
                                 MessageBoxIcon.Error);
             }
         }
+
 
         private void ingredienteSelecionado(object sender, EventArgs e)
         {
