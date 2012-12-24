@@ -119,10 +119,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         {
             Ingrediente ingredienteSelecionado = (Ingrediente)cboListaDeIngrediente.SelectedItem;
             if (ingredienteSelecionado.Disponivel) {
-                btnModificarDisponibilidade.BackgroundImage = 
+                continue;
             }
             else {
-
+                continue;
             }
         }
     }
