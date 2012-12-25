@@ -28,6 +28,19 @@ namespace Softex.Residencia.EServeur.Business
             this.repository.Save();
         }
 
+		public IEnumerable<Ingrediente> RecuperaIngredientes(int produtoId)
+		{
+			if (produtoId <= 0)
+            {
+                throw new ArgumentException("O identificador do produto não pode ser menor ou igual a zero!");
+            }
+			
+			Produto produto = RecuperarProduto(produtoId);
+			List<Ingrediente> ingredientes = produto.Ingredientes;
+			
+			return ingredientes;
+		}
+		
         public Produto RecuperarProduto(int produtoId)
         {
             if (produtoId <= 0)
