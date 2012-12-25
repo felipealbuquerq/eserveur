@@ -13,7 +13,7 @@ namespace Softex.Residencia.EServeur.Model
 
         public int Id { get; set; }
         public DateTime HorarioEntrada { get; set; }
-        public DateTime HorarioSaida { get; set; }
+        public DateTime? HorarioSaida { get; set; }
         public int StatusId { get; set; }
         public int MesaId { get; set; }
         public virtual Status Status { get; set; }
