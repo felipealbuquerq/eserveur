@@ -30,14 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConta));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNumeroMesa = new System.Windows.Forms.TextBox();
             this.btnConsultarMesa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lsbListaDeProdutos = new System.Windows.Forms.ListBox();
-            this.txtNumeroDaMesa = new System.Windows.Forms.MaskedTextBox();
-            this.txtNumeroMesa = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -46,16 +45,22 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtNumeroMesa);
-            this.groupBox1.Controls.Add(this.txtNumeroDaMesa);
             this.groupBox1.Controls.Add(this.btnConsultarMesa);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(715, 112);
+            this.groupBox1.Size = new System.Drawing.Size(715, 86);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Procurar conta";
+            // 
+            // txtNumeroMesa
+            // 
+            this.txtNumeroMesa.Location = new System.Drawing.Point(162, 42);
+            this.txtNumeroMesa.Name = "txtNumeroMesa";
+            this.txtNumeroMesa.Size = new System.Drawing.Size(420, 26);
+            this.txtNumeroMesa.TabIndex = 4;
             // 
             // btnConsultarMesa
             // 
@@ -81,7 +86,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.lsbListaDeProdutos);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 130);
+            this.groupBox2.Location = new System.Drawing.Point(12, 104);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(715, 404);
             this.groupBox2.TabIndex = 1;
@@ -93,13 +98,16 @@
             this.groupBox3.Controls.Add(this.lblTotal);
             this.groupBox3.Location = new System.Drawing.Point(456, 143);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(204, 110);
+            this.groupBox3.Size = new System.Drawing.Size(204, 104);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Total";
             // 
             // lblTotal
             // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.Location = new System.Drawing.Point(46, 42);
@@ -117,26 +125,11 @@
             this.lsbListaDeProdutos.Size = new System.Drawing.Size(370, 344);
             this.lsbListaDeProdutos.TabIndex = 0;
             // 
-            // txtNumeroDaMesa
-            // 
-            this.txtNumeroDaMesa.Location = new System.Drawing.Point(162, 74);
-            this.txtNumeroDaMesa.Mask = "00";
-            this.txtNumeroDaMesa.Name = "txtNumeroDaMesa";
-            this.txtNumeroDaMesa.Size = new System.Drawing.Size(420, 26);
-            this.txtNumeroDaMesa.TabIndex = 3;
-            // 
-            // txtNumeroMesa
-            // 
-            this.txtNumeroMesa.Location = new System.Drawing.Point(162, 42);
-            this.txtNumeroMesa.Name = "txtNumeroMesa";
-            this.txtNumeroMesa.Size = new System.Drawing.Size(420, 26);
-            this.txtNumeroMesa.TabIndex = 4;
-            // 
             // FrmConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 546);
+            this.ClientSize = new System.Drawing.Size(738, 519);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -160,7 +153,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.ListBox lsbListaDeProdutos;
-        private System.Windows.Forms.MaskedTextBox txtNumeroDaMesa;
         private System.Windows.Forms.TextBox txtNumeroMesa;
     }
 }
