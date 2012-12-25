@@ -14,13 +14,13 @@ using Softex.Residencia.EServeur.Model;
 
 namespace Softex.Residencia.Projeto.UI.Administrator
 {
-    public partial class FrmProduto : Form
+    public partial class FrmTestProduto : Form
     {
         private readonly IngredienteBusiness ingredienteBusiness;
         private readonly ProdutoBusiness produtoBusiness;
         private readonly CategoriaBusiness categoriaBusiness;
 
-        public FrmProduto()
+        public FrmTestProduto()
         {
             InitializeComponent();
 
@@ -35,7 +35,9 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             DesativarSalvarModificacao();
         }
 
-        #region Métodos
+        // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        // [Métodos]
+        // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         private void AtualizarCamposFormulario()
         {
@@ -62,6 +64,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.cboCategoria.DataSource = this.categoriaBusiness.RecuperarCategorias();
 
                 // 3. Atualizar lista de ingredientes
+                this.chkListaDeIngredientesProduto.DataSource = null;
                 this.chkListaDeIngredientesProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
 
 
@@ -138,7 +141,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
         }
 
-
         private void AtivarSalvarModificacao(object sender, EventArgs e)
         {
             btnSalvarModificacaoProduto.Enabled = true;
@@ -157,8 +159,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             this.produtoBusiness.RemoverProduto(produto.Id);
         }
 
-        #endregion
-        #region Eventos
+
+        // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        // [EVENTOS]
+        // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         private void btnAdicionarImagemNovoProduto_Click(object sender, EventArgs e)
         {
@@ -181,8 +185,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void btnSalvarModificacaoProduto_Click(object sender, EventArgs e)
         {
-            try
-            {
+            try{
                 // 1. Validar campos do formulário
                 ValidarCamposFormulario();
 
@@ -198,8 +201,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                     CategoriaId = (int)cboCategoria.SelectedValue
                 };
                
-                using (MemoryStream ms = new MemoryStream()) 
-                {
+                using (MemoryStream ms = new MemoryStream()) {
                     Image image = this.picImagemProduto.Image;
                     image.Save(ms, ImageFormat.Png);
 
@@ -228,7 +230,5 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             PreencherFormularioProduto(produto);
             DesativarSalvarModificacao();
         }
-
-        #endregion
     }
 }

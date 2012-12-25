@@ -33,15 +33,18 @@
             this.txtNumeroDaMesa = new System.Windows.Forms.TextBox();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
             this.btnRealizarPedido = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdicionarProduto = new System.Windows.Forms.Button();
+            this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.txtTotalDoPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Lista_Pedidos = new System.Windows.Forms.ListBox();
             this.btnValorDaConta = new System.Windows.Forms.Button();
             this.btnFecharConta = new System.Windows.Forms.Button();
             this.btnAbrirCalculadora = new System.Windows.Forms.Button();
+            this.lstViewProdutos = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // tabCategorias
@@ -82,23 +85,25 @@
             this.btnRealizarPedido.UseVisualStyleBackColor = true;
             this.btnRealizarPedido.Click += new System.EventHandler(this.btnRealizarPedido_Click);
             // 
-            // button2
+            // btnAdicionarProduto
             // 
-            this.button2.Location = new System.Drawing.Point(859, 203);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(51, 45);
-            this.button2.TabIndex = 20;
-            this.button2.Text = ">>";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdicionarProduto.Location = new System.Drawing.Point(859, 203);
+            this.btnAdicionarProduto.Name = "btnAdicionarProduto";
+            this.btnAdicionarProduto.Size = new System.Drawing.Size(51, 45);
+            this.btnAdicionarProduto.TabIndex = 20;
+            this.btnAdicionarProduto.Text = ">>";
+            this.btnAdicionarProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionarProduto_Click);
             // 
-            // button1
+            // btnRemoverProduto
             // 
-            this.button1.Location = new System.Drawing.Point(859, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 45);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "<<";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRemoverProduto.Location = new System.Drawing.Point(859, 254);
+            this.btnRemoverProduto.Name = "btnRemoverProduto";
+            this.btnRemoverProduto.Size = new System.Drawing.Size(51, 45);
+            this.btnRemoverProduto.TabIndex = 19;
+            this.btnRemoverProduto.Text = "<<";
+            this.btnRemoverProduto.UseVisualStyleBackColor = true;
+            this.btnRemoverProduto.Click += new System.EventHandler(this.btnRemoverProduto_Click);
             // 
             // txtTotalDoPedido
             // 
@@ -132,14 +137,6 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Mesa: ";
             // 
-            // Lista_Pedidos
-            // 
-            this.Lista_Pedidos.FormattingEnabled = true;
-            this.Lista_Pedidos.Location = new System.Drawing.Point(918, 63);
-            this.Lista_Pedidos.Name = "Lista_Pedidos";
-            this.Lista_Pedidos.Size = new System.Drawing.Size(297, 433);
-            this.Lista_Pedidos.TabIndex = 15;
-            // 
             // btnValorDaConta
             // 
             this.btnValorDaConta.Location = new System.Drawing.Point(918, 588);
@@ -167,23 +164,52 @@
             this.btnAbrirCalculadora.Text = "Calculadora";
             this.btnAbrirCalculadora.UseVisualStyleBackColor = true;
             // 
+            // lstViewProdutos
+            // 
+            this.lstViewProdutos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lstViewProdutos.Location = new System.Drawing.Point(918, 55);
+            this.lstViewProdutos.Name = "lstViewProdutos";
+            this.lstViewProdutos.Size = new System.Drawing.Size(297, 446);
+            this.lstViewProdutos.TabIndex = 32;
+            this.lstViewProdutos.UseCompatibleStateImageBehavior = false;
+            this.lstViewProdutos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Nome";
+            this.columnHeader1.Width = 199;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Qtd.";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 35;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Valor";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 636);
+            this.Controls.Add(this.lstViewProdutos);
             this.Controls.Add(this.btnAbrirCalculadora);
             this.Controls.Add(this.btnFecharConta);
             this.Controls.Add(this.btnValorDaConta);
             this.Controls.Add(this.txtNumeroDaMesa);
             this.Controls.Add(this.btnCancelarPedido);
             this.Controls.Add(this.btnRealizarPedido);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAdicionarProduto);
+            this.Controls.Add(this.btnRemoverProduto);
             this.Controls.Add(this.txtTotalDoPedido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Lista_Pedidos);
             this.Controls.Add(this.tabCategorias);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
@@ -199,15 +225,18 @@
         private System.Windows.Forms.TextBox txtNumeroDaMesa;
         private System.Windows.Forms.Button btnCancelarPedido;
         private System.Windows.Forms.Button btnRealizarPedido;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdicionarProduto;
+        private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.TextBox txtTotalDoPedido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox Lista_Pedidos;
         private System.Windows.Forms.Button btnValorDaConta;
         private System.Windows.Forms.Button btnFecharConta;
         private System.Windows.Forms.Button btnAbrirCalculadora;
+        private System.Windows.Forms.ListView lstViewProdutos;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
 
     }
 }

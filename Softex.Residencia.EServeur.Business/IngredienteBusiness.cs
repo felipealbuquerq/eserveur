@@ -55,7 +55,7 @@ namespace Softex.Residencia.EServeur.Business
 
         public IList<string> RecuperarNomesIngredientes()
         {
-            return this.RecuperarIngredientes().Select(i => i.Nome).ToList();
+            return this.RecuperarIngredientes().OrderBy(i => i.Nome).Select(i => i.Nome).ToList();
         }
 
         public void IndisponibilizarIngrediente(int ingredienteId)
@@ -68,6 +68,19 @@ namespace Softex.Residencia.EServeur.Business
             Ingrediente ingrediente = this.RecuperarIngrediente(ingredienteId);
             ingrediente.Disponivel = false;
             
+            this.repository.Save();
+        }
+
+        public void DisponibilizarIngrediente(int ingredienteId)
+        {
+            if (ingredienteId <= 0)
+            {
+                return;
+            }
+
+            Ingrediente ingrediente = this.RecuperarIngrediente(ingredienteId);
+            ingrediente.Disponivel = true;
+
             this.repository.Save();
         }
 

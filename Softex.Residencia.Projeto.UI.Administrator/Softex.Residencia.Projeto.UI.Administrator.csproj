@@ -53,11 +53,18 @@
     <ApplicationIcon>IconLogo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -176,6 +183,18 @@
     <Compile Include="FrmRelatorios.Designer.cs">
       <DependentUpon>FrmRelatorios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTestProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTestProduto.Designer.cs">
+      <DependentUpon>FrmTestProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarRelatorio.Designer.cs">
+      <DependentUpon>FrmVisualizarRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +208,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Produtos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Produtos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\RelatórioDeVendas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatórioDeVendas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\TiposRelatorios.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <EmbeddedResource Include="FrmAboutBox.resx">
       <DependentUpon>FrmAboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +266,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngrediente.resx">
       <DependentUpon>FrmIngrediente.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPedido.resx">
       <DependentUpon>FrmPedido.cs</DependentUpon>
@@ -242,6 +279,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRelatorios.resx">
       <DependentUpon>FrmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTestProduto.resx">
+      <DependentUpon>FrmTestProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarRelatorio.resx">
+      <DependentUpon>FrmVisualizarRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProduto.resx">
       <DependentUpon>FrmProduto.cs</DependentUpon>
@@ -260,6 +303,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\Produtos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Produtos.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RelatórioDeVendas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatórioDeVendas.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="App.Config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -320,8 +373,9 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Reports\" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

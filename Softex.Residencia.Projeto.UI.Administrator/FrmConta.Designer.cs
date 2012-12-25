@@ -36,7 +36,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.lsbListaDeProdutos = new System.Windows.Forms.ListBox();
+
+            this.lstViewDetalhesConta = new System.Windows.Forms.ListView();
+            this.colNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colQuantidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colValor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,8 +88,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lstViewDetalhesConta);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.lsbListaDeProdutos);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 104);
             this.groupBox2.Name = "groupBox2";
@@ -116,15 +121,37 @@
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "R$ 0.00";
             // 
-            // lsbListaDeProdutos
+            // lstViewDetalhesConta
             // 
-            this.lsbListaDeProdutos.FormattingEnabled = true;
-            this.lsbListaDeProdutos.ItemHeight = 20;
-            this.lsbListaDeProdutos.Location = new System.Drawing.Point(15, 37);
-            this.lsbListaDeProdutos.Name = "lsbListaDeProdutos";
-            this.lsbListaDeProdutos.Size = new System.Drawing.Size(370, 344);
-            this.lsbListaDeProdutos.TabIndex = 0;
+            this.lstViewDetalhesConta.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colNome,
+            this.colQuantidade,
+            this.colValor});
+            this.lstViewDetalhesConta.Location = new System.Drawing.Point(6, 25);
+            this.lstViewDetalhesConta.Name = "lstViewDetalhesConta";
+            this.lstViewDetalhesConta.Size = new System.Drawing.Size(392, 373);
+            this.lstViewDetalhesConta.TabIndex = 1;
+            this.lstViewDetalhesConta.UseCompatibleStateImageBehavior = false;
+            this.lstViewDetalhesConta.View = System.Windows.Forms.View.Details;
             // 
+            // colNome
+            // 
+            this.colNome.Text = "Nome";
+            this.colNome.Width = 250;
+            // 
+            // colQuantidade
+            // 
+            this.colQuantidade.Text = "Qtd.";
+            this.colQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colQuantidade.Width = 53;
+            // 
+            // colValor
+            // 
+            this.colValor.Text = "Valor";
+            this.colValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.colValor.Width = 85;
+            // 
+
             // FrmConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,7 +179,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.ListBox lsbListaDeProdutos;
+
         private System.Windows.Forms.TextBox txtNumeroMesa;
+        private System.Windows.Forms.ListView lstViewDetalhesConta;
+        private System.Windows.Forms.ColumnHeader colNome;
+        private System.Windows.Forms.ColumnHeader colQuantidade;
+        private System.Windows.Forms.ColumnHeader colValor;
     }
 }

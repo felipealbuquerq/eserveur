@@ -31,7 +31,7 @@
             this.btnRemoverCombo = new System.Windows.Forms.Button();
             this.btnCancelarRegistroCombo = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chkListaDeCombo = new System.Windows.Forms.CheckedListBox();
+
             this.btnAdicionarImagemCombo = new System.Windows.Forms.Button();
             this.picImagemCombo = new System.Windows.Forms.PictureBox();
             this.btnSalvarCombo = new System.Windows.Forms.Button();
@@ -42,6 +42,10 @@
             this.txtNomeCombo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.chkListaDeProdutos = new System.Windows.Forms.ListBox();
+
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picComboSelecionado)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -90,6 +94,7 @@
             this.cboListaDeCombo.Name = "cboListaDeCombo";
             this.cboListaDeCombo.Size = new System.Drawing.Size(492, 23);
             this.cboListaDeCombo.TabIndex = 3;
+            this.cboListaDeCombo.SelectedIndexChanged += new System.EventHandler(this.cboListaDeCombo_SelectedIndexChanged);
             // 
             // btnRemoverCombo
             // 
@@ -101,6 +106,7 @@
             this.btnRemoverCombo.TabIndex = 2;
             this.btnRemoverCombo.UseMnemonic = false;
             this.btnRemoverCombo.UseVisualStyleBackColor = true;
+            this.btnRemoverCombo.Click += new System.EventHandler(this.btnRemoverCombo_Click);
             // 
             // btnCancelarRegistroCombo
             // 
@@ -111,6 +117,7 @@
             this.btnCancelarRegistroCombo.TabIndex = 15;
             this.btnCancelarRegistroCombo.Text = "Cancelar";
             this.btnCancelarRegistroCombo.UseVisualStyleBackColor = true;
+            this.btnCancelarRegistroCombo.Click += new System.EventHandler(this.btnCancelarRegistroCombo_Click);
             // 
             // groupBox3
             // 
@@ -134,15 +141,7 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cadastrar novo combo";
             // 
-            // chkListaDeCombo
-            // 
-            this.chkListaDeCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkListaDeCombo.FormattingEnabled = true;
-            this.chkListaDeCombo.Location = new System.Drawing.Point(94, 60);
-            this.chkListaDeCombo.Name = "chkListaDeCombo";
-            this.chkListaDeCombo.Size = new System.Drawing.Size(342, 132);
-            this.chkListaDeCombo.TabIndex = 12;
-            // 
+
             // btnAdicionarImagemCombo
             // 
             this.btnAdicionarImagemCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,6 +151,7 @@
             this.btnAdicionarImagemCombo.TabIndex = 9;
             this.btnAdicionarImagemCombo.Text = "Upload imagem";
             this.btnAdicionarImagemCombo.UseVisualStyleBackColor = true;
+            this.btnAdicionarImagemCombo.Click += new System.EventHandler(this.btnAdicionarImagemCombo_Click);
             // 
             // picImagemCombo
             // 
@@ -172,6 +172,9 @@
             this.btnSalvarCombo.TabIndex = 14;
             this.btnSalvarCombo.Text = "Salvar";
             this.btnSalvarCombo.UseVisualStyleBackColor = true;
+
+            this.btnSalvarCombo.Click += new System.EventHandler(this.btnSalvarCombo_Click);
+
             // 
             // label6
             // 
@@ -238,6 +241,22 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Produtos";
             // 
+
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // chkListaDeProdutos
+            // 
+            this.chkListaDeProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkListaDeProdutos.FormattingEnabled = true;
+            this.chkListaDeProdutos.ItemHeight = 15;
+            this.chkListaDeProdutos.Location = new System.Drawing.Point(94, 60);
+            this.chkListaDeProdutos.Name = "chkListaDeProdutos";
+            this.chkListaDeProdutos.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.chkListaDeProdutos.Size = new System.Drawing.Size(342, 139);
+            this.chkListaDeProdutos.TabIndex = 16;
+            // 
             // FrmCombo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,7 +286,7 @@
         private System.Windows.Forms.Button btnRemoverCombo;
         private System.Windows.Forms.Button btnCancelarRegistroCombo;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckedListBox chkListaDeCombo;
+
         private System.Windows.Forms.Button btnAdicionarImagemCombo;
         private System.Windows.Forms.PictureBox picImagemCombo;
         private System.Windows.Forms.Label label6;
@@ -278,5 +297,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSalvarCombo;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ListBox chkListaDeProdutos;
     }
 }

@@ -117,52 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CadastroCategoriaFalha" xml:space="preserve">
-    <value>Não foi possível cadastrar a categoria!</value>
-  </data>
-  <data name="CadastroCategoriaSucesso" xml:space="preserve">
-    <value>Categoria cadastrada com sucesso!</value>
-  </data>
-  <data name="CadastroIngredienteFalha" xml:space="preserve">
-    <value>Não foi possível cadastrar o ingrediente!</value>
-  </data>
-  <data name="CadastroProdutoFalha" xml:space="preserve">
-    <value>Não foi possível cadastrar o produto!</value>
-  </data>
-  <data name="CadastroProdutoSucesso" xml:space="preserve">
-    <value>Produto cadastrado com sucesso!</value>
-  </data>
-  <data name="CategoriaExcluidaSucesso" xml:space="preserve">
-    <value>Categoria excluída com sucesso!</value>
-  </data>
-  <data name="ExcluirIngrediente" xml:space="preserve">
-    <value>Tem certeza que deseja excluir esse ingrediente?</value>
-  </data>
-  <data name="ExcluirProduto" xml:space="preserve">
-    <value>Tem certeza que deseja excluir esse produto?</value>
-  </data>
-  <data name="Falha" xml:space="preserve">
-    <value>Falha na aplicação!</value>
-  </data>
-  <data name="IndisponibilizarIngrediente" xml:space="preserve">
-    <value>Tem certeza que deseja tornar esse ingrediente indisponível?</value>
-  </data>
-  <data name="IngredienteCadastrado" xml:space="preserve">
-    <value>Ingrediente cadastrado com sucesso!</value>
-  </data>
-  <data name="IngredienteExcluidoSucesso" xml:space="preserve">
-    <value>Ingrediente excluido com sucesso!</value>
-  </data>
-  <data name="IngredienteIndisponivel" xml:space="preserve">
-    <value>Ingrediente {0} indisponível!</value>
-  </data>
-  <data name="Mensagem" xml:space="preserve">
-    <value>Mensagem</value>
-  </data>
-  <data name="PrecoIngredienteInvalido" xml:space="preserve">
-    <value>Informe o preço do ingrediente corretamente!</value>
-  </data>
-  <data name="ProdutoExcluidoSucesso" xml:space="preserve">
-    <value>Produto excluído com sucesso!</value>
-  </data>
+  <metadata name="Produtos1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
