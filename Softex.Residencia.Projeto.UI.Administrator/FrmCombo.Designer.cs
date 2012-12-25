@@ -31,9 +31,10 @@
             this.btnRemoverCombo = new System.Windows.Forms.Button();
             this.btnCancelarRegistroCombo = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chkListaDeProdutos = new System.Windows.Forms.CheckedListBox();
+            this.chkListaDeCombo = new System.Windows.Forms.CheckedListBox();
             this.btnAdicionarImagemCombo = new System.Windows.Forms.Button();
             this.picImagemCombo = new System.Windows.Forms.PictureBox();
+            this.btnSalvarCombo = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDescricaoCombo = new System.Windows.Forms.RichTextBox();
             this.txtPrecoCombo = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.txtNomeCombo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSalvarCombo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picComboSelecionado)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -114,7 +114,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.chkListaDeProdutos);
+            this.groupBox3.Controls.Add(this.chkListaDeCombo);
             this.groupBox3.Controls.Add(this.btnCancelarRegistroCombo);
             this.groupBox3.Controls.Add(this.btnAdicionarImagemCombo);
             this.groupBox3.Controls.Add(this.picImagemCombo);
@@ -134,14 +134,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cadastrar novo combo";
             // 
-            // chkListaDeProdutos
+            // chkListaDeCombo
             // 
-            this.chkListaDeProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkListaDeProdutos.FormattingEnabled = true;
-            this.chkListaDeProdutos.Location = new System.Drawing.Point(94, 60);
-            this.chkListaDeProdutos.Name = "chkListaDeProdutos";
-            this.chkListaDeProdutos.Size = new System.Drawing.Size(342, 139);
-            this.chkListaDeProdutos.TabIndex = 12;
+            this.chkListaDeCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkListaDeCombo.FormattingEnabled = true;
+            this.chkListaDeCombo.Location = new System.Drawing.Point(94, 60);
+            this.chkListaDeCombo.Name = "chkListaDeCombo";
+            this.chkListaDeCombo.Size = new System.Drawing.Size(342, 132);
+            this.chkListaDeCombo.TabIndex = 12;
             // 
             // btnAdicionarImagemCombo
             // 
@@ -162,6 +162,16 @@
             this.picImagemCombo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagemCombo.TabIndex = 8;
             this.picImagemCombo.TabStop = false;
+            // 
+            // btnSalvarCombo
+            // 
+            this.btnSalvarCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarCombo.Location = new System.Drawing.Point(449, 341);
+            this.btnSalvarCombo.Name = "btnSalvarCombo";
+            this.btnSalvarCombo.Size = new System.Drawing.Size(117, 23);
+            this.btnSalvarCombo.TabIndex = 14;
+            this.btnSalvarCombo.Text = "Salvar";
+            this.btnSalvarCombo.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -228,16 +238,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Produtos";
             // 
-            // btnSalvarCombo
-            // 
-            this.btnSalvarCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarCombo.Location = new System.Drawing.Point(449, 341);
-            this.btnSalvarCombo.Name = "btnSalvarCombo";
-            this.btnSalvarCombo.Size = new System.Drawing.Size(117, 23);
-            this.btnSalvarCombo.TabIndex = 14;
-            this.btnSalvarCombo.Text = "Salvar";
-            this.btnSalvarCombo.UseVisualStyleBackColor = true;
-            // 
             // FrmCombo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,7 +267,7 @@
         private System.Windows.Forms.Button btnRemoverCombo;
         private System.Windows.Forms.Button btnCancelarRegistroCombo;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckedListBox chkListaDeProdutos;
+        private System.Windows.Forms.CheckedListBox chkListaDeCombo;
         private System.Windows.Forms.Button btnAdicionarImagemCombo;
         private System.Windows.Forms.PictureBox picImagemCombo;
         private System.Windows.Forms.Label label6;
