@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using Softex.Residencia.Projeto.UI.Client;
+using Softex.Residencia.Projeto.UI.Kitchen;
 
 namespace Softex.Residencia.Projeto.UI.Administrator
 {
@@ -237,6 +239,18 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
             FrmAboutBox aboutBox = new FrmAboutBox();
             aboutBox.ShowDialog();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente telaDoCliente = new FrmCliente();
+            telaDoCliente.Show();
+        }
+
+        private void cozinhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPrincipalKitchen telaDaCozinha = new FrmPrincipalKitchen();
+            telaDaCozinha.Show();
         }
     }
 }

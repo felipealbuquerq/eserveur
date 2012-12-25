@@ -36,7 +36,7 @@ namespace Softex.Residencia.EServeur.Business
             }
 			
 			Produto produto = RecuperarProduto(produtoId);
-			List<Ingrediente> ingredientes = produto.Ingredientes;
+			List<Ingrediente> ingredientes = (List<Ingrediente>)produto.Ingredientes; // Cast seguro?
 			
 			return ingredientes;
 		}

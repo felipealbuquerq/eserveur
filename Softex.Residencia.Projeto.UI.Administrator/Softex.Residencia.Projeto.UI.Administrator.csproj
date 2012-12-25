@@ -141,12 +141,6 @@
     <Compile Include="FrmConta.Designer.cs">
       <DependentUpon>FrmConta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmIngredienteDispo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmIngredienteDispo.Designer.cs">
-      <DependentUpon>FrmIngredienteDispo.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmNotaFiscal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,9 +252,6 @@
     <EmbeddedResource Include="FrmConta.resx">
       <DependentUpon>FrmConta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIngredienteDispo.resx">
-      <DependentUpon>FrmIngredienteDispo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmNotaFiscal.resx">
       <DependentUpon>FrmNotaFiscal.cs</DependentUpon>
     </EmbeddedResource>
@@ -336,6 +327,10 @@
     <ProjectReference Include="..\Softex.Residencia.Projeto.UI.Client\Softex.Residencia.Projeto.UI.Client.csproj">
       <Project>{FB2D1BBD-BBFD-4BE0-8EC2-3844086D26A3}</Project>
       <Name>Softex.Residencia.Projeto.UI.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Softex.Residencia.Projeto.UI.Kitchen\Softex.Residencia.Projeto.UI.Kitchen.csproj">
+      <Project>{87fce936-0f07-43ed-bc73-0e1148611319}</Project>
+      <Name>Softex.Residencia.Projeto.UI.Kitchen</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
