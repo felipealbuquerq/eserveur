@@ -17,6 +17,8 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         public FrmPrincipal()
         {
             InitializeComponent();
+
+            Form frmInicio = new FrmWelcome() { MdiParent = this };
         }
 
 
