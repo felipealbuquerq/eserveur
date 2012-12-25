@@ -37,8 +37,10 @@ namespace Softex.Residencia.Projeto.UI.Kitchen.Properties {
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+            get 
+            {
+                if (object.ReferenceEquals(resourceMan, null)) 
+                {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Softex.Residencia.Projeto.UI.Kitchen.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

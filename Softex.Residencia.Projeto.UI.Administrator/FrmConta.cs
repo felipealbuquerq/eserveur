@@ -32,6 +32,8 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void adicionarProdutosNaLista(List<Pedido> pedidosNaoPagos)
         {
+            this.lstViewDetalhesConta.Items.Clear();
+
             foreach (Pedido pedido in pedidosNaoPagos)
             {
                 foreach (ItemPedido item in pedido.ItensPedidos)

@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Softex.Residencia.Projeto.UI.Client;
-using Softex.Residencia.EServeur.Business;
-using Softex.Residencia.EServeur.Model;
 
 namespace Softex.Residencia.Projeto.UI.Administrator
 {
@@ -17,26 +15,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         public FrmPrincipal()
         {
             InitializeComponent();
-
-            //ProdutoBusiness produtoBusiness = new ProdutoBusiness();
-            //PedidoBusiness pedidoBusiness = new PedidoBusiness();
-
-            //Produto p1 = produtoBusiness.RecuperarProduto(1);
-            //Produto p2 = produtoBusiness.RecuperarProduto(2);
-
-            //Pedido pedido = new Pedido()
-            //{
-            //    HorarioEntrada = DateTime.Now,
-            //    HorarioSaida = DateTime.Now,
-            //    MesaId = 2,
-            //    StatusId = 1
-            //};
-
-            //pedido.ItensPedido.Add(new ItemPedido(p1) { QtdProduto = 3 });
-            //pedido.ItensPedido.Add(new ItemPedido(p2) { QtdProduto = 2 });
-
-            //pedidoBusiness.CadastrarPedido(pedido);
-
         }
 
 
@@ -69,10 +47,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e) {
-            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmProduto);
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmBackupProduto);
 
             if (frmCliente == null) {
-                frmCliente = new FrmProduto() { MdiParent = this }; // test
+                frmCliente = new FrmBackupProduto() { MdiParent = this }; // test
             }
 
             frmCliente.Focus();
@@ -248,9 +226,9 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void produtoTesteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmTestProduto);
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmProduto);
             if (frmCliente == null) {
-                frmCliente = new FrmTestProduto() { MdiParent = this };
+                frmCliente = new FrmProduto() { MdiParent = this };
             }
             frmCliente.Focus();
         }

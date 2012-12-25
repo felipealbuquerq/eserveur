@@ -27,10 +27,10 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnGerarRelatorioOperacional = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateFimRelatorioOperancional = new System.Windows.Forms.DateTimePicker();
-            this.dateInicioRelatorioOperancional = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateInicioRelatorioOperancional = new System.Windows.Forms.DateTimePicker();
+            this.dateFimRelatorioOperancional = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateFimRelatorioGerencial = new System.Windows.Forms.DateTimePicker();
             this.dateInicioRelatorioGerencial = new System.Windows.Forms.DateTimePicker();
@@ -59,7 +59,6 @@
             this.btnGerarRelatorioOperacional.TabIndex = 1;
             this.btnGerarRelatorioOperacional.Text = "Gerar relatório";
             this.btnGerarRelatorioOperacional.UseVisualStyleBackColor = true;
-            this.btnGerarRelatorioOperacional.Click += new System.EventHandler(this.btnGerarRelatorioOperacional_Click);
             // 
             // groupBox1
             // 
@@ -77,19 +76,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Relatórios operacionais";
             // 
-            // dateFimRelatorioOperancional
+            // label1
             // 
-            this.dateFimRelatorioOperancional.Location = new System.Drawing.Point(269, 92);
-            this.dateFimRelatorioOperancional.Name = "dateFimRelatorioOperancional";
-            this.dateFimRelatorioOperancional.Size = new System.Drawing.Size(200, 26);
-            this.dateFimRelatorioOperancional.TabIndex = 5;
-            // 
-            // dateInicioRelatorioOperancional
-            // 
-            this.dateInicioRelatorioOperancional.Location = new System.Drawing.Point(39, 92);
-            this.dateInicioRelatorioOperancional.Name = "dateInicioRelatorioOperancional";
-            this.dateInicioRelatorioOperancional.Size = new System.Drawing.Size(200, 26);
-            this.dateInicioRelatorioOperancional.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "de";
             // 
             // label3
             // 
@@ -100,14 +94,19 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "a";
             // 
-            // label1
+            // dateInicioRelatorioOperancional
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "de";
+            this.dateInicioRelatorioOperancional.Location = new System.Drawing.Point(39, 92);
+            this.dateInicioRelatorioOperancional.Name = "dateInicioRelatorioOperancional";
+            this.dateInicioRelatorioOperancional.Size = new System.Drawing.Size(200, 26);
+            this.dateInicioRelatorioOperancional.TabIndex = 4;
+            // 
+            // dateFimRelatorioOperancional
+            // 
+            this.dateFimRelatorioOperancional.Location = new System.Drawing.Point(269, 92);
+            this.dateFimRelatorioOperancional.Name = "dateFimRelatorioOperancional";
+            this.dateFimRelatorioOperancional.Size = new System.Drawing.Size(200, 26);
+            this.dateFimRelatorioOperancional.TabIndex = 5;
             // 
             // groupBox2
             // 

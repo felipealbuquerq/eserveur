@@ -645,12 +645,11 @@
         <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Pedido" Width="1.5" PointX="7.5" PointY="4.5" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Produto" Width="1.5" PointX="5.25" PointY="1" Height="3.5186979166666674" />
         <EntityTypeShape EntityType="Softex.Residencia.EServeur.Model.Status" Width="1.5" PointX="9.375" PointY="4.875" Height="1.5956835937500031" />
-        <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_Produtos_Categorias" >
-          <ConnectorPoint PointX="4.5" PointY="4.8218514583333274" />
-          <ConnectorPoint PointX="5.479166666666667" PointY="4.8218514583333265" />
-          <ConnectorPoint PointX="5.645833333333333" PointY="4.8218514583333274" />
-          <ConnectorPoint PointX="6.71875" PointY="4.8218514583333274" />
-          <ConnectorPoint PointX="6.71875" PointY="4.5186979166666674" />
+        <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_Produtos_Categorias" ManuallyRouted="true" >
+          <ConnectorPoint PointX="4.5" PointY="4.977846936677631" />
+          <ConnectorPoint PointX="4.8" PointY="4.977846936677631" />
+          <ConnectorPoint PointX="4.8" PointY="3.6353739583333335" />
+          <ConnectorPoint PointX="5.25" PointY="3.6353739583333335" />
         </AssociationConnector>
         <AssociationConnector Association="Softex.Residencia.EServeur.Model.FK_NotaFiscal_Clientes" >
           <ConnectorPoint PointX="2.25" PointY="2.7401432291666659" />

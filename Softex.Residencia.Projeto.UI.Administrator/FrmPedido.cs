@@ -27,7 +27,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         // Cancelar pedido por codigo de pedido
         private void btnCancelarPedidoPorCodigo_Click(object sender, EventArgs e) {
             string entrada = txtCodigoPedido.Text;
-            if (MessageBox.Show(string.Format("Cancelar pedido numero: [{0}]?", entrada), "Confirmar cancelamento", MessageBoxButtons.OKCancel) == DialogResult.Yes) {
+            if (MessageBox.Show(string.Format("Cancelar pedido numero: [{0}]?", entrada), "Confirmar cancelamento", MessageBoxButtons.OKCancel) == DialogResult.OK) {
                 // a 'DialogResult.Yes' value was returned from the MessageBox
                 // proceed with your deletion
             }
@@ -47,7 +47,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         // Cancelar pedido por numero da mesa
         private void btnCancelarPedidoPorMesa_Click(object sender, EventArgs e) {
             string entrada = txtCodigoPedido.Text;
-            if (MessageBox.Show(string.Format("Cancelar pedido numero: [{0}]?", entrada), "Confirmar cancelamento", MessageBoxButtons.OKCancel) == DialogResult.Yes) {
+            if (MessageBox.Show(string.Format("Cancelar pedido numero: [{0}]?", entrada), "Confirmar cancelamento", MessageBoxButtons.OKCancel) == DialogResult.OK) {
                 // a 'DialogResult.Yes' value was returned from the MessageBox
                 // proceed with your deletion
             }

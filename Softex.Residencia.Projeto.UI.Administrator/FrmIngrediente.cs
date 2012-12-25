@@ -46,27 +46,39 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
             }
         }
 
+
+
+        /*
+         * Adicionar novo ingrediente ao banco de dados
+         */
         private void btnAdicionarIngrediente_Click(object sender, EventArgs e)
         {
+            // Tentar adicionar o ingrediente ao banco de dados
             try
             {
                 if (string.IsNullOrWhiteSpace(this.cboListaDeIngrediente.Text))
                 {
                     throw new GenericWarningException("Informe o nome do ingrediente!");
                 }
-
+                else{
+                    foreach (var ing in ingredienteBusiness.RecuperarIngredientes()) {
+                        if (ing.Nome == this.cboListaDeIngrediente.Text) {
+                            throw new GenericWarningException("Ingrediente com o mesmo nome já está registrado!");
+                        }
+                    }
+                }
                 Ingrediente novoIngrediente = new Ingrediente()
                 {
                     Nome = this.cboListaDeIngrediente.Text,
-                    Disponivel = true
+                    Disponivel = (this.btnDisponivel.Enabled) ? true : false // Se o botão de disponibilidade está disponível
                 };
 
                 this.ingredienteBusiness.CadastrarIngrediente(novoIngrediente);
 
-                MessageBox.Show(Mensagens.IngredienteCadastrado, Mensagens.Mensagem, MessageBoxButtons.OK,
+                MessageBox.Show("Ingrediente registrado com sucesso", Mensagens.Mensagem, MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
 
-                this.CarregarIngredientes();
+                this.CarregarIngredientes();   
             }
             catch (GenericWarningException ex)
             {
@@ -78,10 +90,14 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
             }
             catch (Exception)
             {
-                MessageBox.Show(Mensagens.CadastroIngredienteFalha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Mensagens.CadastroCategoriaFalha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
+        /*
+         * Remover ingrediente selecionado do banco de dados
+         */
         private void btnRemoverIngrediente_Click(object sender, EventArgs e)
         {
             try
@@ -93,7 +109,8 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
 
                 Ingrediente ingrediente = (Ingrediente)this.cboListaDeIngrediente.SelectedItem;
 
-                if (MessageBox.Show(Mensagens.ExcluirIngrediente, Mensagens.Mensagem, MessageBoxButtons.YesNo,
+                if (
+                    MessageBox.Show(Mensagens.ExcluirIngrediente, Mensagens.Mensagem, MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     this.ingredienteBusiness.RemoverIngrediente(ingrediente.Id);
@@ -105,56 +122,52 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
             }
             catch (GenericWarningException ex)
             {
-                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
             catch (Exception)
             {
-                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 
-        private void btnIngredienteNaoDisponivel_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.cboListaDeIngrediente.SelectedItem == null)
-                {
-                    throw new GenericWarningException("Selecione o ingrediente que deseja indisponibilizar!");
-                }
-
-                Ingrediente ingrediente = (Ingrediente)this.cboListaDeIngrediente.SelectedItem;
-
-                if (MessageBox.Show(Mensagens.IndisponibilizarIngrediente, Mensagens.Mensagem, MessageBoxButtons.YesNo,
-                                    MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    this.ingredienteBusiness.IndisponibilizarIngrediente(ingrediente.Id);
-
-                    MessageBox.Show(string.Format(Mensagens.IngredienteIndisponivel, ingrediente.Nome), Mensagens.Mensagem, MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                }
-            }
-            catch (GenericWarningException ex)
-            {
-                MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void ingredienteSelecionado(object sender, EventArgs e)
         {
             Ingrediente ingredienteSelecionado = (Ingrediente)cboListaDeIngrediente.SelectedItem;
-            
-            if (ingredienteSelecionado.Disponivel)
-            {
-                this.ingredienteBusiness.IndisponibilizarIngrediente(ingredienteSelecionado.Id);
+
+            if (ingredienteSelecionado.Disponivel) {
+                this.btnDisponivel.Enabled = true;
+                this.btnDisponivel.Show();
+                this.btnNaoDisponivel.Hide();
+                this.lblDisponibilidade.Text = "Disponível";
             }
-            else
-            {
-                this.ingredienteBusiness.DisponibilizarIngrediente(ingredienteSelecionado.Id);
+            else {
+                this.btnNaoDisponivel.Enabled = true;
+                this.btnNaoDisponivel.Show();
+                this.btnDisponivel.Hide();
+                this.lblDisponibilidade.Text = "Não disponível";
             }
         }
+
+
+        private void btnDisponivel_Click(object sender, EventArgs e)
+        {
+            this.btnNaoDisponivel.Enabled = true;
+            this.btnNaoDisponivel.Show();
+            this.btnDisponivel.Hide();
+            this.lblDisponibilidade.Text = "Não disponível";
+        }
+
+        private void btnNaoDisponivel_Click(object sender, EventArgs e)
+        {
+            this.btnDisponivel.Enabled = true;
+            this.btnDisponivel.Show();
+            this.btnNaoDisponivel.Hide();
+            this.lblDisponibilidade.Text = "Disponível";
+        }
+
+
     }
 }

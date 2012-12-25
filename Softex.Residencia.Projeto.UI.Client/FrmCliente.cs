@@ -225,6 +225,7 @@ namespace Softex.Residencia.Projeto.UI.Client
             this.lstViewProdutos.Items.Clear();
             this.txtNumeroDaMesa.Text = "";
             this.txtTotalDoPedido.Text = "";
+            this.itensPedidos.Clear();
         }
     }
 }

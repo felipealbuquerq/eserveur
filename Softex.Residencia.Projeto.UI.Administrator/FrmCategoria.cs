@@ -53,14 +53,14 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(this.txtNomeNovaCategoria.Text))
+                if (string.IsNullOrWhiteSpace(this.cboListaDeCategoria.Text))
                 {
                     throw new GenericWarningException("Informe o nome da categoria!");
                 }
 
                 Categoria categoria = new Categoria()
                 {
-                    Nome = this.txtNomeNovaCategoria.Text
+                    Nome = this.cboListaDeCategoria.Text
                 };
 
                 this.categoriaBusiness.CadastrarCategoria(categoria);

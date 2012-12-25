@@ -79,15 +79,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi possível cadastrar o ingrediente!.
-        /// </summary>
-        internal static string CadastroIngredienteFalha {
-            get {
-                return ResourceManager.GetString("CadastroIngredienteFalha", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Não foi possível cadastrar o produto!.
         /// </summary>
         internal static string CadastroProdutoFalha {
@@ -142,15 +133,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tem certeza que deseja tornar esse ingrediente indisponível?.
-        /// </summary>
-        internal static string IndisponibilizarIngrediente {
-            get {
-                return ResourceManager.GetString("IndisponibilizarIngrediente", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Ingrediente cadastrado com sucesso!.
         /// </summary>
         internal static string IngredienteCadastrado {
@@ -165,15 +147,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
         internal static string IngredienteExcluidoSucesso {
             get {
                 return ResourceManager.GetString("IngredienteExcluidoSucesso", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ingrediente {0} indisponível!.
-        /// </summary>
-        internal static string IngredienteIndisponivel {
-            get {
-                return ResourceManager.GetString("IngredienteIndisponivel", resourceCulture);
             }
         }
         

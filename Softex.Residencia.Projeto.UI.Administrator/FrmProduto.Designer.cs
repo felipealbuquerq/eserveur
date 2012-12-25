@@ -28,298 +28,279 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProduto));
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDescricaoProdutoSelecionado = new System.Windows.Forms.TextBox();
-            this.picProdutoSelecionado = new System.Windows.Forms.PictureBox();
-            this.cboListaDeProdutos = new System.Windows.Forms.ComboBox();
-            this.btnRemoverProduto = new System.Windows.Forms.Button();
-            this.btnCancelarRegistroNovoProduto = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnSalvarModificacaoProduto = new System.Windows.Forms.Button();
+            this.btnCancelarModificacaoProduto = new System.Windows.Forms.Button();
+            this.dlgUploadImagem = new System.Windows.Forms.OpenFileDialog();
+            this.lblIngredientes = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
+            this.lblPreco = new System.Windows.Forms.Label();
+            this.txtPrecoProduto = new System.Windows.Forms.TextBox();
+            this.txtDescricaoProduto = new System.Windows.Forms.RichTextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.chkListaDeIngredientesProduto = new System.Windows.Forms.CheckedListBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnRemoverProduto = new System.Windows.Forms.Button();
+            this.cboListaDeProdutos = new System.Windows.Forms.ComboBox();
+            this.picImagemProduto = new System.Windows.Forms.PictureBox();
             this.btnAdicionarImagemNovoProduto = new System.Windows.Forms.Button();
-            this.picImagemNovoProduto = new System.Windows.Forms.PictureBox();
-            this.btnSalvarNovoProduto = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDescricaoNovoProduto = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNomeNovoProduto = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chkListaDeIngredientesNovoProduto = new System.Windows.Forms.ListBox();
-            this.txtPrecoNovoProduto = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProdutoSelecionado)).BeginInit();
+            this.btnAdicionarProduto = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagemProduto)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagemNovoProduto)).BeginInit();
             this.SuspendLayout();
             // 
-            // openFileDialog
+            // btnSalvarModificacaoProduto
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
+            this.btnSalvarModificacaoProduto.Enabled = false;
+            this.btnSalvarModificacaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarModificacaoProduto.Location = new System.Drawing.Point(431, 419);
+            this.btnSalvarModificacaoProduto.Name = "btnSalvarModificacaoProduto";
+            this.btnSalvarModificacaoProduto.Size = new System.Drawing.Size(117, 23);
+            this.btnSalvarModificacaoProduto.TabIndex = 18;
+            this.btnSalvarModificacaoProduto.Text = "Salvar";
+            this.toolTip1.SetToolTip(this.btnSalvarModificacaoProduto, "Salvar modificações");
+            this.btnSalvarModificacaoProduto.UseVisualStyleBackColor = true;
+            this.btnSalvarModificacaoProduto.Click += new System.EventHandler(this.btnSalvarModificacaoProduto_Click);
             // 
-            // groupBox1
+            // btnCancelarModificacaoProduto
             // 
-            this.groupBox1.Controls.Add(this.txtDescricaoProdutoSelecionado);
-            this.groupBox1.Controls.Add(this.picProdutoSelecionado);
-            this.groupBox1.Controls.Add(this.cboListaDeProdutos);
-            this.groupBox1.Controls.Add(this.btnRemoverProduto);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 14);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(708, 176);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lista de produtos";
+            this.btnCancelarModificacaoProduto.Enabled = false;
+            this.btnCancelarModificacaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarModificacaoProduto.Location = new System.Drawing.Point(554, 419);
+            this.btnCancelarModificacaoProduto.Name = "btnCancelarModificacaoProduto";
+            this.btnCancelarModificacaoProduto.Size = new System.Drawing.Size(117, 23);
+            this.btnCancelarModificacaoProduto.TabIndex = 19;
+            this.btnCancelarModificacaoProduto.Text = "Cancelar";
+            this.toolTip1.SetToolTip(this.btnCancelarModificacaoProduto, "Cancelar modificações");
+            this.btnCancelarModificacaoProduto.UseVisualStyleBackColor = true;
+            this.btnCancelarModificacaoProduto.Click += new System.EventHandler(this.btnCancelarModificacaoProduto_Click);
             // 
-            // txtDescricaoProdutoSelecionado
+            // dlgUploadImagem
             // 
-            this.txtDescricaoProdutoSelecionado.Enabled = false;
-            this.txtDescricaoProdutoSelecionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoProdutoSelecionado.Location = new System.Drawing.Point(150, 79);
-            this.txtDescricaoProdutoSelecionado.Multiline = true;
-            this.txtDescricaoProdutoSelecionado.Name = "txtDescricaoProdutoSelecionado";
-            this.txtDescricaoProdutoSelecionado.Size = new System.Drawing.Size(492, 67);
-            this.txtDescricaoProdutoSelecionado.TabIndex = 13;
+            this.dlgUploadImagem.FileName = "[imagem do produto]";
+            this.dlgUploadImagem.Title = "Escolha uma image para o produto";
             // 
-            // picProdutoSelecionado
+            // lblIngredientes
             // 
-            this.picProdutoSelecionado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picProdutoSelecionado.Location = new System.Drawing.Point(13, 35);
-            this.picProdutoSelecionado.Name = "picProdutoSelecionado";
-            this.picProdutoSelecionado.Size = new System.Drawing.Size(116, 111);
-            this.picProdutoSelecionado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProdutoSelecionado.TabIndex = 12;
-            this.picProdutoSelecionado.TabStop = false;
+            this.lblIngredientes.AutoSize = true;
+            this.lblIngredientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngredientes.Location = new System.Drawing.Point(140, 164);
+            this.lblIngredientes.Name = "lblIngredientes";
+            this.lblIngredientes.Size = new System.Drawing.Size(102, 20);
+            this.lblIngredientes.TabIndex = 1;
+            this.lblIngredientes.Text = "Ingredientes:";
             // 
-            // cboListaDeProdutos
+            // lblNome
             // 
-            this.cboListaDeProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboListaDeProdutos.FormattingEnabled = true;
-            this.cboListaDeProdutos.Location = new System.Drawing.Point(150, 42);
-            this.cboListaDeProdutos.Name = "cboListaDeProdutos";
-            this.cboListaDeProdutos.Size = new System.Drawing.Size(492, 23);
-            this.cboListaDeProdutos.TabIndex = 3;
-            this.cboListaDeProdutos.SelectedIndexChanged += new System.EventHandler(this.cboListaDeProdutos_SelectedIndexChanged);
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(140, 68);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(55, 20);
+            this.lblNome.TabIndex = 2;
+            this.lblNome.Text = "Nome:";
+            // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeProduto.Location = new System.Drawing.Point(329, 62);
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(342, 26);
+            this.txtNomeProduto.TabIndex = 3;
+            this.txtNomeProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            // 
+            // lblPreco
+            // 
+            this.lblPreco.AutoSize = true;
+            this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreco.Location = new System.Drawing.Point(140, 134);
+            this.lblPreco.Name = "lblPreco";
+            this.lblPreco.Size = new System.Drawing.Size(54, 20);
+            this.lblPreco.TabIndex = 4;
+            this.lblPreco.Text = "Preço:";
+            // 
+            // txtPrecoProduto
+            // 
+            this.txtPrecoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoProduto.Location = new System.Drawing.Point(329, 128);
+            this.txtPrecoProduto.Name = "txtPrecoProduto";
+            this.txtPrecoProduto.Size = new System.Drawing.Size(87, 26);
+            this.txtPrecoProduto.TabIndex = 5;
+            this.txtPrecoProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            // 
+            // txtDescricaoProduto
+            // 
+            this.txtDescricaoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescricaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoProduto.Location = new System.Drawing.Point(329, 297);
+            this.txtDescricaoProduto.Name = "txtDescricaoProduto";
+            this.txtDescricaoProduto.Size = new System.Drawing.Size(342, 116);
+            this.txtDescricaoProduto.TabIndex = 6;
+            this.txtDescricaoProduto.Text = "";
+            this.txtDescricaoProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.Location = new System.Drawing.Point(140, 300);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(84, 20);
+            this.lblDescricao.TabIndex = 7;
+            this.lblDescricao.Text = "Descrição:";
+            // 
+            // chkListaDeIngredientesProduto
+            // 
+            this.chkListaDeIngredientesProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkListaDeIngredientesProduto.FormattingEnabled = true;
+            this.chkListaDeIngredientesProduto.Location = new System.Drawing.Point(329, 161);
+            this.chkListaDeIngredientesProduto.Name = "chkListaDeIngredientesProduto";
+            this.chkListaDeIngredientesProduto.Size = new System.Drawing.Size(342, 130);
+            this.chkListaDeIngredientesProduto.TabIndex = 12;
+            this.chkListaDeIngredientesProduto.EnabledChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(139, 100);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(82, 20);
+            this.lblCategoria.TabIndex = 20;
+            this.lblCategoria.Text = "Categoria:";
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(329, 94);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(342, 28);
+            this.cboCategoria.TabIndex = 21;
+            this.cboCategoria.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao);
             // 
             // btnRemoverProduto
             // 
             this.btnRemoverProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemoverProduto.BackgroundImage")));
             this.btnRemoverProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemoverProduto.Location = new System.Drawing.Point(648, 35);
+            this.btnRemoverProduto.Location = new System.Drawing.Point(635, 19);
             this.btnRemoverProduto.Name = "btnRemoverProduto";
             this.btnRemoverProduto.Size = new System.Drawing.Size(36, 33);
-            this.btnRemoverProduto.TabIndex = 2;
+            this.btnRemoverProduto.TabIndex = 22;
             this.btnRemoverProduto.UseMnemonic = false;
             this.btnRemoverProduto.UseVisualStyleBackColor = true;
-            this.btnRemoverProduto.Click += new System.EventHandler(this.btnRemoverProduto_Click);
             // 
-            // btnCancelarRegistroNovoProduto
+            // cboListaDeProdutos
             // 
-            this.btnCancelarRegistroNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarRegistroNovoProduto.Location = new System.Drawing.Point(579, 369);
-            this.btnCancelarRegistroNovoProduto.Name = "btnCancelarRegistroNovoProduto";
-            this.btnCancelarRegistroNovoProduto.Size = new System.Drawing.Size(117, 23);
-            this.btnCancelarRegistroNovoProduto.TabIndex = 19;
-            this.btnCancelarRegistroNovoProduto.Text = "Cancelar";
-            this.btnCancelarRegistroNovoProduto.UseVisualStyleBackColor = true;
-            this.btnCancelarRegistroNovoProduto.Click += new System.EventHandler(this.btnCancelarRegistroNovoProduto_Click);
+            this.cboListaDeProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboListaDeProdutos.FormattingEnabled = true;
+            this.cboListaDeProdutos.Location = new System.Drawing.Point(17, 22);
+            this.cboListaDeProdutos.Name = "cboListaDeProdutos";
+            this.cboListaDeProdutos.Size = new System.Drawing.Size(570, 28);
+            this.cboListaDeProdutos.TabIndex = 23;
+            this.cboListaDeProdutos.SelectedIndexChanged += new System.EventHandler(this.cboListaDeProdutos_SelectedIndexChanged);
             // 
-            // groupBox3
+            // picImagemProduto
             // 
-            this.groupBox3.Controls.Add(this.chkListaDeIngredientesNovoProduto);
-            this.groupBox3.Controls.Add(this.cboCategoria);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.btnCancelarRegistroNovoProduto);
-            this.groupBox3.Controls.Add(this.btnAdicionarImagemNovoProduto);
-            this.groupBox3.Controls.Add(this.picImagemNovoProduto);
-            this.groupBox3.Controls.Add(this.btnSalvarNovoProduto);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.txtDescricaoNovoProduto);
-            this.groupBox3.Controls.Add(this.txtPrecoNovoProduto);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.txtNomeNovoProduto);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(11, 196);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(708, 404);
-            this.groupBox3.TabIndex = 16;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cadastrar novo produto";
-            // 
-            // cboCategoria
-            // 
-            this.cboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(94, 56);
-            this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(342, 23);
-            this.cboCategoria.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Categoria:";
+            this.picImagemProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImagemProduto.Location = new System.Drawing.Point(17, 65);
+            this.picImagemProduto.Name = "picImagemProduto";
+            this.picImagemProduto.Size = new System.Drawing.Size(116, 111);
+            this.picImagemProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImagemProduto.TabIndex = 24;
+            this.picImagemProduto.TabStop = false;
             // 
             // btnAdicionarImagemNovoProduto
             // 
             this.btnAdicionarImagemNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarImagemNovoProduto.Location = new System.Drawing.Point(579, 27);
+            this.btnAdicionarImagemNovoProduto.Location = new System.Drawing.Point(17, 182);
             this.btnAdicionarImagemNovoProduto.Name = "btnAdicionarImagemNovoProduto";
             this.btnAdicionarImagemNovoProduto.Size = new System.Drawing.Size(117, 23);
-            this.btnAdicionarImagemNovoProduto.TabIndex = 9;
+            this.btnAdicionarImagemNovoProduto.TabIndex = 25;
             this.btnAdicionarImagemNovoProduto.Text = "Upload imagem";
             this.btnAdicionarImagemNovoProduto.UseVisualStyleBackColor = true;
             this.btnAdicionarImagemNovoProduto.Click += new System.EventHandler(this.btnAdicionarImagemNovoProduto_Click);
             // 
-            // picImagemNovoProduto
+            // btnAdicionarProduto
             // 
-            this.picImagemNovoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picImagemNovoProduto.Location = new System.Drawing.Point(449, 24);
-            this.picImagemNovoProduto.Name = "picImagemNovoProduto";
-            this.picImagemNovoProduto.Size = new System.Drawing.Size(116, 111);
-            this.picImagemNovoProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picImagemNovoProduto.TabIndex = 8;
-            this.picImagemNovoProduto.TabStop = false;
+            this.btnAdicionarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionarProduto.BackgroundImage")));
+            this.btnAdicionarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionarProduto.Location = new System.Drawing.Point(593, 19);
+            this.btnAdicionarProduto.Name = "btnAdicionarProduto";
+            this.btnAdicionarProduto.Size = new System.Drawing.Size(36, 33);
+            this.btnAdicionarProduto.TabIndex = 26;
+            this.btnAdicionarProduto.UseMnemonic = false;
+            this.btnAdicionarProduto.UseVisualStyleBackColor = true;
             // 
-            // btnSalvarNovoProduto
+            // groupBox3
             // 
-            this.btnSalvarNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarNovoProduto.Location = new System.Drawing.Point(449, 369);
-            this.btnSalvarNovoProduto.Name = "btnSalvarNovoProduto";
-            this.btnSalvarNovoProduto.Size = new System.Drawing.Size(117, 23);
-            this.btnSalvarNovoProduto.TabIndex = 18;
-            this.btnSalvarNovoProduto.Text = "Salvar";
-            this.btnSalvarNovoProduto.UseVisualStyleBackColor = true;
-            this.btnSalvarNovoProduto.Click += new System.EventHandler(this.btnSalvarProduto_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(10, 276);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 15);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Descrição:";
-            // 
-            // txtDescricaoNovoProduto
-            // 
-            this.txtDescricaoNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoNovoProduto.Location = new System.Drawing.Point(94, 276);
-            this.txtDescricaoNovoProduto.Name = "txtDescricaoNovoProduto";
-            this.txtDescricaoNovoProduto.Size = new System.Drawing.Size(342, 116);
-            this.txtDescricaoNovoProduto.TabIndex = 6;
-            this.txtDescricaoNovoProduto.Text = "";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 246);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Preço:";
-            // 
-            // txtNomeNovoProduto
-            // 
-            this.txtNomeNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeNovoProduto.Location = new System.Drawing.Point(94, 24);
-            this.txtNomeNovoProduto.Name = "txtNomeNovoProduto";
-            this.txtNomeNovoProduto.Size = new System.Drawing.Size(342, 21);
-            this.txtNomeNovoProduto.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Nome:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Ingredientes:";
-            // 
-            // chkListaDeIngredientesNovoProduto
-            // 
-            this.chkListaDeIngredientesNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkListaDeIngredientesNovoProduto.FormattingEnabled = true;
-            this.chkListaDeIngredientesNovoProduto.ItemHeight = 15;
-            this.chkListaDeIngredientesNovoProduto.Location = new System.Drawing.Point(94, 95);
-            this.chkListaDeIngredientesNovoProduto.Name = "chkListaDeIngredientesNovoProduto";
-            this.chkListaDeIngredientesNovoProduto.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.chkListaDeIngredientesNovoProduto.Size = new System.Drawing.Size(342, 124);
-            this.chkListaDeIngredientesNovoProduto.TabIndex = 22;
-            // 
-            // txtPrecoNovoProduto
-            // 
-            this.txtPrecoNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoNovoProduto.Location = new System.Drawing.Point(94, 243);
-            this.txtPrecoNovoProduto.Name = "txtPrecoNovoProduto";
-            this.txtPrecoNovoProduto.Size = new System.Drawing.Size(87, 21);
-            this.txtPrecoNovoProduto.TabIndex = 5;
+            this.groupBox3.Controls.Add(this.btnAdicionarProduto);
+            this.groupBox3.Controls.Add(this.btnAdicionarImagemNovoProduto);
+            this.groupBox3.Controls.Add(this.picImagemProduto);
+            this.groupBox3.Controls.Add(this.cboListaDeProdutos);
+            this.groupBox3.Controls.Add(this.btnRemoverProduto);
+            this.groupBox3.Controls.Add(this.cboCategoria);
+            this.groupBox3.Controls.Add(this.lblCategoria);
+            this.groupBox3.Controls.Add(this.chkListaDeIngredientesProduto);
+            this.groupBox3.Controls.Add(this.btnCancelarModificacaoProduto);
+            this.groupBox3.Controls.Add(this.btnSalvarModificacaoProduto);
+            this.groupBox3.Controls.Add(this.lblDescricao);
+            this.groupBox3.Controls.Add(this.txtDescricaoProduto);
+            this.groupBox3.Controls.Add(this.txtPrecoProduto);
+            this.groupBox3.Controls.Add(this.lblPreco);
+            this.groupBox3.Controls.Add(this.txtNomeProduto);
+            this.groupBox3.Controls.Add(this.lblNome);
+            this.groupBox3.Controls.Add(this.lblIngredientes);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(12, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(689, 465);
+            this.groupBox3.TabIndex = 17;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Lista de produtos";
             // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 612);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(714, 490);
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProduto";
             this.Text = "Produtos";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProdutoSelecionado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagemProduto)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagemNovoProduto)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtDescricaoProdutoSelecionado;
-        private System.Windows.Forms.PictureBox picProdutoSelecionado;
-        private System.Windows.Forms.ComboBox cboListaDeProdutos;
-        private System.Windows.Forms.Button btnRemoverProduto;
-        private System.Windows.Forms.Button btnCancelarRegistroNovoProduto;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnAdicionarImagemNovoProduto;
-        private System.Windows.Forms.PictureBox picImagemNovoProduto;
-        private System.Windows.Forms.Button btnSalvarNovoProduto;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox txtDescricaoNovoProduto;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtNomeNovoProduto;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.OpenFileDialog dlgUploadImagem;
+        private System.Windows.Forms.Label lblIngredientes;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txtNomeProduto;
+        private System.Windows.Forms.Label lblPreco;
+        private System.Windows.Forms.TextBox txtPrecoProduto;
+        private System.Windows.Forms.RichTextBox txtDescricaoProduto;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.Button btnSalvarModificacaoProduto;
+        private System.Windows.Forms.Button btnCancelarModificacaoProduto;
+        private System.Windows.Forms.CheckedListBox chkListaDeIngredientesProduto;
+        private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.ComboBox cboCategoria;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox chkListaDeIngredientesNovoProduto;
-        private System.Windows.Forms.TextBox txtPrecoNovoProduto;
+        private System.Windows.Forms.Button btnRemoverProduto;
+        private System.Windows.Forms.ComboBox cboListaDeProdutos;
+        private System.Windows.Forms.PictureBox picImagemProduto;
+        private System.Windows.Forms.Button btnAdicionarImagemNovoProduto;
+        private System.Windows.Forms.Button btnAdicionarProduto;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
