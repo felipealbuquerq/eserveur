@@ -208,7 +208,7 @@ namespace Softex.Residencia.Projeto.UI.Client
                 
                 if (MessageBox.Show(mensagem, "Confirmar pedido", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    Pedido pedido = new Pedido()
+                    Pedido novoPedido = new Pedido()
                     {
                         HorarioEntrada = DateTime.Now,
                         MesaId = Convert.ToInt32(this.txtNumeroDaMesa.Text),
@@ -216,7 +216,7 @@ namespace Softex.Residencia.Projeto.UI.Client
                         ItensPedidos = this.itensPedidos
                     };
 
-                    this.pedidoBusiness.CadastrarPedido(pedido);
+                    this.pedidoBusiness.CadastrarPedido(novoPedido);
                     MessageBox.Show("Pedido realizado com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.LimparCamposFormulario();
