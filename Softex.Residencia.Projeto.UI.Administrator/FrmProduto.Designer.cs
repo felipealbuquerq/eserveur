@@ -112,7 +112,9 @@
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(342, 26);
             this.txtNomeProduto.TabIndex = 3;
+            this.txtNomeProduto.Click += new System.EventHandler(this.formatarNomeNovoProduto);
             this.txtNomeProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            this.txtNomeProduto.Leave += new System.EventHandler(this.testeNomeDoProdutoModificado);
             // 
             // lblPreco
             // 
@@ -235,8 +237,10 @@
             this.btnAdicionarProduto.Name = "btnAdicionarProduto";
             this.btnAdicionarProduto.Size = new System.Drawing.Size(36, 33);
             this.btnAdicionarProduto.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.btnAdicionarProduto, "Adicionar novo produto");
             this.btnAdicionarProduto.UseMnemonic = false;
             this.btnAdicionarProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionarProduto_Click);
             // 
             // groupBox3
             // 

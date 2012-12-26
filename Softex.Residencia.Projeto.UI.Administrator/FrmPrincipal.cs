@@ -97,7 +97,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         }
 
 
-        // TODO: Comentar ou fazer esse metodo mais claro
         private void RealizarPedidoToolStripMenuItemClick(object sender, EventArgs e)
         {
             Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmCliente);

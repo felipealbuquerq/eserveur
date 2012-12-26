@@ -117,24 +117,37 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         //
         private void ValidarCamposFormulario()
         {
-            if (string.IsNullOrWhiteSpace(this.txtNomeProduto.Text)) {
+            // 1. Testar o campo de nome do produto
+            string campoNomeProduto = this.txtNomeProduto.Text;
+            if (string.IsNullOrWhiteSpace(campoNomeProduto)) {
                 throw new GenericWarningException("Informe o nome do produto!");
             }
 
-            decimal d;
+            if (string.IsNullOrEmpty(campoNomeProduto)) {
+                throw new GenericWarningException("Informe o nome do produto!");
+            }
 
+            if (this.txtNomeProduto.Text == "[Nome do novo produto]") {
+                throw new GenericWarningException("Escolha um novo nome para o produto!");
+            }
+
+            // 2. Testar o campo de preco do produto
+            decimal d;
             if (!decimal.TryParse(this.txtPrecoProduto.Text, out d)) {
                 throw new GenericWarningException("Informe o preço do produto corretamente!");
             }
 
+            // 3. Testar o campo de categoria
             if (this.cboCategoria.SelectedValue == null) {
                 throw new GenericWarningException("Informe a categoria do produto!");
             }
 
+            // 4. Testar o campo de imagem do produto
             if (this.picImagemProduto.Image == null) {
-                throw new GenericWarningException("Informe a imagem do produto!");
+                throw new GenericWarningException("Adicione uma imagem do produto!");
             }
 
+            // 2. Testar o campo de descricao do produto
             if (string.IsNullOrWhiteSpace(this.txtDescricaoProduto.Text)) {
                 throw new GenericWarningException("Informe a descrição do produto!");
             }
@@ -174,12 +187,17 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void cboListaDeProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try {
-                Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
-                PreencherFormularioProduto(produto);
+            if (this.cboListaDeProdutos.SelectedItem == null) {
+                // Se o objeto selecionado é nul, não fazer nada
             }
-            catch (Exception) {
-                MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else {
+                try {
+                    Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
+                    PreencherFormularioProduto(produto);
+                }
+                catch (Exception) {
+                    MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             DesativarSalvarModificacao();
         }
@@ -191,8 +209,12 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 // 1. Validar campos do formulário
                 ValidarCamposFormulario();
 
-                // 2. Remover o produto selecionado
-                //RemoverProdutoSelecionado();
+                // 2. Remover o produto selecionado se um produto com o mesmo nome já existe no banco
+                IEnumerable<Produto> produtosRegistrados = this.produtoBusiness.RecuperarProdutos();
+                Produto produtoBuscado = produtosRegistrados.Where(i => i.Nome == this.txtNomeProduto.Text).FirstOrDefault();
+                if ( produtoBuscado != null) {
+                    this.RemoverProdutoSelecionado();
+                }
 
                 // 3. Criar um novo produto a partir dos campos modificados
                 Produto novoProduto = new Produto()
@@ -215,10 +237,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.produtoBusiness.CadastrarProduto(novoProduto);
 
                 // 5. Desativar os botoes de salvar e cancelar
-                DesativarSalvarModificacao();
+                this.DesativarSalvarModificacao();
 
                 // 6. Recarregar lista de produtos
-                AtualizarCamposFormulario();
+                this.AtualizarCamposFormulario();
             }
             catch (GenericWarningException ex){
                 MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK,
@@ -233,8 +255,8 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         private void btnCancelarModificacaoProduto_Click(object sender, EventArgs e)
         {
             Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
-            PreencherFormularioProduto(produto);
-            DesativarSalvarModificacao();
+            this.PreencherFormularioProduto(produto);
+            this.DesativarSalvarModificacao();
         }
 
         private void btnRemoverProduto_Click(object sender, EventArgs e)
@@ -247,11 +269,31 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 MessageBox.Show("O produto não pôde ser removido", Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             // 6. Recarregar lista de produtos
-            AtualizarCamposFormulario();
+            this.AtualizarCamposFormulario();
         }
 
         #endregion Eventos
 
+        private void btnAdicionarProduto_Click(object sender, EventArgs e)
+        {
+            this.LimparCamposFormulario();
+            this.txtNomeProduto.Text = "[Nome do novo produto]";
+            this.cboListaDeProdutos.SelectedItem = null;
+        }
+
+        private void formatarNomeNovoProduto(object sender, EventArgs e)
+        {
+            this.txtNomeProduto.Text = "";
+        }
+
+        private void testeNomeDoProdutoModificado(object sender, EventArgs e)
+        {
+            // Se o nome do produto foi selecionado mas não foi modificado
+            if (this.txtNomeProduto.Text == "") {
+                this.txtNomeProduto.Text = "[Nome do novo produto]";
+                this.DesativarSalvarModificacao();
+            }
+        }
 
     }
 }
