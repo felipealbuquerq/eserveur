@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 using Softex.Residencia.Projeto.UI.Client;
 using Softex.Residencia.Projeto.UI.Kitchen;
+using Softex.Residencia.Projeto.UI.Calculadora;
 
 namespace Softex.Residencia.Projeto.UI.Administrator
 {
@@ -267,6 +268,12 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         private void ajudaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.abrirTelaWelcome();
+        }
+
+        private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCalculadora telaCalculadora = new FrmCalculadora();
+            telaCalculadora.Show();
         }
     }
 }

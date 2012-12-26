@@ -292,7 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(24F, 46F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 375);
+            this.ClientSize = new System.Drawing.Size(422, 371);
             this.Controls.Add(this.botaoClear);
             this.Controls.Add(this.botaoReturn);
             this.Controls.Add(this.botaoVirgula);
