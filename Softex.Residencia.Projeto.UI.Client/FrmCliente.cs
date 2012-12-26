@@ -188,8 +188,8 @@ namespace Softex.Residencia.Projeto.UI.Client
 
         private void btnRealizarPedido_Click(object sender, EventArgs e) 
         {
-            try
-            {
+            /*try
+            {*/
                 if (string.IsNullOrWhiteSpace(this.txtNumeroDaMesa.Text))
                 {
                     MessageBox.Show("Informe o número da mesa!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -222,11 +222,11 @@ namespace Softex.Residencia.Projeto.UI.Client
 
                     this.LimparCamposFormulario();
                 }
-            }
+            /*}
             catch(Exception)
             {
                 MessageBox.Show("Não foi possível realizar o pedido!", "Falha", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         private void LimparCamposFormulario()

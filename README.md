@@ -11,9 +11,9 @@ Introdução
 e-Serveur é sistema de automação para pequenas/micro empresas do setor de gastronomia e/ou hospedagem.
 Um software para não-técnicos! Muito simples e agradável de usar, ele é perfeito para donos de restaurantes a procura de um simples, barato
 e eficaz serviço de gestao de pedidos, pratos e bebidas. 
-Com suporte a multiplas impressoras, várias posições, preços de venda/disponibilidade de produtos. 
-E-Serveur também facilita a gestão de disponibilidade de pratos e serviços oferecidos.
-Com suporte à geração de relatórios gerenciais e operacionais, facilitando assim a tomada de decisões do empreendedor/gestor.
+e-Serveur também facilita a gestão de disponibilidade de pratos e serviços oferecidos.
+Suporte à multiplas impressoras, várias posições, preços de venda/disponibilidade de produtos. 
+Suporte à geração de relatórios gerenciais e operacionais, facilitando assim a tomada de decisões do empreendedor/gestor.
 
 
 
@@ -97,7 +97,7 @@ Copyright e licença
 ---------------------
 
 This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Lesser General Public License as published by
+it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 at your option) any later version.
 
