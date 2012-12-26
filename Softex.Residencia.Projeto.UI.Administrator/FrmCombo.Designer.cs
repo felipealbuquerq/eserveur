@@ -121,7 +121,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.chkListaDeCombo);
+            //this.groupBox3.Controls.Add(this.chkListaDeCombo);
             this.groupBox3.Controls.Add(this.btnCancelarRegistroCombo);
             this.groupBox3.Controls.Add(this.btnAdicionarImagemCombo);
             this.groupBox3.Controls.Add(this.picImagemCombo);

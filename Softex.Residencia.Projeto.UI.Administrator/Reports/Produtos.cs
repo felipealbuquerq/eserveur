@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+/*
 namespace Softex.Residencia.Projeto.UI.Administrator.Reports {
     using System;
     using System.ComponentModel;
@@ -167,3 +167,4 @@ namespace Softex.Residencia.Projeto.UI.Administrator.Reports {
         }
     }
 }
+*/

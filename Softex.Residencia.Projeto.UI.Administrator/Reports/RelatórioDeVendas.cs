@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace Softex.Residencia.Projeto.UI.Administrator.Reports {
+    /*
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -182,4 +183,5 @@ namespace Softex.Residencia.Projeto.UI.Administrator.Reports {
             return key;
         }
     }
+     * */
 }

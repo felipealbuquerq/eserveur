@@ -1,4 +1,5 @@
-﻿namespace Softex.Residencia.Projeto.UI.Administrator
+﻿/*
+namespace Softex.Residencia.Projeto.UI.Administrator
 {
     partial class FrmVisualizarRelatorio
     {
@@ -61,3 +62,4 @@
         private Reports.Produtos Produtos1;
     }
 }
+*/
