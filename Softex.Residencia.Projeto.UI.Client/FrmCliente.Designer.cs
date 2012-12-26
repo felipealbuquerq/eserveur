@@ -49,6 +49,7 @@
             // 
             // tabCategorias
             // 
+            this.tabCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCategorias.Location = new System.Drawing.Point(12, 12);
             this.tabCategorias.Name = "tabCategorias";
             this.tabCategorias.SelectedIndex = 0;
@@ -170,12 +171,14 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.lstViewProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstViewProdutos.Location = new System.Drawing.Point(918, 55);
             this.lstViewProdutos.Name = "lstViewProdutos";
             this.lstViewProdutos.Size = new System.Drawing.Size(297, 446);
             this.lstViewProdutos.TabIndex = 32;
             this.lstViewProdutos.UseCompatibleStateImageBehavior = false;
             this.lstViewProdutos.View = System.Windows.Forms.View.Details;
+            this.lstViewProdutos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pedidoDoubleClick);
             // 
             // columnHeader1
             // 

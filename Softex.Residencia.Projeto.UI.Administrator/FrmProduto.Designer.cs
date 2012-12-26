@@ -194,6 +194,7 @@
             this.btnRemoverProduto.TabIndex = 22;
             this.btnRemoverProduto.UseMnemonic = false;
             this.btnRemoverProduto.UseVisualStyleBackColor = true;
+            this.btnRemoverProduto.Click += new System.EventHandler(this.btnRemoverProduto_Click);
             // 
             // cboListaDeProdutos
             // 

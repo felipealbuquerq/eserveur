@@ -66,7 +66,8 @@ namespace Softex.Residencia.Projeto.UI.Client
                         imageList.Images.Add(icone);
                     }
 
-                    ListViewItem listViewItem = new ListViewItem(produto.Nome);                    
+                    string labelDoProduto = String.Format("{0}\n[{1:C}]", produto.Nome, produto.Preco);
+                    ListViewItem listViewItem = new ListViewItem(labelDoProduto);                    
                     listViewItem.ImageIndex = imageList.Images.Count - 1;
                     lstView.Items.Add(listViewItem);
                 }
@@ -98,6 +99,7 @@ namespace Softex.Residencia.Projeto.UI.Client
             }
             
             string nomeProduto = lstView.SelectedItems[0].Text;
+            lstView.SelectedItems[0].
 
             Produto produto = this.produtoBusiness.RecuperarProdutos(p => p.Nome == nomeProduto).FirstOrDefault();
             
@@ -228,6 +230,29 @@ namespace Softex.Residencia.Projeto.UI.Client
             this.txtNumeroDaMesa.Text = "";
             this.txtTotalDoPedido.Text = "";
             this.itensPedidos.Clear();
+        }
+
+        private void pedidoDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.lstViewProdutos.SelectedItems.Count <= 0) {
+                MessageBox.Show("Selecione o produto que deseja remover!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            string nomeProdutoSelecionado = this.lstViewProdutos.SelectedItems[0].Text;
+            ItemPedido itemPedido = this.itensPedidos.FirstOrDefault(item => item.Produto.Nome == nomeProdutoSelecionado);
+
+            if (itemPedido == null) {
+                return;
+            }
+            else if (itemPedido.QtdProduto > 1) {
+                itemPedido.QtdProduto -= 1;
+            }
+            else {
+                this.itensPedidos.Remove(itemPedido);
+            }
+
+            this.MostrarProdutosLista();
         }
     }
 }

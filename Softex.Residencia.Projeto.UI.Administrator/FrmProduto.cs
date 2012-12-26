@@ -237,6 +237,21 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             DesativarSalvarModificacao();
         }
 
+        private void btnRemoverProduto_Click(object sender, EventArgs e)
+        {
+            try {
+                Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
+                this.produtoBusiness.RemoverProduto(produto.Id);
+            }
+            catch (Exception) {
+                MessageBox.Show("O produto não pôde ser removido", Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            // 6. Recarregar lista de produtos
+            AtualizarCamposFormulario();
+        }
+
         #endregion Eventos
+
+
     }
 }
