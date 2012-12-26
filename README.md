@@ -1,46 +1,61 @@
-[e-Serveur](https://github.com/marcwebbie/eserveur) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](https://github.com/marcwebbie/eserveur)
+[e-Serveur](http://marcwebbie.github.com/eserveur) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](http://marcwebbie.github.com/eserveur)
 =================
 
-e-Serveur é um sistema de gestao(automação) de para micro/pequena empresas do setor de gastronomia by 
-[Marcondes Silva](https://github.com/marcwebbie), [Felipe Rosacruz](mailto:feliperosacruz@gmail.com), [Carlox Max](mailto:max28@oi.com.br), [Deyvid Maciel](mailto:deyvid.maciel@bol.com.br).
+e-Serveur é um sistema de gestão(automação) de para micro/pequena empresas do setor de gastronomia.
 
 
 Introdução
 -----------
 
-e-Serveur é sistema de ponto de venda para pequenas/micro empresas do setor de gastronomia ou hospedagem.
+e-Serveur é sistema de automação para pequenas/micro empresas do setor de gastronomia e/ou hospedagem.
 Um software para não-técnicos! Muito simples e agradável de usar, ele é perfeito para donos de restaurantes a procura de um simples, barato
 e eficaz serviço de gestao de pedidos, pratos e bebidas. 
-Com suporte multi-linguagem que pode gerenciar impressoras na cozinha, várias posições, preços de venda/disponibilidade de 
-pratos. E-Serveur também facilita a gestão de disponibilidade de pratos e serviços oferecidos.
-Com suporte à geração de relatórios gerenciais e operacionais facilitando assim a tomada de decisões do empreendedor/gestor.
+Com suporte a multiplas impressoras, várias posições, preços de venda/disponibilidade de produtos. 
+E-Serveur também facilita a gestão de disponibilidade de pratos e serviços oferecidos.
+Com suporte à geração de relatórios gerenciais e operacionais, facilitando assim a tomada de decisões do empreendedor/gestor.
+
+Screenshots
+----------------
 
 
 Funcionalidades
-============
+-----------
 
 + Gestão de caixa;
++ Gestão da disponibilidade dos produtos em tempo real;
++ Gestão dadisponibilidade dos pratos a partir dos ingredientes disponíveis;
 + Geração de cardápios;
-+ Gestão da disponibilidade dos produtos vendidos;
++ Geração de faturas;
 + Impressão de pedidos;
-+ Gerenciar a disponibilidade dos pratos a partir dos ingredientes disponíveis;
++ Formulários de cadastros (ingredientes, categorias, produtos, combos);
 + Cancelamento/Modificação de pedidos;
 + Visualização pedidos em aberto;
-+ Visualisação do valor da conta do cliente;
-+ Geração de faturas;
++ Visualização de parcial da conta do cliente;
++ Suporte multi-interface (Interface cliente, interface administrador, interface cozinha);
 + Suporte a relatórios gerenciais (Ex: Vendas por produto ou por data);
 + Suporte a relatórios operacionais (Ex: Relatório listando produtos vendidos);
-+ Cadastro de ingredientes;
-+ Cadastro de categorias;
-+ Cadastro de produtos;
-+ Cadastro de combos;
 + Suporte multi-idioma (previsto).
 
 
-Versionamento
-----------
+Requerimentos
+-----------
 
-`<major>.<minor>.<patch>`
++ Computador com Windows 7 ou mais recente;
++ .Net 4 framework runtime ou mais recente;
++ Microsoft SQL Server 2012
+
+
+Documentação
+-----------
+
+Documentação e passo a passo disponível em breve na [página oficial](http://marcwebbie.github.com/eserveur) do projeto no Github: 
+
+
+Downloads
+----------
+Versão estável: (Em construção)
+
+Código fonte: [snapshot](https://github.com/marcwebbie/eserveur/archive/master.zip)
 
 
 Authors
