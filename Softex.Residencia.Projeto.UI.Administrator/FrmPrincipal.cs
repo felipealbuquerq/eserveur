@@ -17,11 +17,20 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         public FrmPrincipal()
         {
             InitializeComponent();
-
-            Form frmInicio = new FrmWelcome() { MdiParent = this };
         }
 
+        private void abrirTelaWelcome() 
+        {
+            Form frmInicio = this.MdiChildren.FirstOrDefault(i => i is FrmWelcome);
 
+            if (frmInicio == null) {
+                frmInicio = new FrmWelcome() { MdiParent = this };
+            }
+            
+            frmInicio.Focus();
+            frmInicio.WindowState = FormWindowState.Maximized;
+            
+        }
         
         //------------------------------------------
         // Botoes da barra de ferramentas
@@ -75,7 +84,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         }
 
         private void tsbAjuda_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            abrirTelaWelcome();
         }
 
 
@@ -253,6 +262,11 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
             FrmPrincipalKitchen telaDaCozinha = new FrmPrincipalKitchen();
             telaDaCozinha.Show();
+        }
+
+        private void ajudaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.abrirTelaWelcome();
         }
     }
 }
