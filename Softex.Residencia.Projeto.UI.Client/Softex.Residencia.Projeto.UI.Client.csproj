@@ -11,7 +11,8 @@
     <RootNamespace>Softex.Residencia.Projeto.UI.Client</RootNamespace>
     <AssemblyName>Softex.Residencia.Projeto.UI.Client</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -92,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config">
       <SubType>Designer</SubType>
@@ -121,6 +123,10 @@
     <ProjectReference Include="..\Softex.Residencia.Projeto.Repository.EF\Softex.Residencia.EServeur.Repository.EF.csproj">
       <Project>{A9DC6CEA-71F5-43EB-8978-930E2C030FA0}</Project>
       <Name>Softex.Residencia.EServeur.Repository.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Softex.Residencia.Projeto.UI.Calculadora\Softex.Residencia.Projeto.UI.Calculadora.csproj">
+      <Project>{200bf229-2ab8-4118-b5a7-b1cb2a7098e2}</Project>
+      <Name>Softex.Residencia.Projeto.UI.Calculadora</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

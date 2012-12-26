@@ -183,9 +183,7 @@
     <Compile Include="FrmTestProduto.Designer.cs">
       <DependentUpon>FrmTestProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVisualizarRelatorio.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FrmVisualizarRelatorio.cs" />
     <Compile Include="FrmVisualizarRelatorio.Designer.cs">
       <DependentUpon>FrmVisualizarRelatorio.cs</DependentUpon>
     </Compile>
@@ -212,7 +210,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Produtos.rpt</DependentUpon>
-      <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Reports\RelatórioDeVendas.cs">
@@ -331,6 +328,10 @@
     <ProjectReference Include="..\Softex.Residencia.Projeto.Model\Softex.Residencia.EServeur.Model.csproj">
       <Project>{BC0C12D8-C0F1-47DD-88B8-BD2332AACDDA}</Project>
       <Name>Softex.Residencia.EServeur.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Softex.Residencia.Projeto.UI.Calculadora\Softex.Residencia.Projeto.UI.Calculadora.csproj">
+      <Project>{200bf229-2ab8-4118-b5a7-b1cb2a7098e2}</Project>
+      <Name>Softex.Residencia.Projeto.UI.Calculadora</Name>
     </ProjectReference>
     <ProjectReference Include="..\Softex.Residencia.Projeto.UI.Client\Softex.Residencia.Projeto.UI.Client.csproj">
       <Project>{FB2D1BBD-BBFD-4BE0-8EC2-3844086D26A3}</Project>

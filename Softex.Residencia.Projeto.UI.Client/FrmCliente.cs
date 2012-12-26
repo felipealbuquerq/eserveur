@@ -1,9 +1,4 @@
-﻿using Softex.Residencia.EServeur.Business;
-using Softex.Residencia.EServeur.Model;
-using Softex.Residencia.Projeto.UI.Administrator;
-using Softex.Residencia.Projeto.UI.Client.Controls;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
+using Softex.Residencia.EServeur.Business;
+using Softex.Residencia.EServeur.Model;
+using Softex.Residencia.Projeto.UI.Administrator;
+using Softex.Residencia.Projeto.UI.Client.Controls;
+using Softex.Residencia.Projeto.UI.Calculadora;
 
 
 namespace Softex.Residencia.Projeto.UI.Client
@@ -257,6 +258,12 @@ namespace Softex.Residencia.Projeto.UI.Client
             }
 
             this.MostrarProdutosLista();
+        }
+
+        private void btnAbrirCalculadora_Click(object sender, EventArgs e)
+        {
+            FrmCalculadora calculadora = new FrmCalculadora();
+            calculadora.Show();
         }
     }
 }

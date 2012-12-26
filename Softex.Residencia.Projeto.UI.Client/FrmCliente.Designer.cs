@@ -164,6 +164,7 @@
             this.btnAbrirCalculadora.TabIndex = 31;
             this.btnAbrirCalculadora.Text = "Calculadora";
             this.btnAbrirCalculadora.UseVisualStyleBackColor = true;
+            this.btnAbrirCalculadora.Click += new System.EventHandler(this.btnAbrirCalculadora_Click);
             // 
             // lstViewProdutos
             // 
