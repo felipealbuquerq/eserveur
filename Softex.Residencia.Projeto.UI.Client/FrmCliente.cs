@@ -1,15 +1,18 @@
-﻿using System;
+﻿using Softex.Residencia.EServeur.Business;
+using Softex.Residencia.EServeur.Model;
+using Softex.Residencia.Projeto.UI.Administrator;
+using Softex.Residencia.Projeto.UI.Client.Controls;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Softex.Residencia.EServeur.Business;
-using Softex.Residencia.EServeur.Model;
-using Softex.Residencia.Projeto.UI.Client.Controls;
-using System.IO;
+
 
 namespace Softex.Residencia.Projeto.UI.Client
 {
@@ -65,9 +68,11 @@ namespace Softex.Residencia.Projeto.UI.Client
                         Bitmap icone = new Bitmap(ms);
                         imageList.Images.Add(icone);
                     }
-
+                    /*
                     string labelDoProduto = String.Format("{0}\n[{1:C}]", produto.Nome, produto.Preco);
-                    ListViewItem listViewItem = new ListViewItem(labelDoProduto);                    
+                    ListViewItem listViewItem = new ListViewItem(labelDoProduto); 
+                     * */
+                    ListViewItem listViewItem = new IconeProduto(produto.Nome, produto.Preco); 
                     listViewItem.ImageIndex = imageList.Images.Count - 1;
                     lstView.Items.Add(listViewItem);
                 }
@@ -97,9 +102,8 @@ namespace Softex.Residencia.Projeto.UI.Client
             {
                 return;
             }
-            
-            string nomeProduto = lstView.SelectedItems[0].Text;
-            lstView.SelectedItems[0].
+
+            string nomeProduto = ((IconeProduto)lstView.SelectedItems[0]).NomeDoProduto;
 
             Produto produto = this.produtoBusiness.RecuperarProdutos(p => p.Nome == nomeProduto).FirstOrDefault();
             

@@ -72,6 +72,7 @@
     <Compile Include="FrmEfetuarPedido.Designer.cs">
       <DependentUpon>FrmEfetuarPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="IconeProduto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\ThumbnailControl.resx">
