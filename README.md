@@ -4,6 +4,7 @@
 e-Serveur é um sistema de gestão(automação) de para micro/pequena empresas do setor de gastronomia.
 
 
+
 Introdução
 -----------
 
@@ -14,8 +15,15 @@ Com suporte a multiplas impressoras, várias posições, preços de venda/dispon
 E-Serveur também facilita a gestão de disponibilidade de pratos e serviços oferecidos.
 Com suporte à geração de relatórios gerenciais e operacionais, facilitando assim a tomada de decisões do empreendedor/gestor.
 
-Screenshots
-----------------
+
+
+Requerimentos
+-----------
+
++ Computador com Windows 7 ou mais recente;
++ .Net 4 framework runtime ou mais recente;
++ Microsoft SQL Server 2012
+
 
 
 Funcionalidades
@@ -37,18 +45,24 @@ Funcionalidades
 + Suporte multi-idioma (previsto).
 
 
-Requerimentos
------------
 
-+ Computador com Windows 7 ou mais recente;
-+ .Net 4 framework runtime ou mais recente;
-+ Microsoft SQL Server 2012
+Screenshots
+----------------
 
+### Administrador
+![Interface administrador](https://raw.github.com/marcwebbie/eserveur/master/Imagens/Screenshots/Admin2.png)
 
-Documentação
------------
+![Interface administrador](https://raw.github.com/marcwebbie/eserveur/master/Imagens/Screenshots/Admin3.png)
 
-Documentação e passo a passo disponível em breve na [página oficial](http://marcwebbie.github.com/eserveur) do projeto no Github: 
+### Cliente
+![Interface cliente](https://raw.github.com/marcwebbie/eserveur/master/Imagens/Screenshots/Cliente2.png)
+
+### Cozinha
+![Interface cozinha](https://raw.github.com/marcwebbie/eserveur/master/Imagens/Screenshots/Cozinha1.png)
+
+### Calculadora
+![Calculadora](https://raw.github.com/marcwebbie/eserveur/master/Imagens/Screenshots/Calculadora1.png)
+
 
 
 Downloads
@@ -56,6 +70,14 @@ Downloads
 Versão estável: (Em construção)
 
 Código fonte: [snapshot](https://github.com/marcwebbie/eserveur/archive/master.zip)
+
+
+
+Documentação
+-----------
+
+Documentação e passo a passo disponível em breve na [página oficial](http://marcwebbie.github.com/eserveur) do projeto no Github: 
+
 
 
 Authors
@@ -68,6 +90,7 @@ Authors
 **Carlox Max**
 
 **Deyvid Maciel**
+
 
 
 Copyright e licença
