@@ -26,14 +26,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIngrediente));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblDisponibilidade = new System.Windows.Forms.Label();
-            this.btnDisponivel = new System.Windows.Forms.Button();
             this.cboListaDeIngrediente = new System.Windows.Forms.ComboBox();
             this.btnAdicionarIngrediente = new System.Windows.Forms.Button();
             this.btnRemoverIngrediente = new System.Windows.Forms.Button();
+            this.lblDisponibilidade = new System.Windows.Forms.Label();
+            this.btnDisponivel = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNaoDisponivel = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,29 +51,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de ingredientes";
             // 
-            // lblDisponibilidade
-            // 
-            this.lblDisponibilidade.AutoSize = true;
-            this.lblDisponibilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisponibilidade.Location = new System.Drawing.Point(73, 36);
-            this.lblDisponibilidade.Name = "lblDisponibilidade";
-            this.lblDisponibilidade.Size = new System.Drawing.Size(91, 20);
-            this.lblDisponibilidade.TabIndex = 5;
-            this.lblDisponibilidade.Text = "Disponível";
-            // 
-            // btnDisponivel
-            // 
-            this.btnDisponivel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDisponivel.BackgroundImage")));
-            this.btnDisponivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDisponivel.Location = new System.Drawing.Point(18, 25);
-            this.btnDisponivel.Name = "btnDisponivel";
-            this.btnDisponivel.Size = new System.Drawing.Size(47, 43);
-            this.btnDisponivel.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.btnDisponivel, "Clicar se indisponível");
-            this.btnDisponivel.UseMnemonic = false;
-            this.btnDisponivel.UseVisualStyleBackColor = true;
-            this.btnDisponivel.Click += new System.EventHandler(this.btnDisponivel_Click);
-            // 
             // cboListaDeIngrediente
             // 
             this.cboListaDeIngrediente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,6 +60,7 @@
             this.cboListaDeIngrediente.Size = new System.Drawing.Size(359, 28);
             this.cboListaDeIngrediente.TabIndex = 3;
             this.cboListaDeIngrediente.SelectedIndexChanged += new System.EventHandler(this.ingredienteSelecionado);
+            this.cboListaDeIngrediente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.nomeIngrediente_DoubleClick);
             // 
             // btnAdicionarIngrediente
             // 
@@ -110,18 +88,28 @@
             this.btnRemoverIngrediente.UseVisualStyleBackColor = true;
             this.btnRemoverIngrediente.Click += new System.EventHandler(this.btnRemoverIngrediente_Click);
             // 
-            // groupBox1
+            // lblDisponibilidade
             // 
-            this.groupBox1.Controls.Add(this.btnNaoDisponivel);
-            this.groupBox1.Controls.Add(this.lblDisponibilidade);
-            this.groupBox1.Controls.Add(this.btnDisponivel);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 102);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(495, 79);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Disponibilidade";
+            this.lblDisponibilidade.AutoSize = true;
+            this.lblDisponibilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisponibilidade.Location = new System.Drawing.Point(73, 36);
+            this.lblDisponibilidade.Name = "lblDisponibilidade";
+            this.lblDisponibilidade.Size = new System.Drawing.Size(91, 20);
+            this.lblDisponibilidade.TabIndex = 5;
+            this.lblDisponibilidade.Text = "Disponível";
+            // 
+            // btnDisponivel
+            // 
+            this.btnDisponivel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDisponivel.BackgroundImage")));
+            this.btnDisponivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDisponivel.Location = new System.Drawing.Point(18, 25);
+            this.btnDisponivel.Name = "btnDisponivel";
+            this.btnDisponivel.Size = new System.Drawing.Size(47, 43);
+            this.btnDisponivel.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnDisponivel, "Clicar se indisponível");
+            this.btnDisponivel.UseMnemonic = false;
+            this.btnDisponivel.UseVisualStyleBackColor = true;
+            this.btnDisponivel.Click += new System.EventHandler(this.btnDisponivel_Click);
             // 
             // btnNaoDisponivel
             // 
@@ -135,6 +123,19 @@
             this.btnNaoDisponivel.UseMnemonic = false;
             this.btnNaoDisponivel.UseVisualStyleBackColor = true;
             this.btnNaoDisponivel.Click += new System.EventHandler(this.btnNaoDisponivel_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnNaoDisponivel);
+            this.groupBox1.Controls.Add(this.lblDisponibilidade);
+            this.groupBox1.Controls.Add(this.btnDisponivel);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 102);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(495, 79);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Disponibilidade";
             // 
             // FrmIngrediente
             // 
