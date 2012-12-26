@@ -24,35 +24,35 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBDIngrediente));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvIngredientes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvIngredientes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(836, 493);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIngredientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvIngredientes.Location = new System.Drawing.Point(0, 0);
+            this.dgvIngredientes.Name = "dgvIngredientes";
+            this.dgvIngredientes.Size = new System.Drawing.Size(836, 493);
+            this.dgvIngredientes.TabIndex = 1;
             // 
             // FrmBDIngrediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 493);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvIngredientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmBDIngrediente";
             this.Text = "Banco de dados de ingredientes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvIngredientes;
     }
 }
