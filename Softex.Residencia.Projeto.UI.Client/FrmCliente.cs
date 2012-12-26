@@ -36,6 +36,7 @@ namespace Softex.Residencia.Projeto.UI.Client
 
         private void CarregarTabsCategorias()
         {
+            // 1. Criar tabs com os nomes das categorias
             foreach (Categoria categoria in this.categoriasBusiness.RecuperarCategorias())
             {
                 TabPage tabPage = new TabPage(categoria.Nome); 
@@ -56,6 +57,7 @@ namespace Softex.Residencia.Projeto.UI.Client
                 this.nomesListViews.Add(lstView.Name);
                 tabPage.Controls.Add(lstView);
                 
+                // 2. Adicionar produtos das categorias nas tabs
                 foreach (Produto produto in categoria.Produtos)
                 {
                     using (MemoryStream ms = new MemoryStream(produto.Imagem))

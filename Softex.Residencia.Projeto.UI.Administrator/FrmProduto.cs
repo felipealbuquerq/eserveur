@@ -35,7 +35,9 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             DesativarSalvarModificacao();
         }
 
+        
         #region Métodos
+        //------------------------
 
         private void AtualizarCamposFormulario()
         {
@@ -157,9 +159,12 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             this.produtoBusiness.RemoverProduto(produto.Id);
         }
 
-        #endregion
-        #region Eventos
+        #endregion Metodos
+        //------------------------
 
+
+        #region Eventos
+        //------------------------
         private void btnAdicionarImagemNovoProduto_Click(object sender, EventArgs e)
         {
             if (this.dlgUploadImagem.ShowDialog() == DialogResult.OK) {
@@ -187,7 +192,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 ValidarCamposFormulario();
 
                 // 2. Remover o produto selecionado
-                RemoverProdutoSelecionado();
+                //RemoverProdutoSelecionado();
 
                 // 3. Criar um novo produto a partir dos campos modificados
                 Produto novoProduto = new Produto()
@@ -211,6 +216,9 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
                 // 5. Desativar os botoes de salvar e cancelar
                 DesativarSalvarModificacao();
+
+                // 6. Recarregar lista de produtos
+                AtualizarCamposFormulario();
             }
             catch (GenericWarningException ex){
                 MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK,
@@ -229,6 +237,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             DesativarSalvarModificacao();
         }
 
-        #endregion
+        #endregion Eventos
     }
 }
