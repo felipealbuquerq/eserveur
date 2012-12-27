@@ -33,6 +33,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnSalvarModificacaoProduto = new System.Windows.Forms.Button();
             this.btnCancelarModificacaoProduto = new System.Windows.Forms.Button();
+            this.btnAdicionarProduto = new System.Windows.Forms.Button();
             this.dlgUploadImagem = new System.Windows.Forms.OpenFileDialog();
             this.lblIngredientes = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.cboListaDeProdutos = new System.Windows.Forms.ComboBox();
             this.picImagemProduto = new System.Windows.Forms.PictureBox();
             this.btnAdicionarImagemNovoProduto = new System.Windows.Forms.Button();
-            this.btnAdicionarProduto = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.picImagemProduto)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -79,6 +79,19 @@
             this.toolTip1.SetToolTip(this.btnCancelarModificacaoProduto, "Cancelar modificações");
             this.btnCancelarModificacaoProduto.UseVisualStyleBackColor = true;
             this.btnCancelarModificacaoProduto.Click += new System.EventHandler(this.btnCancelarModificacaoProduto_Click);
+            // 
+            // btnAdicionarProduto
+            // 
+            this.btnAdicionarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionarProduto.BackgroundImage")));
+            this.btnAdicionarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionarProduto.Location = new System.Drawing.Point(593, 19);
+            this.btnAdicionarProduto.Name = "btnAdicionarProduto";
+            this.btnAdicionarProduto.Size = new System.Drawing.Size(36, 33);
+            this.btnAdicionarProduto.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.btnAdicionarProduto, "Adicionar novo produto");
+            this.btnAdicionarProduto.UseMnemonic = false;
+            this.btnAdicionarProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionarProduto_Click);
             // 
             // dlgUploadImagem
             // 
@@ -113,7 +126,7 @@
             this.txtNomeProduto.Size = new System.Drawing.Size(342, 26);
             this.txtNomeProduto.TabIndex = 3;
             this.txtNomeProduto.Click += new System.EventHandler(this.formatarNomeNovoProduto);
-            this.txtNomeProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            this.txtNomeProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
             this.txtNomeProduto.Leave += new System.EventHandler(this.testeNomeDoProdutoModificado);
             // 
             // lblPreco
@@ -133,7 +146,7 @@
             this.txtPrecoProduto.Name = "txtPrecoProduto";
             this.txtPrecoProduto.Size = new System.Drawing.Size(87, 26);
             this.txtPrecoProduto.TabIndex = 5;
-            this.txtPrecoProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            this.txtPrecoProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
             // 
             // txtDescricaoProduto
             // 
@@ -144,7 +157,7 @@
             this.txtDescricaoProduto.Size = new System.Drawing.Size(342, 116);
             this.txtDescricaoProduto.TabIndex = 6;
             this.txtDescricaoProduto.Text = "";
-            this.txtDescricaoProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            this.txtDescricaoProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
             // 
             // lblDescricao
             // 
@@ -184,7 +197,7 @@
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(342, 28);
             this.cboCategoria.TabIndex = 21;
-            this.cboCategoria.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            this.cboCategoria.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
             // 
             // btnRemoverProduto
             // 
@@ -217,6 +230,7 @@
             this.picImagemProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagemProduto.TabIndex = 24;
             this.picImagemProduto.TabStop = false;
+            this.picImagemProduto.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.AtivarSalvarModificacao_Event);
             // 
             // btnAdicionarImagemNovoProduto
             // 
@@ -228,19 +242,6 @@
             this.btnAdicionarImagemNovoProduto.Text = "Upload imagem";
             this.btnAdicionarImagemNovoProduto.UseVisualStyleBackColor = true;
             this.btnAdicionarImagemNovoProduto.Click += new System.EventHandler(this.btnAdicionarImagemNovoProduto_Click);
-            // 
-            // btnAdicionarProduto
-            // 
-            this.btnAdicionarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionarProduto.BackgroundImage")));
-            this.btnAdicionarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionarProduto.Location = new System.Drawing.Point(593, 19);
-            this.btnAdicionarProduto.Name = "btnAdicionarProduto";
-            this.btnAdicionarProduto.Size = new System.Drawing.Size(36, 33);
-            this.btnAdicionarProduto.TabIndex = 26;
-            this.toolTip1.SetToolTip(this.btnAdicionarProduto, "Adicionar novo produto");
-            this.btnAdicionarProduto.UseMnemonic = false;
-            this.btnAdicionarProduto.UseVisualStyleBackColor = true;
-            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionarProduto_Click);
             // 
             // groupBox3
             // 

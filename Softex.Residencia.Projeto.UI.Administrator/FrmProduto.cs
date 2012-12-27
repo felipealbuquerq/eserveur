@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using Softex.Residencia.EServeur.Business;
 using Softex.Residencia.EServeur.Business.Exceptions;
 using Softex.Residencia.EServeur.Model;
+using System.Web.UI.WebControls;
 
 
 namespace Softex.Residencia.Projeto.UI.Administrator
@@ -64,10 +65,48 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.cboCategoria.DataSource = this.categoriaBusiness.RecuperarCategorias();
 
                 // 3. Atualizar lista de ingredientes
-                this.chkListaDeIngredientesProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
+                foreach (Ingrediente ingrediente in this.ingredienteBusiness.RecuperarIngredientes()){
+                    ListItem listItem = new ListItem()
+                    {
+                        Text = ingrediente.Nome,
+                        Value = ingrediente.Nome
+                    };
+
+                    this.chkListaDeIngredientesProduto.Items.Add(listItem);
+                }
+
+                #region testes de algoritimos para 3. Atualizar lista de ingredientes
+                /* USANDO Nome dos ingredientes como labels
+                 -----------------------------------------------------------*/
+                //this.chkListaDeIngredientesProduto.DataSource = this.ingredienteBusiness.RecuperarNomesIngredientes();
+                //this.chkListaDeIngredientesProduto.DisplayMember = "Nome";
 
 
-                // 4. Preencher os campos com informações do produto selecionado necessários
+                /* USANDO ObjectCollection para inserir nos items
+                 -----------------------------------------------------------*/
+                /*
+                System.Windows.Forms.CheckedListBox.ObjectCollection listaDeIngredientes = 
+                                  new System.Windows.Forms.CheckedListBox.ObjectCollection(this.chkListaDeIngredientesProduto);
+
+                foreach (Ingrediente ingrediente in this.ingredienteBusiness.RecuperarIngredientes()){
+                    ListItem listItem = new ListItem()
+                    {
+                        Text = ingrediente.Nome,
+                        Value = ingrediente.Nome
+                    };
+
+                    listaDeIngredientes.Add(listItem);
+                }
+                */
+
+
+
+                /*
+                this.chkListaDeIngredientesProduto.DataSource = this.ingredienteBusiness.RecuperarIngredientes();
+                this.chkListaDeIngredientesProduto.DisplayMember = "Nome";
+                 */
+                #endregion
+
             }
             catch (Exception)
             {
@@ -85,18 +124,83 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             this.cboCategoria.SelectedValue = produto.CategoriaId;
 
             // 3. Preencher preço do produto
-            Console.WriteLine("preço" + produto.Preco.ToString());
             this.txtPrecoProduto.Text = Convert.ToString(produto.Preco);
 
+            
             // 4. Selecionar ingredientes que compoem produto
-            /**** TODO: Falta implementar ****/
+            for (int i = 0; i != this.chkListaDeIngredientesProduto.Items.Count; ++i) {
+
+                ListItem item = (ListItem)this.chkListaDeIngredientesProduto.Items[i];
+
+                // Se o item representa um ingrediente da lista de ingredientes do Produto,
+                // checar o ingrediente na lista de ingredientes da tela
+                if (produto.Ingredientes.Where(elemento => elemento.Nome == item.Text).FirstOrDefault() != null) {
+                    if (chkListaDeIngredientesProduto.GetItemCheckState(i) == CheckState.Indeterminate ||
+                        chkListaDeIngredientesProduto.GetItemCheckState(i) == CheckState.Unchecked) {
+                        chkListaDeIngredientesProduto.SetItemCheckState(i, CheckState.Checked);
+                    }
+                }
+                else {
+                    if (chkListaDeIngredientesProduto.GetItemCheckState(i) == CheckState.Checked){
+                        chkListaDeIngredientesProduto.SetItemCheckState(i, CheckState.Unchecked);
+                    }
+                }
+
+            }
+            #region Testes de código para Selecionar ingredientes que compoem produto
+            /*
+            this.chkListaDeIngredientesProduto.Items.Clear();
+            foreach (Ingrediente ingrediente in this.ingredienteBusiness.RecuperarIngredientes()) {
+                foreach (Ingrediente ingredienteParaSelecionar in produto.Ingredientes) {
+                        ListItem listItem = new ListItem()
+                        {
+                            Text = ingrediente.Nome,
+                            Value = ingrediente.Nome,  
+                        };
+                    if (ingredienteParaSelecionar == ingrediente) {
+                        listItem.Selected = true;
+                    }
+
+                    this.chkListaDeIngredientesProduto.Items.Add(listItem);
+                }
+            }
+            */
+
+            /*
+            foreach (ListItem item in this.chkListaDeIngredientesProduto.Items) {
+                foreach (Ingrediente ing in produto.Ingredientes) {
+                    if (item.Text == ing.Nome) {
+                        item.Selected = true;
+                    }
+                }
+            }
+            */
+
+            /*
+            for (int i = 0; i < this.chkListaDeIngredientesProduto.Items.Count; i++) {
+                foreach (Ingrediente ing in produto.Ingredientes) {
+                    if (((Ingrediente)this.chkListaDeIngredientesProduto.Items[i]) == ing) {
+                        ((ListItem)this.chkListaDeIngredientesProduto.Items[i]).Selected = true;
+                    }
+                }
+            }
+            
+            foreach (ListItem item in this.chkListaDeIngredientesProduto.Items) {
+                foreach (Ingrediente ing in produto.Ingredientes) {
+                    if (item.Value == ing.Nome) {
+                        item.Selected = true;
+                    }
+                }
+            }
+            */
+            #endregion
 
             // 5. Preencher descrição do produto
             this.txtDescricaoProduto.Text = produto.Descricao;
 
             // 6. Adicionar imagem do produto
             ImageConverter ic = new ImageConverter();
-            this.picImagemProduto.Image = (Image)ic.ConvertFrom(produto.Imagem);
+            this.picImagemProduto.Image = (System.Drawing.Image)ic.ConvertFrom(produto.Imagem);
         }
 
         //
@@ -216,30 +320,39 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                     this.RemoverProdutoSelecionado();
                 }
 
-                // 3. Criar um novo produto a partir dos campos modificados
+                // 3. Recuperar os ingredientes selecionados
+                List<Ingrediente> ingredientesSelecionados = new List<Ingrediente>();
+                foreach (var itemSelecionado in chkListaDeIngredientesProduto.CheckedItems) {
+                    Ingrediente ingrediente = (Ingrediente) itemSelecionado;
+                    ingredientesSelecionados.Add(ingrediente);
+                }
+
+
+                // 4. Criar um novo produto a partir dos campos modificados
                 Produto novoProduto = new Produto()
                 {
                     Nome = this.txtNomeProduto.Text,
                     Descricao = this.txtDescricaoProduto.Text,
                     Preco = Convert.ToDecimal(this.txtPrecoProduto.Text),
-                    CategoriaId = (int)cboCategoria.SelectedValue
+                    CategoriaId = (int)cboCategoria.SelectedValue,
+                    Ingredientes = ingredientesSelecionados
                 };
                
                 using (MemoryStream ms = new MemoryStream()) 
                 {
-                    Image image = this.picImagemProduto.Image;
+                    System.Drawing.Image image = this.picImagemProduto.Image;
                     image.Save(ms, ImageFormat.Png);
 
                     novoProduto.Imagem = ms.ToArray();
                 }
 
-                // 4. Adicionar o novo produto ao banco de dados
+                // 5. Adicionar o novo produto ao banco de dados
                 this.produtoBusiness.CadastrarProduto(novoProduto);
 
-                // 5. Desativar os botoes de salvar e cancelar
+                // 6. Desativar os botoes de salvar e cancelar
                 this.DesativarSalvarModificacao();
 
-                // 6. Recarregar lista de produtos
+                // 7. Recarregar lista de produtos
                 this.AtualizarCamposFormulario();
             }
             catch (GenericWarningException ex){
@@ -272,7 +385,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             this.AtualizarCamposFormulario();
         }
 
-        #endregion Eventos
+        
 
         private void btnAdicionarProduto_Click(object sender, EventArgs e)
         {
@@ -294,6 +407,29 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.DesativarSalvarModificacao();
             }
         }
+
+        private void listaDeIngredientes_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            this.AtivarSalvarModificacao();
+        }
+
+        private void AtivarSalvarModificacao_Event(object sender, EventArgs e)
+        {
+            this.AtivarSalvarModificacao();
+        }
+
+        private void AtivarSalvarModificacao_Event(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            this.AtivarSalvarModificacao();
+        }
+
+        #endregion Eventos
+
+        private void AtivarSalvarModificacao()
+        {
+
+        }
+
 
     }
 }
