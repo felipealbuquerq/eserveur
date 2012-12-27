@@ -28,6 +28,8 @@ namespace Softex.Residencia.EServeur.Business
             this.repository.Save();
         }
 
+
+
 		public IEnumerable<Ingrediente> RecuperaIngredientes(int produtoId)
 		{
 			if (produtoId <= 0)
@@ -64,6 +66,12 @@ namespace Softex.Residencia.EServeur.Business
         public IEnumerable<Produto> RecuperarProdutos(Expression<Func<Produto, bool>> filter, int index, int count)
         {
             return this.repository.FindBy(filter, index, count);
+        }
+
+        public IEnumerable<Produto> RecuperarProdutosPorNome(string nomeDoProduto)
+        {
+            //Verifica se o horario de saida é nulo, o que significa que o pedido ainda não foi atendido
+            return this.RecuperarProdutos(p => p.Nome.ToUpper() == nomeDoProduto.ToUpper());
         }
 
         public IEnumerable<Produto> RecuperarProdutosDisponiveis()
