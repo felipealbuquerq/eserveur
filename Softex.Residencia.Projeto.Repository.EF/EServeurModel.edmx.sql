@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 12/26/2012 02:26:59
+-- Date Created: 12/27/2012 20:22:35
 -- Generated from EDMX file: D:\Projects\CSProjects\eserveur\Softex.Residencia.Projeto.Repository.EF\EServeurModel.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_IngredienteProduto_Ingrediente]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[IngredienteProduto] DROP CONSTRAINT [FK_IngredienteProduto_Ingrediente];
+IF OBJECT_ID(N'[dbo].[FK_Produtos_Categorias]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Produtos] DROP CONSTRAINT [FK_Produtos_Categorias];
 GO
-IF OBJECT_ID(N'[dbo].[FK_IngredienteProduto_Produto]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[IngredienteProduto] DROP CONSTRAINT [FK_IngredienteProduto_Produto];
+IF OBJECT_ID(N'[dbo].[FK_NotaFiscal_Clientes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[NotasFiscais] DROP CONSTRAINT [FK_NotaFiscal_Clientes];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ItensPedidos_Pedidos]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ItensPedidos] DROP CONSTRAINT [FK_ItensPedidos_Pedidos];
@@ -29,8 +29,14 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ItensPedidos_Produtos]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ItensPedidos] DROP CONSTRAINT [FK_ItensPedidos_Produtos];
 GO
-IF OBJECT_ID(N'[dbo].[FK_NotaFiscal_Clientes]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[NotasFiscais] DROP CONSTRAINT [FK_NotaFiscal_Clientes];
+IF OBJECT_ID(N'[dbo].[FK_Pedidos_Status]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pedidos] DROP CONSTRAINT [FK_Pedidos_Status];
+GO
+IF OBJECT_ID(N'[dbo].[FK_IngredienteProduto_Ingredientes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[IngredienteProduto] DROP CONSTRAINT [FK_IngredienteProduto_Ingredientes];
+GO
+IF OBJECT_ID(N'[dbo].[FK_IngredienteProduto_Produtos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[IngredienteProduto] DROP CONSTRAINT [FK_IngredienteProduto_Produtos];
 GO
 IF OBJECT_ID(N'[dbo].[FK_NotasFiscaisProdutos_NotasFiscais]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[NotasFiscaisProdutos] DROP CONSTRAINT [FK_NotasFiscaisProdutos_NotasFiscais];
@@ -38,17 +44,11 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_NotasFiscaisProdutos_Produtos]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[NotasFiscaisProdutos] DROP CONSTRAINT [FK_NotasFiscaisProdutos_Produtos];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Pedidos_Status]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Pedidos] DROP CONSTRAINT [FK_Pedidos_Status];
+IF OBJECT_ID(N'[dbo].[FK_ProdutosCombo_Produtos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProdutosCombo] DROP CONSTRAINT [FK_ProdutosCombo_Produtos];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProdutoCombo_ItemProduto]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProdutosCombo] DROP CONSTRAINT [FK_ProdutoCombo_ItemProduto];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ProdutoCombo_Produto]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProdutosCombo] DROP CONSTRAINT [FK_ProdutoCombo_Produto];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Produtos_Categorias]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Produtos] DROP CONSTRAINT [FK_Produtos_Categorias];
+IF OBJECT_ID(N'[dbo].[FK_ProdutosCombo_Produtos1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProdutosCombo] DROP CONSTRAINT [FK_ProdutosCombo_Produtos1];
 GO
 
 -- --------------------------------------------------
@@ -61,9 +61,6 @@ GO
 IF OBJECT_ID(N'[dbo].[Clientes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Clientes];
 GO
-IF OBJECT_ID(N'[dbo].[IngredienteProduto]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[IngredienteProduto];
-GO
 IF OBJECT_ID(N'[dbo].[Ingredientes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Ingredientes];
 GO
@@ -73,20 +70,23 @@ GO
 IF OBJECT_ID(N'[dbo].[NotasFiscais]', 'U') IS NOT NULL
     DROP TABLE [dbo].[NotasFiscais];
 GO
-IF OBJECT_ID(N'[dbo].[NotasFiscaisProdutos]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[NotasFiscaisProdutos];
-GO
 IF OBJECT_ID(N'[dbo].[Pedidos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Pedidos];
 GO
 IF OBJECT_ID(N'[dbo].[Produtos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Produtos];
 GO
-IF OBJECT_ID(N'[dbo].[ProdutosCombo]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProdutosCombo];
-GO
 IF OBJECT_ID(N'[dbo].[Status]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Status];
+GO
+IF OBJECT_ID(N'[dbo].[IngredienteProduto]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[IngredienteProduto];
+GO
+IF OBJECT_ID(N'[dbo].[NotasFiscaisProdutos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[NotasFiscaisProdutos];
+GO
+IF OBJECT_ID(N'[dbo].[ProdutosCombo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProdutosCombo];
 GO
 
 -- --------------------------------------------------

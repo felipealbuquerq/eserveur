@@ -146,6 +146,7 @@
             this.btnValorDaConta.TabIndex = 24;
             this.btnValorDaConta.Text = "Valor da conta";
             this.btnValorDaConta.UseVisualStyleBackColor = true;
+            this.btnValorDaConta.Click += new System.EventHandler(this.btnValorDaConta_Click);
             // 
             // btnFecharConta
             // 
