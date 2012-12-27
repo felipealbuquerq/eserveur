@@ -304,8 +304,18 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void RemoverProdutoSelecionado()
         {
-            Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
-            this.produtoBusiness.RemoverProduto(produto.Id);
+           Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
+           this.produtoBusiness.RemoverProduto(produto.Id); 
+        }
+
+        private void RemoverProdutoEscrito()
+        {
+            string nomeDoProduto = this.txtNomeProduto.Text;
+            IEnumerable<Produto> produtos = this.produtoBusiness.RecuperarProdutosPorNome(nomeDoProduto);
+            foreach (Produto produtoExcluir in produtos)
+            {
+                this.produtoBusiness.RemoverProduto(produtoExcluir.Id);
+            }
         }
 
         #endregion Metodos
@@ -343,7 +353,15 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             try
             {
                 // 1. Pedir confirmação da modificação
-                String mensagemAlerta = String.Format("Modificar produto: {0}?", this.cboListaDeProdutos.Text); 
+                String mensagemAlerta;
+                if (this.cboListaDeProdutos.SelectedItem != null)
+                {
+                    mensagemAlerta = String.Format("Modificar produto: {0}?", this.cboListaDeProdutos.Text);
+                }
+                else
+                {
+                    mensagemAlerta = String.Format("Adicionar produto: {0}?", this.txtNomeProduto.Text);
+                }
                 DialogResult confirmacao = MessageBox.Show(mensagemAlerta, 
                                                            Mensagens.Mensagem, 
                                                            MessageBoxButtons.OKCancel, 
@@ -363,7 +381,14 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
                 // 4. Ver se um produto com o mesmo nome já está registrado
                 //    Se SIM remover produto do banco
-                this.RemoverProdutoSelecionado();
+                if (this.cboListaDeProdutos.SelectedItem != null)
+                {
+                    this.RemoverProdutoSelecionado();
+                }
+                else
+                {
+                    this.RemoverProdutoEscrito();
+                }
                 /*
                 IEnumerable<Produto> produtosRegistrados = this.produtoBusiness.RecuperarProdutos();
                 Produto produtoBuscado = produtosRegistrados.Where(i => i.Nome == this.txtNomeProduto.Text).FirstOrDefault();
