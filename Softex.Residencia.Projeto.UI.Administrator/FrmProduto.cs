@@ -324,7 +324,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         private void cboListaDeProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.cboListaDeProdutos.SelectedItem == null) {
-                // Se o objeto selecionado é nul, não fazer nada
+                // Se o objeto selecionado é null, não fazer nada
             }
             else {
                 try {
@@ -343,7 +343,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             try
             {
                 // 1. Pedir confirmação da modificação
-                String mensagemAlerta = String.Format("Modificar produto: {0}", this.cboListaDeProdutos.Text); 
+                String mensagemAlerta = String.Format("Modificar produto: {0}?", this.cboListaDeProdutos.Text); 
                 DialogResult confirmacao = MessageBox.Show(mensagemAlerta, 
                                                            Mensagens.Mensagem, 
                                                            MessageBoxButtons.OKCancel, 
@@ -400,6 +400,20 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void btnRemoverProduto_Click(object sender, EventArgs e)
         {
+            // 1. Pedir confirmação da supressão
+            String mensagemAlerta = String.Format("Deletar produto: {0}?", this.cboListaDeProdutos.Text);
+            DialogResult confirmacao = MessageBox.Show(mensagemAlerta,
+                                                       Mensagens.Mensagem,
+                                                       MessageBoxButtons.OKCancel,
+                                                       MessageBoxIcon.Warning
+                                                       );
+
+            if (confirmacao != DialogResult.OK) { // Se o cliente NÃO escolher OK, retornar ao modo inicial
+                return;
+            }
+
+
+            // 2. Proceder com a supressão
             try {
                 Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
                 this.produtoBusiness.RemoverProduto(produto.Id);
@@ -407,7 +421,9 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             catch (Exception) {
                 MessageBox.Show("O produto não pôde ser removido", Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            // 6. Recarregar lista de produtos
+
+
+            // 3. Recarregar lista de produtos
             this.AtualizarCamposFormulario();
         }
 
