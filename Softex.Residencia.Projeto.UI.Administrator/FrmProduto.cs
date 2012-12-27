@@ -419,8 +419,14 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         private void btnCancelarModificacaoProduto_Click(object sender, EventArgs e)
         {
             Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
-            this.PreencherFormularioProduto(produto);
-            this.DesativarSalvarModificacao();
+            if (produto == null) {
+                this.LimparCamposFormulario();
+                this.DesativarSalvarModificacao();
+            }
+            else {
+                this.PreencherFormularioProduto(produto);
+                this.DesativarSalvarModificacao();
+            }
         }
 
         private void btnRemoverProduto_Click(object sender, EventArgs e)
