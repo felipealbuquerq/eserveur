@@ -342,27 +342,43 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
             try
             {
-                // 1. Validar campos do formulário
+                // 1. Pedir confirmação da modificação
+                String mensagemAlerta = String.Format("Modificar produto: {0}", this.cboListaDeProdutos.Text); 
+                DialogResult confirmacao = MessageBox.Show(mensagemAlerta, 
+                                                           Mensagens.Mensagem, 
+                                                           MessageBoxButtons.OKCancel, 
+                                                           MessageBoxIcon.Warning
+                                                           );
+
+                // Se o cliente nao escolher OK, retornar ao modo inicial
+                if (confirmacao != DialogResult.OK) {
+                    return;
+                }
+
+                // 2. Validar campos do formulário
                 ValidarCamposFormulario();
 
-                // 2. Criar novo produto a partir dos campos do formulario
+                // 3. Criar novo produto a partir dos campos do formulario
                 Produto novoProduto = criarProdutoDoForm();
 
-                // 3. Ver se um produto com o mesmo nome já está registrado
+                // 4. Ver se um produto com o mesmo nome já está registrado
                 //    Se SIM remover produto do banco
+                this.RemoverProdutoSelecionado();
+                /*
                 IEnumerable<Produto> produtosRegistrados = this.produtoBusiness.RecuperarProdutos();
                 Produto produtoBuscado = produtosRegistrados.Where(i => i.Nome == this.txtNomeProduto.Text).FirstOrDefault();
                 if (produtoBuscado != null) {
                     this.RemoverProdutoSelecionado();
                 }
+                */
 
-                // 4. Adicionar o novo produto ao banco de dados
+                // 5. Adicionar o novo produto ao banco de dados
                 this.produtoBusiness.CadastrarProduto(novoProduto);
 
-                // 5. Desativar os botoes de salvar e cancelar
+                // 6. Desativar os botoes de salvar e cancelar
                 this.DesativarSalvarModificacao();
 
-                // 6. Recarregar lista de produtos
+                // 7. Recarregar lista de produtos
                 this.AtualizarCamposFormulario();
             }
             catch (GenericWarningException ex){
