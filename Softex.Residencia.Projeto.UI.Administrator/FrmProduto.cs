@@ -65,11 +65,12 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.cboCategoria.DataSource = this.categoriaBusiness.RecuperarCategorias();
 
                 // 3. Atualizar lista de ingredientes
+                this.chkListaDeIngredientesProduto.Items.Clear();
                 foreach (Ingrediente ingrediente in this.ingredienteBusiness.RecuperarIngredientes()){
                     ListItem listItem = new ListItem()
                     {
                         Text = ingrediente.Nome,
-                        Value = ingrediente.Nome
+                        Value = ingrediente.Id.ToString()
                     };
 
                     this.chkListaDeIngredientesProduto.Items.Add(listItem);
@@ -147,7 +148,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 }
 
             }
-            #region Testes de código para Selecionar ingredientes que compoem produto
+            #region Testes de algoritimo para 4. Selecionar ingredientes que compoem produto
             /*
             this.chkListaDeIngredientesProduto.Items.Clear();
             foreach (Ingrediente ingrediente in this.ingredienteBusiness.RecuperarIngredientes()) {
@@ -215,6 +216,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.cboCategoria.SelectedIndex = 0;
             }
 
+            this.chkListaDeIngredientesProduto.ClearSelected();
             this.picImagemProduto.Image = null;
         }
 
@@ -257,8 +259,38 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             }
         }
 
+        //
+        private Produto criarProdutoDoForm()
+        {
+            Produto novoProduto = new Produto()
+            {
+                Nome = this.txtNomeProduto.Text,
+                Descricao = this.txtDescricaoProduto.Text,
+                Preco = Convert.ToDecimal(this.txtPrecoProduto.Text),
+                CategoriaId = (int)cboCategoria.SelectedValue,
+            };
 
-        private void AtivarSalvarModificacao(object sender, EventArgs e)
+            // Construir imagem do produto
+            using (MemoryStream ms = new MemoryStream()) {
+                System.Drawing.Image image = this.picImagemProduto.Image;
+                image.Save(ms, ImageFormat.Png);
+
+                novoProduto.Imagem = ms.ToArray();
+            }
+
+
+            // 3. Recuperar e adicionar os ingredientes selecionados ao produto
+            foreach (ListItem itemChecado in chkListaDeIngredientesProduto.CheckedItems) {
+                Int32 itemId = Convert.ToInt32(itemChecado.Value);
+                Ingrediente ingrediente = ingredienteBusiness.RecuperarIngrediente(itemId);
+                novoProduto.Ingredientes.Add(ingrediente);
+            }
+
+            return novoProduto;
+        }
+
+
+        private void AtivarSalvarModificacao()
         {
             btnSalvarModificacaoProduto.Enabled = true;
             btnCancelarModificacaoProduto.Enabled = true;
@@ -313,46 +345,24 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 // 1. Validar campos do formulário
                 ValidarCamposFormulario();
 
-                // 2. Remover o produto selecionado se um produto com o mesmo nome já existe no banco
+                // 2. Criar novo produto a partir dos campos do formulario
+                Produto novoProduto = criarProdutoDoForm();
+
+                // 3. Ver se um produto com o mesmo nome já está registrado
+                //    Se SIM remover produto do banco
                 IEnumerable<Produto> produtosRegistrados = this.produtoBusiness.RecuperarProdutos();
                 Produto produtoBuscado = produtosRegistrados.Where(i => i.Nome == this.txtNomeProduto.Text).FirstOrDefault();
-                if ( produtoBuscado != null) {
+                if (produtoBuscado != null) {
                     this.RemoverProdutoSelecionado();
                 }
 
-                // 3. Recuperar os ingredientes selecionados
-                List<Ingrediente> ingredientesSelecionados = new List<Ingrediente>();
-                foreach (var itemSelecionado in chkListaDeIngredientesProduto.CheckedItems) {
-                    Ingrediente ingrediente = (Ingrediente) itemSelecionado;
-                    ingredientesSelecionados.Add(ingrediente);
-                }
-
-
-                // 4. Criar um novo produto a partir dos campos modificados
-                Produto novoProduto = new Produto()
-                {
-                    Nome = this.txtNomeProduto.Text,
-                    Descricao = this.txtDescricaoProduto.Text,
-                    Preco = Convert.ToDecimal(this.txtPrecoProduto.Text),
-                    CategoriaId = (int)cboCategoria.SelectedValue,
-                    Ingredientes = ingredientesSelecionados
-                };
-               
-                using (MemoryStream ms = new MemoryStream()) 
-                {
-                    System.Drawing.Image image = this.picImagemProduto.Image;
-                    image.Save(ms, ImageFormat.Png);
-
-                    novoProduto.Imagem = ms.ToArray();
-                }
-
-                // 5. Adicionar o novo produto ao banco de dados
+                // 4. Adicionar o novo produto ao banco de dados
                 this.produtoBusiness.CadastrarProduto(novoProduto);
 
-                // 6. Desativar os botoes de salvar e cancelar
+                // 5. Desativar os botoes de salvar e cancelar
                 this.DesativarSalvarModificacao();
 
-                // 7. Recarregar lista de produtos
+                // 6. Recarregar lista de produtos
                 this.AtualizarCamposFormulario();
             }
             catch (GenericWarningException ex){
@@ -424,11 +434,6 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         }
 
         #endregion Eventos
-
-        private void AtivarSalvarModificacao()
-        {
-
-        }
 
 
     }

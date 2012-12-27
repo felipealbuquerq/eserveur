@@ -177,7 +177,7 @@
             this.chkListaDeIngredientesProduto.Name = "chkListaDeIngredientesProduto";
             this.chkListaDeIngredientesProduto.Size = new System.Drawing.Size(342, 130);
             this.chkListaDeIngredientesProduto.TabIndex = 12;
-            this.chkListaDeIngredientesProduto.EnabledChanged += new System.EventHandler(this.AtivarSalvarModificacao);
+            this.chkListaDeIngredientesProduto.EnabledChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
             // 
             // lblCategoria
             // 
