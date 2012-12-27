@@ -445,7 +445,17 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         {
             // Se o nome do produto foi selecionado mas não foi modificado
             if (this.txtNomeProduto.Text == "") {
-                this.txtNomeProduto.Text = "[Nome do novo produto]";
+
+                // Se o nome na lista de produto esta em branco,
+                // é porque o usuário clicou em adicionar novo produto
+                if (this.cboListaDeProdutos == null ||
+                    this.cboListaDeProdutos.Text == "") {
+
+                    this.txtNomeProduto.Text = "[Nome do novo produto]";
+                }
+                else {
+                    this.txtNomeProduto.Text = this.cboListaDeProdutos.Text;
+                }
                 this.DesativarSalvarModificacao();
             }
         }
