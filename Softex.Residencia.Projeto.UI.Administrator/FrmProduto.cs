@@ -305,7 +305,10 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         private void RemoverProdutoSelecionado()
         {
             Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
-            this.produtoBusiness.RemoverProduto(produto.Id);
+            if (this.produtoBusiness.RecuperarProduto(produto.Id) != null)
+            {
+                this.produtoBusiness.RemoverProduto(produto.Id);
+            }
         }
 
         #endregion Metodos
@@ -343,7 +346,15 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             try
             {
                 // 1. Pedir confirmação da modificação
-                String mensagemAlerta = String.Format("Modificar produto: {0}?", this.cboListaDeProdutos.Text); 
+                String mensagemAlerta;
+                if (this.cboListaDeProdutos.SelectedItem != null)
+                {
+                    mensagemAlerta = String.Format("Modificar produto: {0}?", this.cboListaDeProdutos.Text);
+                }
+                else
+                {
+                    mensagemAlerta = String.Format("Adicionar produto: {0}?", this.txtNomeProduto.Text);
+                }
                 DialogResult confirmacao = MessageBox.Show(mensagemAlerta, 
                                                            Mensagens.Mensagem, 
                                                            MessageBoxButtons.OKCancel, 
