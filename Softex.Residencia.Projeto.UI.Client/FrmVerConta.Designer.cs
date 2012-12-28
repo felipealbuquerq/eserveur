@@ -27,12 +27,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVerConta));
             this.gpbNomeMesa = new System.Windows.Forms.GroupBox();
-            this.ckbListaPedidos = new System.Windows.Forms.CheckedListBox();
-            this.btnPagarPedidosSelecionados = new System.Windows.Forms.Button();
-            this.btnPagarConta = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtValorTotalConta = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnPagarConta = new System.Windows.Forms.Button();
+            this.btnPagarPedidosSelecionados = new System.Windows.Forms.Button();
+            this.ckbListaPedidos = new System.Windows.Forms.CheckedListBox();
             this.gpbNomeMesa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,31 +53,15 @@
             this.gpbNomeMesa.TabStop = false;
             this.gpbNomeMesa.Text = "NomeDaMesa";
             // 
-            // ckbListaPedidos
+            // txtValorTotalConta
             // 
-            this.ckbListaPedidos.FormattingEnabled = true;
-            this.ckbListaPedidos.Location = new System.Drawing.Point(13, 26);
-            this.ckbListaPedidos.Name = "ckbListaPedidos";
-            this.ckbListaPedidos.Size = new System.Drawing.Size(1037, 487);
-            this.ckbListaPedidos.TabIndex = 0;
-            // 
-            // btnPagarPedidosSelecionados
-            // 
-            this.btnPagarPedidosSelecionados.Location = new System.Drawing.Point(13, 530);
-            this.btnPagarPedidosSelecionados.Name = "btnPagarPedidosSelecionados";
-            this.btnPagarPedidosSelecionados.Size = new System.Drawing.Size(135, 30);
-            this.btnPagarPedidosSelecionados.TabIndex = 1;
-            this.btnPagarPedidosSelecionados.Text = "Fechar seleção";
-            this.btnPagarPedidosSelecionados.UseVisualStyleBackColor = true;
-            // 
-            // btnPagarConta
-            // 
-            this.btnPagarConta.Location = new System.Drawing.Point(169, 530);
-            this.btnPagarConta.Name = "btnPagarConta";
-            this.btnPagarConta.Size = new System.Drawing.Size(135, 30);
-            this.btnPagarConta.TabIndex = 2;
-            this.btnPagarConta.Text = "Fechar conta";
-            this.btnPagarConta.UseVisualStyleBackColor = true;
+            this.txtValorTotalConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorTotalConta.Location = new System.Drawing.Point(863, 528);
+            this.txtValorTotalConta.Name = "txtValorTotalConta";
+            this.txtValorTotalConta.Size = new System.Drawing.Size(187, 30);
+            this.txtValorTotalConta.TabIndex = 4;
+            this.txtValorTotalConta.Text = "0,00";
+            this.txtValorTotalConta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -88,15 +73,32 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Total:";
             // 
-            // txtValorTotalConta
+            // btnPagarConta
             // 
-            this.txtValorTotalConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorTotalConta.Location = new System.Drawing.Point(863, 528);
-            this.txtValorTotalConta.Name = "txtValorTotalConta";
-            this.txtValorTotalConta.Size = new System.Drawing.Size(187, 30);
-            this.txtValorTotalConta.TabIndex = 4;
-            this.txtValorTotalConta.Text = "0,00";
-            this.txtValorTotalConta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnPagarConta.Location = new System.Drawing.Point(169, 530);
+            this.btnPagarConta.Name = "btnPagarConta";
+            this.btnPagarConta.Size = new System.Drawing.Size(135, 30);
+            this.btnPagarConta.TabIndex = 2;
+            this.btnPagarConta.Text = "Fechar conta";
+            this.btnPagarConta.UseVisualStyleBackColor = true;
+            // 
+            // btnPagarPedidosSelecionados
+            // 
+            this.btnPagarPedidosSelecionados.Location = new System.Drawing.Point(13, 530);
+            this.btnPagarPedidosSelecionados.Name = "btnPagarPedidosSelecionados";
+            this.btnPagarPedidosSelecionados.Size = new System.Drawing.Size(135, 30);
+            this.btnPagarPedidosSelecionados.TabIndex = 1;
+            this.btnPagarPedidosSelecionados.Text = "Fechar seleção";
+            this.btnPagarPedidosSelecionados.UseVisualStyleBackColor = true;
+            // 
+            // ckbListaPedidos
+            // 
+            this.ckbListaPedidos.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbListaPedidos.FormattingEnabled = true;
+            this.ckbListaPedidos.Location = new System.Drawing.Point(13, 26);
+            this.ckbListaPedidos.Name = "ckbListaPedidos";
+            this.ckbListaPedidos.Size = new System.Drawing.Size(1037, 487);
+            this.ckbListaPedidos.TabIndex = 0;
             // 
             // FrmVerConta
             // 
@@ -104,8 +106,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 583);
             this.Controls.Add(this.gpbNomeMesa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVerConta";
-            this.Text = "FrmVerConta";
+            this.Text = "Visualisaçao da conta";
             this.gpbNomeMesa.ResumeLayout(false);
             this.gpbNomeMesa.PerformLayout();
             this.ResumeLayout(false);
