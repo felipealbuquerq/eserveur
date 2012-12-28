@@ -41,7 +41,6 @@
             this.ingredienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.combosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.faturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +53,7 @@
             this.interfacesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cozinhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +61,6 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbModificarIngrediente = new System.Windows.Forms.ToolStripButton();
-            this.tsbAdicionarIngrediente = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbGerarRelatorio = new System.Windows.Forms.ToolStripButton();
@@ -69,7 +68,7 @@
             this.tsbAjuda = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.tsbAdicionarProduto.SuspendLayout();
             this.SuspendLayout();
@@ -109,7 +108,7 @@
             this.sairToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sairToolStripMenuItem.Image")));
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -117,7 +116,8 @@
             // 
             this.contaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarToolStripMenuItem,
-            this.fecharToolStripMenuItem});
+            this.fecharToolStripMenuItem,
+            this.pedidosToolStripMenuItem1});
             this.contaToolStripMenuItem.Name = "contaToolStripMenuItem";
             this.contaToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.contaToolStripMenuItem.Text = "Contas";
@@ -125,14 +125,14 @@
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // fecharToolStripMenuItem
             // 
             this.fecharToolStripMenuItem.Name = "fecharToolStripMenuItem";
-            this.fecharToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.fecharToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fecharToolStripMenuItem.Text = "Fechar";
             // 
             // cadastrarToolStripMenuItem
@@ -141,8 +141,7 @@
             this.produtoToolStripMenuItem,
             this.ingredienteToolStripMenuItem,
             this.categoriaToolStripMenuItem,
-            this.combosToolStripMenuItem,
-            this.pedidosToolStripMenuItem});
+            this.combosToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.cadastrarToolStripMenuItem.Text = "Inserir/Editar";
@@ -150,37 +149,30 @@
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // ingredienteToolStripMenuItem
             // 
             this.ingredienteToolStripMenuItem.Name = "ingredienteToolStripMenuItem";
-            this.ingredienteToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.ingredienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ingredienteToolStripMenuItem.Text = "Ingrediente";
             this.ingredienteToolStripMenuItem.Click += new System.EventHandler(this.ingredienteToolStripMenuItem_Click);
             // 
             // categoriaToolStripMenuItem
             // 
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.categoriaToolStripMenuItem.Text = "Categoria";
             this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
             // 
             // combosToolStripMenuItem
             // 
             this.combosToolStripMenuItem.Name = "combosToolStripMenuItem";
-            this.combosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.combosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.combosToolStripMenuItem.Text = "Combos";
             this.combosToolStripMenuItem.Click += new System.EventHandler(this.combosToolStripMenuItem_Click);
-            // 
-            // pedidosToolStripMenuItem
-            // 
-            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.pedidosToolStripMenuItem.Text = "Pedidos";
-            this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -267,16 +259,23 @@
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // cozinhaToolStripMenuItem
             // 
             this.cozinhaToolStripMenuItem.Name = "cozinhaToolStripMenuItem";
-            this.cozinhaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.cozinhaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.cozinhaToolStripMenuItem.Text = "Cozinha";
             this.cozinhaToolStripMenuItem.Click += new System.EventHandler(this.cozinhaToolStripMenuItem_Click);
+            // 
+            // calculadoraToolStripMenuItem
+            // 
+            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
+            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.calculadoraToolStripMenuItem.Text = "Calculadora";
+            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem
             // 
@@ -290,14 +289,14 @@
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.sobreToolStripMenuItem.Text = "Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem1
             // 
             this.ajudaToolStripMenuItem1.Name = "ajudaToolStripMenuItem1";
-            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.ajudaToolStripMenuItem1.Text = "Ajuda";
             this.ajudaToolStripMenuItem1.Click += new System.EventHandler(this.ajudaToolStripMenuItem1_Click);
             // 
@@ -307,7 +306,6 @@
             this.toolStripButton7,
             this.toolStripSeparator3,
             this.tsbModificarIngrediente,
-            this.tsbAdicionarIngrediente,
             this.toolStripButton3,
             this.toolStripSeparator1,
             this.tsbGerarRelatorio,
@@ -344,16 +342,6 @@
             this.tsbModificarIngrediente.Size = new System.Drawing.Size(23, 22);
             this.tsbModificarIngrediente.Text = "Modificar disponibilidade de um ingrediente";
             this.tsbModificarIngrediente.Click += new System.EventHandler(this.tsbModificarIngrediente_Click);
-            // 
-            // tsbAdicionarIngrediente
-            // 
-            this.tsbAdicionarIngrediente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbAdicionarIngrediente.Image = ((System.Drawing.Image)(resources.GetObject("tsbAdicionarIngrediente.Image")));
-            this.tsbAdicionarIngrediente.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAdicionarIngrediente.Name = "tsbAdicionarIngrediente";
-            this.tsbAdicionarIngrediente.Size = new System.Drawing.Size(23, 22);
-            this.tsbAdicionarIngrediente.Text = "Adicionar ingrediente";
-            this.tsbAdicionarIngrediente.Click += new System.EventHandler(this.tsbAdicionarIngrediente_Click);
             // 
             // toolStripButton3
             // 
@@ -405,12 +393,12 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // calculadoraToolStripMenuItem
+            // pedidosToolStripMenuItem1
             // 
-            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.calculadoraToolStripMenuItem.Text = "Calculadora";
-            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
+            this.pedidosToolStripMenuItem1.Name = "pedidosToolStripMenuItem1";
+            this.pedidosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.pedidosToolStripMenuItem1.Text = "Pedidos";
+            this.pedidosToolStripMenuItem1.Click += new System.EventHandler(this.pedidosToolStripMenuItem1_Click);
             // 
             // FrmPrincipal
             // 
@@ -456,9 +444,7 @@
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem faturasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton tsbAdicionarIngrediente;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -477,6 +463,7 @@
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cozinhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calculadoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem1;
     }
 }
 

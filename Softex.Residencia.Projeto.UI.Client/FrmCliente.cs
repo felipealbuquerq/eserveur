@@ -13,6 +13,7 @@ using Softex.Residencia.EServeur.Model;
 using Softex.Residencia.Projeto.UI.Administrator;
 using Softex.Residencia.Projeto.UI.Client.Controls;
 using Softex.Residencia.Projeto.UI.Calculadora;
+using Softex.Residencia.EServeur.Business.Exceptions;
 
 
 namespace Softex.Residencia.Projeto.UI.Client
@@ -62,20 +63,20 @@ namespace Softex.Residencia.Projeto.UI.Client
                 tabPage.Controls.Add(lstView);
                 
                 // 2. Adicionar produtos das categorias nas tabs
-                foreach (Produto produto in categoria.Produtos)
-                {
-                    using (MemoryStream ms = new MemoryStream(produto.Imagem))
-                    {
-                        Bitmap icone = new Bitmap(ms);
-                        imageList.Images.Add(icone);
+                if (categoria.Produtos != null) {
+                    foreach (Produto produto in categoria.Produtos) {
+                        using (MemoryStream ms = new MemoryStream(produto.Imagem)) {
+                            Bitmap icone = new Bitmap(ms);
+                            imageList.Images.Add(icone);
+                        }
+                        /*
+                        string labelDoProduto = String.Format("{0}\n[{1:C}]", produto.Nome, produto.Preco);
+                        ListViewItem listViewItem = new ListViewItem(labelDoProduto); 
+                         * */
+                        ListViewItem listViewItem = new IconeProduto(produto.Nome, produto.Preco);
+                        listViewItem.ImageIndex = imageList.Images.Count - 1;
+                        lstView.Items.Add(listViewItem);
                     }
-                    /*
-                    string labelDoProduto = String.Format("{0}\n[{1:C}]", produto.Nome, produto.Preco);
-                    ListViewItem listViewItem = new ListViewItem(labelDoProduto); 
-                     * */
-                    ListViewItem listViewItem = new IconeProduto(produto.Nome, produto.Preco); 
-                    listViewItem.ImageIndex = imageList.Images.Count - 1;
-                    lstView.Items.Add(listViewItem);
                 }
             }
         }
@@ -205,6 +206,7 @@ namespace Softex.Residencia.Projeto.UI.Client
                     }
                 }
 
+                
                 string mensagem = string.Format("Efetuar pedido no valor: {0:c}? \nMesa: {1}", txtTotalDoPedido.Text, txtNumeroDaMesa.Text);
                 
                 if (MessageBox.Show(mensagem, "Confirmar pedido", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -264,6 +266,29 @@ namespace Softex.Residencia.Projeto.UI.Client
         {
             FrmCalculadora calculadora = new FrmCalculadora();
             calculadora.Show();
+        }
+
+        private void btnValorDaConta_Click(object sender, EventArgs e)
+        {
+            try {
+                if (string.IsNullOrWhiteSpace(this.txtNumeroDaMesa.Text)) {
+                    MessageBox.Show("Informe o número da mesa!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                foreach (char c in this.txtNumeroDaMesa.Text.ToCharArray()) {
+                    if (!char.IsNumber(c)) {
+                        MessageBox.Show("O número da mesa informado é inválido!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+
+                //Form telaDaConta = new FrmConta(Convert.ToInt32(this.txtNumeroDaMesa.Text));
+                //telaDaConta.ShowDialog();
+            }
+            catch (Exception) {
+                MessageBox.Show("Não foi possível carregar os pedidos da conta!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

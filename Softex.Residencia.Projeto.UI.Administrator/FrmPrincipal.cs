@@ -274,5 +274,15 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             FrmCalculadora telaCalculadora = new FrmCalculadora();
             telaCalculadora.Show();
         }
+
+        private void pedidosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frmCliente = this.MdiChildren.FirstOrDefault(i => i is FrmPedido);
+
+            if (frmCliente == null) {
+                frmCliente = new FrmPedido() { MdiParent = this }; // test
+            }
+            frmCliente.Focus();
+        }
     }
 }

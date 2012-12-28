@@ -6,11 +6,12 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Collections;
 using System.Collections.Generic;
+using System.Web.UI.WebControls;
 
 using Softex.Residencia.EServeur.Business;
 using Softex.Residencia.EServeur.Business.Exceptions;
 using Softex.Residencia.EServeur.Model;
-using System.Web.UI.WebControls;
+
 
 
 namespace Softex.Residencia.Projeto.UI.Administrator
@@ -419,8 +420,14 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         private void btnCancelarModificacaoProduto_Click(object sender, EventArgs e)
         {
             Produto produto = (Produto)this.cboListaDeProdutos.SelectedItem;
-            this.PreencherFormularioProduto(produto);
-            this.DesativarSalvarModificacao();
+            if (produto == null) {
+                this.LimparCamposFormulario();
+                this.DesativarSalvarModificacao();
+            }
+            else {
+                this.PreencherFormularioProduto(produto);
+                this.DesativarSalvarModificacao();
+            }
         }
 
         private void btnRemoverProduto_Click(object sender, EventArgs e)

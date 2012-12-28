@@ -34,6 +34,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnNaoDisponivel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnModificarDisponibilidade = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -102,7 +103,7 @@
             // 
             this.btnDisponivel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDisponivel.BackgroundImage")));
             this.btnDisponivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDisponivel.Location = new System.Drawing.Point(18, 25);
+            this.btnDisponivel.Location = new System.Drawing.Point(20, 25);
             this.btnDisponivel.Name = "btnDisponivel";
             this.btnDisponivel.Size = new System.Drawing.Size(47, 43);
             this.btnDisponivel.TabIndex = 4;
@@ -115,7 +116,7 @@
             // 
             this.btnNaoDisponivel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNaoDisponivel.BackgroundImage")));
             this.btnNaoDisponivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNaoDisponivel.Location = new System.Drawing.Point(18, 25);
+            this.btnNaoDisponivel.Location = new System.Drawing.Point(20, 25);
             this.btnNaoDisponivel.Name = "btnNaoDisponivel";
             this.btnNaoDisponivel.Size = new System.Drawing.Size(47, 43);
             this.btnNaoDisponivel.TabIndex = 6;
@@ -126,6 +127,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnModificarDisponibilidade);
             this.groupBox1.Controls.Add(this.btnNaoDisponivel);
             this.groupBox1.Controls.Add(this.lblDisponibilidade);
             this.groupBox1.Controls.Add(this.btnDisponivel);
@@ -136,6 +138,17 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Disponibilidade";
+            // 
+            // btnModificarDisponibilidade
+            // 
+            this.btnModificarDisponibilidade.Location = new System.Drawing.Point(346, 31);
+            this.btnModificarDisponibilidade.Name = "btnModificarDisponibilidade";
+            this.btnModificarDisponibilidade.Size = new System.Drawing.Size(137, 31);
+            this.btnModificarDisponibilidade.TabIndex = 7;
+            this.btnModificarDisponibilidade.Text = "Modificar";
+            this.toolTip1.SetToolTip(this.btnModificarDisponibilidade, "Modificar disponibilidade");
+            this.btnModificarDisponibilidade.UseVisualStyleBackColor = true;
+            this.btnModificarDisponibilidade.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmIngrediente
             // 
@@ -165,5 +178,6 @@
         private System.Windows.Forms.Label lblDisponibilidade;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnNaoDisponivel;
+        private System.Windows.Forms.Button btnModificarDisponibilidade;
     }
 }

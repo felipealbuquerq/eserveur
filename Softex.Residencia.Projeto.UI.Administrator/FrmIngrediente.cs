@@ -19,6 +19,8 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
 
             this.ingredienteBusiness = new IngredienteBusiness();
             this.CarregarIngredientes();
+            this.cboListaDeIngrediente.SelectedIndex = -1;
+            this.mostrarBotaoDisponivel();
         }
 
         // Carrega a comboBox com os ingredientes cadastrados no sistema
@@ -219,6 +221,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
 
                 // 2. Mudar o icone de não disponível em disponível
                 this.mostrarBotaoDisponivel();
+                
 
                 // 3. Disponibilizar ingrediente no banco de dados 
                 this.ingredienteBusiness.DisponibilizarIngrediente(ingredienteSelecionado.Id);
@@ -240,6 +243,16 @@ namespace Softex.Residencia.Projeto.UI.Administrator {
             // Limpa o campo de nome do ingrediente
             this.cboListaDeIngrediente.SelectedItem = null;
             this.cboListaDeIngrediente.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (((Ingrediente)cboListaDeIngrediente.SelectedItem).Disponivel) {
+                btnDisponivel_Click(sender, e);
+            }
+            else {
+                btnNaoDisponivel_Click(sender, e);
+            }
         }
     }
 }
