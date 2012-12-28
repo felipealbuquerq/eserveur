@@ -45,6 +45,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,17 +68,17 @@
     <Compile Include="FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConta.Designer.cs">
-      <DependentUpon>FrmConta.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmEfetuarPedido.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEfetuarPedido.Designer.cs">
       <DependentUpon>FrmEfetuarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVerConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerConta.Designer.cs">
+      <DependentUpon>FrmVerConta.cs</DependentUpon>
     </Compile>
     <Compile Include="IconeProduto.cs" />
     <Compile Include="Program.cs" />
@@ -88,11 +89,11 @@
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConta.resx">
-      <DependentUpon>FrmConta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmEfetuarPedido.resx">
       <DependentUpon>FrmEfetuarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerConta.resx">
+      <DependentUpon>FrmVerConta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
