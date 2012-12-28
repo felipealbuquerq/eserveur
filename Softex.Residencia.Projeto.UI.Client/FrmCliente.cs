@@ -65,9 +65,11 @@ namespace Softex.Residencia.Projeto.UI.Client
                 // 2. Adicionar produtos das categorias nas tabs
                 if (categoria.Produtos != null) {
                     foreach (Produto produto in categoria.Produtos) {
-                        using (MemoryStream ms = new MemoryStream(produto.Imagem)) {
-                            Bitmap icone = new Bitmap(ms);
-                            imageList.Images.Add(icone);
+                        if (produto.Imagem != null) {
+                            using (MemoryStream ms = new MemoryStream(produto.Imagem)) {
+                                Bitmap icone = new Bitmap(ms);
+                                imageList.Images.Add(icone);
+                            }
                         }
                         /*
                         string labelDoProduto = String.Format("{0}\n[{1:C}]", produto.Nome, produto.Preco);
@@ -283,8 +285,8 @@ namespace Softex.Residencia.Projeto.UI.Client
                     }
                 }
 
-                //Form telaDaConta = new FrmConta(Convert.ToInt32(this.txtNumeroDaMesa.Text));
-                //telaDaConta.ShowDialog();
+                Form telaDaConta = new FrmVerConta(Convert.ToInt32(this.txtNumeroDaMesa.Text));
+                telaDaConta.ShowDialog();
             }
             catch (Exception) {
                 MessageBox.Show("Não foi possível carregar os pedidos da conta!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);

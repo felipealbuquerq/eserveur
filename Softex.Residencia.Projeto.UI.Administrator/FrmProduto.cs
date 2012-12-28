@@ -43,8 +43,8 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void AtualizarCamposFormulario()
         {
-            try
-            {
+            /*try
+            {*/
                 // 1. Limpar e atualizar lista de produtos do BD
                 this.cboListaDeProdutos.Items.Clear();
                 foreach (Produto produto in this.produtoBusiness.RecuperarProdutos())
@@ -109,11 +109,12 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                  */
                 #endregion
 
-            }
+            /*
+            }  
             catch (Exception)
             {
                 MessageBox.Show(Mensagens.Falha, Mensagens.Mensagem, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         //
@@ -351,8 +352,8 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
         private void btnSalvarModificacaoProduto_Click(object sender, EventArgs e)
         {
-            try
-            {
+            /*try
+            {*/
                 // 1. Pedir confirmação da modificação
                 String mensagemAlerta;
                 if (this.cboListaDeProdutos.SelectedItem != null)
@@ -406,7 +407,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
                 // 7. Recarregar lista de produtos
                 this.AtualizarCamposFormulario();
-            }
+            /*}
             catch (GenericWarningException ex){
                 MessageBox.Show(ex.Message, Mensagens.Mensagem, MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
@@ -414,7 +415,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
             catch (Exception){
                 MessageBox.Show(Mensagens.CadastroProdutoFalha, Mensagens.Mensagem, MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         private void btnCancelarModificacaoProduto_Click(object sender, EventArgs e)

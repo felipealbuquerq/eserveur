@@ -30,6 +30,9 @@ namespace Softex.Residencia.Projeto.UI.Client
             InitializeComponent();
 
             this.pedidoBusiness = new PedidoBusiness();
+
+            this.gpbNomeMesa.Text = String.Format("Conta da mesa: {0}", numeroMesa);
+
             adicionarPedidosNaLista(numeroMesa);
             calcularTotalPedidos(numeroMesa);
         }
@@ -41,7 +44,7 @@ namespace Softex.Residencia.Projeto.UI.Client
                 valorTotal += pedidoAberto.ValorPedido;
             }
 
-            this.txtValorTotalConta.Text = valorTotal.ToString();
+            this.txtValorTotalConta.Text = String.Format("{0:C}", valorTotal);
         }
 
         private void adicionarPedidosNaLista(int numeroMesa)
@@ -51,23 +54,23 @@ namespace Softex.Residencia.Projeto.UI.Client
             // 1. Adicionar
             int indexPedido = 1;
             foreach (Pedido pedidoAberto in this.pedidoBusiness.RecuperarPedidosEmEspera(numeroMesa)) {
-                String tituloPedido = String.Format("{0} - {1} - ID: {2}", indexPedido, pedidoAberto.HorarioEntrada, pedidoAberto.Id);
+                String tituloPedido = String.Format("[{0}] -- Data: {1} -- ID: {2}", indexPedido, pedidoAberto.HorarioEntrada, pedidoAberto.Id);
                 ListItem pedidoAbertoListItem = new ListItem()
                 {
                     Text = tituloPedido,
                     Value = pedidoAberto.Id.ToString(),
-                    Selected = false,
+                    Selected = true,
                     Enabled = true
                 };
 
                 this.ckbListaPedidos.Items.Add(pedidoAbertoListItem);
 
                 foreach (ItemPedido itemPedido in pedidoAberto.ItensPedidos) {
-                    String strQtdeItemPedido = itemPedido.QtdProduto.ToString().PadRight(5);
-                    String strNomeItemPedido = itemPedido.Produto.Nome.ToString().PadRight(100);
-                    String strValorItemPedido = itemPedido.Valor.ToString().PadRight(10);
+                    String strQtdeItemPedido = itemPedido.QtdProduto.ToString().PadRight(4);
+                    String strNomeItemPedido = itemPedido.Produto.Nome.ToString().PadRight(80, '_');
+                    String strValorItemPedido = String.Format("{0:C}", itemPedido.Valor).PadRight(10);
 
-                    String tituloItemPedido = "\t" + strQtdeItemPedido + strNomeItemPedido + strValorItemPedido;
+                    String tituloItemPedido = "  " + strQtdeItemPedido + strNomeItemPedido + strValorItemPedido;
                     ListItem itemPedidoListItem = new ListItem()
                     {
                         Text = tituloItemPedido,
@@ -77,6 +80,17 @@ namespace Softex.Residencia.Projeto.UI.Client
                     };
 
                     this.ckbListaPedidos.Items.Add(itemPedidoListItem);
+                }
+
+
+                // 
+                for (int i = 0; i != this.ckbListaPedidos.Items.Count; ++i) {
+
+                    ListItem item = (ListItem)this.ckbListaPedidos.Items[i];
+
+                    if (item.Enabled) {
+                        ckbListaPedidos.SetItemCheckState(i, CheckState.Checked);
+                    }
                 }
             }
         }
