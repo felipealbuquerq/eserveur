@@ -17,6 +17,30 @@ namespace Softex.Residencia.EServeur.Business
             this.repository = new PedidoRepository();
         }
 
+        public void PagarPedido(int pedidoId)
+        {
+            if (pedidoId <= 0)
+            {
+                throw new ArgumentException("O identificador do pedido não pode ser menor ou igual a zero!");
+            }
+            Pedido pedido = RecuperarPedido(pedidoId);
+            this.repository.Remove(pedido);
+            pedido.StatusId = 2;
+            CadastrarPedido(pedido);
+        }
+
+        public void CancelarPedido(int pedidoId)
+        {
+            if (pedidoId <= 0)
+            {
+                throw new ArgumentException("O identificador do pedido não pode ser menor ou igual a zero!");
+            }
+            Pedido pedido = RecuperarPedido(pedidoId);
+            this.repository.Remove(pedido);
+            pedido.StatusId = 3;
+            CadastrarPedido(pedido);
+        }
+
         public void CadastrarPedido(Pedido pedido)
         {
             if (pedido == null)

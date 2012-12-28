@@ -217,7 +217,18 @@ namespace Softex.Residencia.Projeto.UI.Administrator
                 this.cboCategoria.SelectedIndex = 0;
             }
 
-            this.chkListaDeIngredientesProduto.ClearSelected();
+            this.chkListaDeIngredientesProduto.Items.Clear();
+            foreach (Ingrediente ingrediente in this.ingredienteBusiness.RecuperarIngredientes())
+            {
+                ListItem listItem = new ListItem()
+                {
+                    Text = ingrediente.Nome,
+                    Value = ingrediente.Id.ToString()
+                };
+
+                this.chkListaDeIngredientesProduto.Items.Add(listItem);
+            }
+
             this.picImagemProduto.Image = null;
         }
 
@@ -376,7 +387,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
 
                 // 2. Validar campos do formulário
                 ValidarCamposFormulario();
-
+                Console.WriteLine("11111111111111111111111111111111111111111111111111111111111");
                 // 3. Criar novo produto a partir dos campos do formulario
                 Produto novoProduto = criarProdutoDoForm();
 
@@ -464,6 +475,7 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         private void btnAdicionarProduto_Click(object sender, EventArgs e)
         {
             this.LimparCamposFormulario();
+            
             this.txtNomeProduto.Text = "[Nome do novo produto]";
             this.cboListaDeProdutos.SelectedItem = null;
         }
@@ -508,6 +520,11 @@ namespace Softex.Residencia.Projeto.UI.Administrator
         }
 
         #endregion Eventos
+
+        private void chkListaDeIngredientesProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.AtivarSalvarModificacao();
+        }
 
 
     }

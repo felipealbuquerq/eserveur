@@ -58,9 +58,10 @@
             // 
             this.btnSalvarModificacaoProduto.Enabled = false;
             this.btnSalvarModificacaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarModificacaoProduto.Location = new System.Drawing.Point(431, 419);
+            this.btnSalvarModificacaoProduto.Location = new System.Drawing.Point(575, 516);
+            this.btnSalvarModificacaoProduto.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvarModificacaoProduto.Name = "btnSalvarModificacaoProduto";
-            this.btnSalvarModificacaoProduto.Size = new System.Drawing.Size(117, 23);
+            this.btnSalvarModificacaoProduto.Size = new System.Drawing.Size(156, 28);
             this.btnSalvarModificacaoProduto.TabIndex = 18;
             this.btnSalvarModificacaoProduto.Text = "Salvar";
             this.toolTip1.SetToolTip(this.btnSalvarModificacaoProduto, "Salvar modificações");
@@ -71,9 +72,10 @@
             // 
             this.btnCancelarModificacaoProduto.Enabled = false;
             this.btnCancelarModificacaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarModificacaoProduto.Location = new System.Drawing.Point(554, 419);
+            this.btnCancelarModificacaoProduto.Location = new System.Drawing.Point(739, 516);
+            this.btnCancelarModificacaoProduto.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarModificacaoProduto.Name = "btnCancelarModificacaoProduto";
-            this.btnCancelarModificacaoProduto.Size = new System.Drawing.Size(117, 23);
+            this.btnCancelarModificacaoProduto.Size = new System.Drawing.Size(156, 28);
             this.btnCancelarModificacaoProduto.TabIndex = 19;
             this.btnCancelarModificacaoProduto.Text = "Cancelar";
             this.toolTip1.SetToolTip(this.btnCancelarModificacaoProduto, "Cancelar modificações");
@@ -84,9 +86,10 @@
             // 
             this.btnAdicionarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionarProduto.BackgroundImage")));
             this.btnAdicionarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionarProduto.Location = new System.Drawing.Point(593, 19);
+            this.btnAdicionarProduto.Location = new System.Drawing.Point(791, 23);
+            this.btnAdicionarProduto.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionarProduto.Name = "btnAdicionarProduto";
-            this.btnAdicionarProduto.Size = new System.Drawing.Size(36, 33);
+            this.btnAdicionarProduto.Size = new System.Drawing.Size(48, 41);
             this.btnAdicionarProduto.TabIndex = 26;
             this.toolTip1.SetToolTip(this.btnAdicionarProduto, "Adicionar novo produto");
             this.btnAdicionarProduto.UseMnemonic = false;
@@ -102,9 +105,10 @@
             // 
             this.lblIngredientes.AutoSize = true;
             this.lblIngredientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngredientes.Location = new System.Drawing.Point(140, 164);
+            this.lblIngredientes.Location = new System.Drawing.Point(187, 202);
+            this.lblIngredientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIngredientes.Name = "lblIngredientes";
-            this.lblIngredientes.Size = new System.Drawing.Size(102, 20);
+            this.lblIngredientes.Size = new System.Drawing.Size(125, 25);
             this.lblIngredientes.TabIndex = 1;
             this.lblIngredientes.Text = "Ingredientes:";
             // 
@@ -112,18 +116,20 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(140, 68);
+            this.lblNome.Location = new System.Drawing.Point(187, 84);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(55, 20);
+            this.lblNome.Size = new System.Drawing.Size(70, 25);
             this.lblNome.TabIndex = 2;
             this.lblNome.Text = "Nome:";
             // 
             // txtNomeProduto
             // 
             this.txtNomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeProduto.Location = new System.Drawing.Point(329, 62);
+            this.txtNomeProduto.Location = new System.Drawing.Point(439, 76);
+            this.txtNomeProduto.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(342, 26);
+            this.txtNomeProduto.Size = new System.Drawing.Size(455, 30);
             this.txtNomeProduto.TabIndex = 3;
             this.txtNomeProduto.Click += new System.EventHandler(this.formatarNomeNovoProduto);
             this.txtNomeProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
@@ -133,18 +139,20 @@
             // 
             this.lblPreco.AutoSize = true;
             this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreco.Location = new System.Drawing.Point(140, 134);
+            this.lblPreco.Location = new System.Drawing.Point(187, 165);
+            this.lblPreco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(54, 20);
+            this.lblPreco.Size = new System.Drawing.Size(69, 25);
             this.lblPreco.TabIndex = 4;
             this.lblPreco.Text = "Preço:";
             // 
             // txtPrecoProduto
             // 
             this.txtPrecoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoProduto.Location = new System.Drawing.Point(329, 128);
+            this.txtPrecoProduto.Location = new System.Drawing.Point(439, 158);
+            this.txtPrecoProduto.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecoProduto.Name = "txtPrecoProduto";
-            this.txtPrecoProduto.Size = new System.Drawing.Size(87, 26);
+            this.txtPrecoProduto.Size = new System.Drawing.Size(115, 30);
             this.txtPrecoProduto.TabIndex = 5;
             this.txtPrecoProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
             // 
@@ -152,9 +160,10 @@
             // 
             this.txtDescricaoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescricaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoProduto.Location = new System.Drawing.Point(329, 297);
+            this.txtDescricaoProduto.Location = new System.Drawing.Point(439, 366);
+            this.txtDescricaoProduto.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricaoProduto.Name = "txtDescricaoProduto";
-            this.txtDescricaoProduto.Size = new System.Drawing.Size(342, 116);
+            this.txtDescricaoProduto.Size = new System.Drawing.Size(455, 142);
             this.txtDescricaoProduto.TabIndex = 6;
             this.txtDescricaoProduto.Text = "";
             this.txtDescricaoProduto.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
@@ -163,9 +172,10 @@
             // 
             this.lblDescricao.AutoSize = true;
             this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(140, 300);
+            this.lblDescricao.Location = new System.Drawing.Point(187, 369);
+            this.lblDescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(84, 20);
+            this.lblDescricao.Size = new System.Drawing.Size(105, 25);
             this.lblDescricao.TabIndex = 7;
             this.lblDescricao.Text = "Descrição:";
             // 
@@ -173,19 +183,22 @@
             // 
             this.chkListaDeIngredientesProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkListaDeIngredientesProduto.FormattingEnabled = true;
-            this.chkListaDeIngredientesProduto.Location = new System.Drawing.Point(329, 161);
+            this.chkListaDeIngredientesProduto.Location = new System.Drawing.Point(439, 198);
+            this.chkListaDeIngredientesProduto.Margin = new System.Windows.Forms.Padding(4);
             this.chkListaDeIngredientesProduto.Name = "chkListaDeIngredientesProduto";
-            this.chkListaDeIngredientesProduto.Size = new System.Drawing.Size(342, 130);
+            this.chkListaDeIngredientesProduto.Size = new System.Drawing.Size(455, 154);
             this.chkListaDeIngredientesProduto.TabIndex = 12;
+            this.chkListaDeIngredientesProduto.SelectedIndexChanged += new System.EventHandler(this.chkListaDeIngredientesProduto_SelectedIndexChanged);
             this.chkListaDeIngredientesProduto.EnabledChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(139, 100);
+            this.lblCategoria.Location = new System.Drawing.Point(185, 123);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(82, 20);
+            this.lblCategoria.Size = new System.Drawing.Size(103, 25);
             this.lblCategoria.TabIndex = 20;
             this.lblCategoria.Text = "Categoria:";
             // 
@@ -193,9 +206,10 @@
             // 
             this.cboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(329, 94);
+            this.cboCategoria.Location = new System.Drawing.Point(439, 116);
+            this.cboCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(342, 28);
+            this.cboCategoria.Size = new System.Drawing.Size(455, 33);
             this.cboCategoria.TabIndex = 21;
             this.cboCategoria.TextChanged += new System.EventHandler(this.AtivarSalvarModificacao_Event);
             // 
@@ -203,9 +217,10 @@
             // 
             this.btnRemoverProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemoverProduto.BackgroundImage")));
             this.btnRemoverProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemoverProduto.Location = new System.Drawing.Point(635, 19);
+            this.btnRemoverProduto.Location = new System.Drawing.Point(847, 23);
+            this.btnRemoverProduto.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoverProduto.Name = "btnRemoverProduto";
-            this.btnRemoverProduto.Size = new System.Drawing.Size(36, 33);
+            this.btnRemoverProduto.Size = new System.Drawing.Size(48, 41);
             this.btnRemoverProduto.TabIndex = 22;
             this.btnRemoverProduto.UseMnemonic = false;
             this.btnRemoverProduto.UseVisualStyleBackColor = true;
@@ -215,18 +230,20 @@
             // 
             this.cboListaDeProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboListaDeProdutos.FormattingEnabled = true;
-            this.cboListaDeProdutos.Location = new System.Drawing.Point(17, 22);
+            this.cboListaDeProdutos.Location = new System.Drawing.Point(23, 27);
+            this.cboListaDeProdutos.Margin = new System.Windows.Forms.Padding(4);
             this.cboListaDeProdutos.Name = "cboListaDeProdutos";
-            this.cboListaDeProdutos.Size = new System.Drawing.Size(570, 28);
+            this.cboListaDeProdutos.Size = new System.Drawing.Size(759, 33);
             this.cboListaDeProdutos.TabIndex = 23;
             this.cboListaDeProdutos.SelectedIndexChanged += new System.EventHandler(this.cboListaDeProdutos_SelectedIndexChanged);
             // 
             // picImagemProduto
             // 
             this.picImagemProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picImagemProduto.Location = new System.Drawing.Point(17, 65);
+            this.picImagemProduto.Location = new System.Drawing.Point(23, 80);
+            this.picImagemProduto.Margin = new System.Windows.Forms.Padding(4);
             this.picImagemProduto.Name = "picImagemProduto";
-            this.picImagemProduto.Size = new System.Drawing.Size(116, 111);
+            this.picImagemProduto.Size = new System.Drawing.Size(154, 136);
             this.picImagemProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagemProduto.TabIndex = 24;
             this.picImagemProduto.TabStop = false;
@@ -235,9 +252,10 @@
             // btnAdicionarImagemNovoProduto
             // 
             this.btnAdicionarImagemNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarImagemNovoProduto.Location = new System.Drawing.Point(17, 182);
+            this.btnAdicionarImagemNovoProduto.Location = new System.Drawing.Point(23, 224);
+            this.btnAdicionarImagemNovoProduto.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionarImagemNovoProduto.Name = "btnAdicionarImagemNovoProduto";
-            this.btnAdicionarImagemNovoProduto.Size = new System.Drawing.Size(117, 23);
+            this.btnAdicionarImagemNovoProduto.Size = new System.Drawing.Size(156, 28);
             this.btnAdicionarImagemNovoProduto.TabIndex = 25;
             this.btnAdicionarImagemNovoProduto.Text = "Upload imagem";
             this.btnAdicionarImagemNovoProduto.UseVisualStyleBackColor = true;
@@ -263,20 +281,23 @@
             this.groupBox3.Controls.Add(this.lblNome);
             this.groupBox3.Controls.Add(this.lblIngredientes);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 12);
+            this.groupBox3.Location = new System.Drawing.Point(16, 15);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(689, 465);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(919, 572);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de produtos";
             // 
             // FrmProduto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 490);
+            this.ClientSize = new System.Drawing.Size(952, 603);
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmProduto";
             this.Text = "Produtos";
             ((System.ComponentModel.ISupportInitialize)(this.picImagemProduto)).EndInit();
