@@ -1,7 +1,9 @@
---CREATE DATABASE EServeur;
-
+use master;
+go
+CREATE DATABASE EServeur;
+go
 USE EServeur;
-
+go
 --DROP TABLE IngredienteProduto;
 --DROP TABLE ProdutosCombo;
 --DROP TABLE NotasFiscaisProdutos;
